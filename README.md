@@ -1,5 +1,7 @@
 Hello!
 
+Hi everyone :D
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 This project contains an example project board meant to showcase how one can be used. The issues posted to it are not real issues.
 
