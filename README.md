@@ -2,6 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This project contains an example project board meant to showcase how one can be used. The issues posted to it are not real issues.
 
 Joseph was here.
+Dominic was here also.
 
 #### _**IMPORTANT NOTE**_ - 
 This project does not have a mongoDB connection setup. Setup the connection based on the environments below.
