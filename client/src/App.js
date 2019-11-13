@@ -6,22 +6,29 @@ import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 
+class App extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        selectedPage: 'vender'
+      };
+    }
 
-const App = () => {
-    return (
-      <div className="demo-big-content">
+    render() {
+        return (
+        <div className="demo-big-content">
           <Layout>
               <Header className = "header-color" title="Team 7C Concession App" scroll>
                   <Navigation>
-                      <a href="/">Venders page</a>
-                      <a href="/">Checkout</a>
+                      <a href="/">Venders</a>
+                      <a href="/">Menu</a>
                       <a href="/">Sign Up/Sign In</a>
                   </Navigation>
               </Header>
               <Drawer title="Navigation Bar">
                   <Navigation>
-                      <a href="/">Venders page</a>
-                      <a href="/">Checkout</a>
+                      <a href="/">Venders</a>
+                      <a href="/">Menu</a>
                       <a href="/">Sign Up/Sign In</a>
                   </Navigation>
               </Drawer>
@@ -30,7 +37,8 @@ const App = () => {
               </Content>
           </Layout>
       </div>
-  );
+        );
+    }
 }
 
 export default App;
