@@ -4,6 +4,7 @@ import Home from "./views/Home/Home"
 import NotFound from "./views/NotFound"
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
+import './assets/home_food.jpg';
 import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 
 class App extends React.Component {
@@ -33,7 +34,9 @@ class App extends React.Component {
                   </Navigation>
               </Drawer>
               <Content>
-                  <div className="page-content" />
+                  <div className="page-content">
+                    <img src={ require('./assets/home_food.jpg') } />
+                  </div>
               </Content>
           </Layout>
       </div>
