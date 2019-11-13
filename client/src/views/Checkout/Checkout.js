@@ -1,14 +1,14 @@
 import React from 'react';
 //import UFLogo from '../../assets/UF_Wallpaper.jpg';
-import './Home.css';
+import './Checkout.css';
 import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 
-
-function Home() {
+class Checkout extends React.Component {
+    render() {
     return (
         <div className="demo-big-content">
             <Layout>
-                <Header className = "header-color" title="Team 7C Concession App" scroll>
+                <Header className = "header-color" title="Checkout" scroll>
                     <Navigation>
                         <a href="/">Venders page</a>
                         <a href="/">Checkout</a>
@@ -29,5 +29,5 @@ function Home() {
         </div>
     );
 }
-
-export default Home;
+}
+export default Checkout;
