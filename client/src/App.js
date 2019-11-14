@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Switch, Redirect  } from 'react-router-dom';
-import Home from "./components/Home.js";
+import Home from "./components/Home/Home.js";
 import Menu from "./components/Menu/Menu.js";
-import './components/Home.css';
-import Sign_In from "./components/Sign_In.js";
-import New_User from "./components/New_User.js";
+import './components/Home/Home.css';
+import Sign_In from "./components/Sign_In/Sign_In.js";
+import New_User from "./components/New_User/New_User.js";
 import './views/Home/Home.css';
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
@@ -35,7 +35,7 @@ class App extends React.Component {
                 <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'home'})}}>Home</a>
 
                 <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'menu'})}}>Menu</a>
-                <a href="/" alt="cart" className = "cart" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'cart'})}}>
+                <a href="/" alt="cart" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'cart'})}}>
                 <div>
                 <img src={ require('../src/assets/shopping_cart.png')} alt="cart logo" className = "cart_logo"/>
                 Cart 

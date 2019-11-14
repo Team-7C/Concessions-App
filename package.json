@@ -30,6 +30,7 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10",
     "react-mdl": "^1.11.0",
+    "react-number-format": "^4.3.1",
     "should": "^13.2.3",
     "supertest": "^4.0.2"
   },
