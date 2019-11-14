@@ -33,8 +33,10 @@ class App extends React.Component {
                   </p>
                 </div>
 
-                <div>
-                  
+                <div className = "body-text"> 
+                  <h1>
+                    
+                  </h1>
                 </div>
               </div>
               
