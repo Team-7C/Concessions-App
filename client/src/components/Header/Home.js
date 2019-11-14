@@ -13,6 +13,7 @@ class App extends React.Component {
         return (
                   <div className="page-content">
                     <img src={ require('./assets/home_food.jpg') } />
+                    
                   </div>
         );
     }
