@@ -90,14 +90,10 @@ class App extends React.Component {
                       ['home']: <Home/>,
                       ['menu']: null,
                       ['venders']: null,
-<<<<<<< HEAD
                       ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
                       ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
-=======
-                      ['sign']: <Sign_In changeState={this.changeState}/>,
                       ['cart']: null,
                       ['checkout']: null,
->>>>>>> 981b5826e9969771a04e1aad882a8313f6606904
                      }[this.state.selectedPage]}
                     
               </Content>
