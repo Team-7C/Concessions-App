@@ -12,7 +12,7 @@ class App extends React.Component {
               <div className="page-content">
                 <div>
                   <img
-                    src={ require('../assets/Concession_Stand.jpg')}
+                    src={ require('../../assets/Concession_Stand.jpg')}
                     alt="concession"
                     className = "logo"
                   />

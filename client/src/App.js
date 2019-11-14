@@ -1,11 +1,9 @@
 import React from 'react';
 import { Route, Switch, Redirect  } from 'react-router-dom';
-import Home from "./components/Home.js";
+import Home from "./components/Home/Home.js";
 import Menu from "./components/Menu/Menu.js";
-import './components/Home.css';
-import Sign_In from "./components/Sign_In.js";
-import New_User from "./components/New_User.js";
-import './views/Home/Home.css';
+import Sign_In from "./components/SignIn/SignIn.js";
+import New_User from "./components/SignUp/SignUp.js";
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import './assets/home_food.jpg';
