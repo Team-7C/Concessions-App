@@ -33,13 +33,15 @@ class App extends React.Component {
         return (
             <Navigation>
                 <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'home'})}}>Home</a>
-                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'venders'})}}>Venders</a>
+                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'signIn'})}}>Sign Up/Sign In</a>
                 <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'menu'})}}>Menu</a>
                 { this.state.username === '' ? (
                     <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'sign'})}}>Sign In</a>
                 ) : (
                     <a href="/" onClick={(a) => {a.preventDefault(); this.changeUser('', ''); this.changePage('home')}}>Sign Out</a>   
                 )}
+                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'checkout'})}}>Checkout</a>
+
             </Navigation>
         )
     }
@@ -59,7 +61,7 @@ class App extends React.Component {
         return (
 
         <div className="demo-big-content">
-          <Layout>
+          <Layout fixedHeader>
               <Header className = "header-color" title={"Team 7C Concession App - " + this.state.selectedPage} scroll>
                     {this.menuItems()}
 
@@ -74,8 +76,13 @@ class App extends React.Component {
                       ['home']: <Home/>,
                       ['menu']: null,
                       ['venders']: null,
+<<<<<<< HEAD
                       ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
                       ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
+=======
+                      ['sign']: <Sign_In changeState={this.changeState}/>,
+                      ['checkout']: null,
+>>>>>>> 981b5826e9969771a04e1aad882a8313f6606904
                      }[this.state.selectedPage]}
                     
               </Content>
