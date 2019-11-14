@@ -8,6 +8,7 @@ import './views/Home/Home.css';
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import './assets/home_food.jpg';
+import './App.css'
 import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 
 class App extends React.Component {
@@ -28,16 +29,22 @@ class App extends React.Component {
     //make it all look super pretty
     menuItems(){
         return (
-            <Navigation>
+            <Navigation alt="Navigation Bar" className = "nav_bar">
                 <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'home'})}}>Home</a>
-                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'signIn'})}}>Sign Up/Sign In</a>
+
                 <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'menu'})}}>Menu</a>
+                <a href="/" alt="cart" className = "cart" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'cart'})}}>
+                <div>
+                <img src={ require('../src/assets/shopping_cart.png')} alt="cart logo" className = "cart_logo"/>
+                Cart 
+                </div>
+                </a>
+                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'checkout'})}}>Checkout</a>
                 { this.state.username === '' ? (
                     <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'sign'})}}>Sign In</a>
                 ) : (
                     <a href="/" onClick={(a) => {a.preventDefault(); this.changeState('home', '', '')}}>Sign Out</a>   
                 )}
-                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'checkout'})}}>Checkout</a>
 
             </Navigation>
         )
@@ -52,14 +59,14 @@ class App extends React.Component {
 
         <div className="demo-big-content">
           <Layout fixedHeader>
-              <Header className = "header-color" title={"Team 7C Concession App - " + this.state.selectedPage}>
+              <Header className = "header-color" title={"Team 7C Concession App"} scroll>
                     {this.menuItems()}
 
               </Header>
               
-              <Drawer title="Navigation Bar">
+              {/* <Drawer title="Navigation Bar">
                     {this.menuItems()}
-              </Drawer>
+              </Drawer> */}
 
               <Content>
                    {{
@@ -67,6 +74,7 @@ class App extends React.Component {
                       ['menu']: null,
                       ['venders']: null,
                       ['sign']: <Sign_In changeState={this.changeState}/>,
+                      ['cart']: null,
                       ['checkout']: null,
                      }[this.state.selectedPage]}
                     
