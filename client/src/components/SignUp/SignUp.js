@@ -1,4 +1,5 @@
 import React from 'react';
+import './SignUp.css'
 
 
 class New_User extends React.Component {
@@ -54,24 +55,24 @@ class New_User extends React.Component {
         const createUser = this.props.createUser;
 
         return (
-            <div>
+            <div className="form">
                 <input type="text" ref="username_input" placeholder="Username" onChange={() => {
                     this.changeUsername(this.refs.username_input.value)}} />
-
+                <br/>
                 <input type="text" ref="password_input" placeholder="Password" onChange={() => {
                     this.changePassword(this.refs.password_input.value)}} />
-
+                <br/>
                 <input type="text" ref="password_confirm_input" placeholder="Re-enter Password" onChange={() => {
                     this.changeConfirmPassword(this.refs.password_confirm_input.value)}} />
-
+                <br/>
                 <label> {this.state.message} </label>
-
+                <br/>
                 <input type="text" ref="email_input" placeholder="Email" onChange={() => {
                     this.changeEmail(this.refs.email_input.value)}} />
-
+                <br/>
                 <input type="text" ref="phone_input" placeholder="Phone Number" onChange={() => {
                     this.changePhone(this.refs.phone_input.value)}} />
-
+                <br/>
                 <button onClick={(a) => {a.preventDefault(); createUser(this.state.userName, this.state.password, this.state.phone, this.state.email); changePage('home')}}> Submit </button>
 
                 
