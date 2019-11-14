@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, Switch, Redirect  } from 'react-router-dom';
 import Home from "./components/Home.js";
+import Menu from "./components/Menu/Menu.js";
 import './components/Home.css';
 import Sign_In from "./components/Sign_In.js";
 import New_User from "./components/New_User.js";
 import './views/Home/Home.css';
-
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import './assets/home_food.jpg';
@@ -28,11 +28,8 @@ class App extends React.Component {
         this.createUser = this.createUser.bind(this);
         
     }
-    
-    //if username and password are blank, make signin/up button = 'sign in'.  if user is logged in make the button say 'sign out'
-    //on login page, add a button to create new account with a label above it saying something like 'If you don't already have an account create one!'.  Make this button open a sign up page where you can add your information.  do like username, password (2x for clarification), email, and phone for now.
-    //make it all look super pretty
-    menuItems(){
+
+  menuItems(){
         return (
             <Navigation alt="Navigation Bar" className = "nav_bar">
                 <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'home'})}}>Home</a>
@@ -88,16 +85,12 @@ class App extends React.Component {
                 />
                    {{
                       ['home']: <Home/>,
-                      ['menu']: null,
+                      ['menu']: <Menu/>,
                       ['venders']: null,
-<<<<<<< HEAD
                       ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
                       ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
-=======
-                      ['sign']: <Sign_In changeState={this.changeState}/>,
                       ['cart']: null,
                       ['checkout']: null,
->>>>>>> 981b5826e9969771a04e1aad882a8313f6606904
                      }[this.state.selectedPage]}
                     
               </Content>
