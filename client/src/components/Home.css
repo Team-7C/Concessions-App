@@ -1,35 +1,27 @@
-.background-transparent{
-    opacity: 0.75;
-    width: 100%;
-    height: auto;
-    min-height: 100%;
-    min-width: 1024px;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
 
 .logo{
-    position: fixed;
+    position: relative;
     width: 250px;
     height: 250px;
-    padding-top: 5em;
+    padding-top: 7em;
     z-index: 2;
-    left: 45%;
-    margin-left: -55px;
-    top: 25%;
-    margin-top: -75px;
+    position: relative; 
+    left: 50%;
+    transform: translateX(-50%);
+    top: 75%;
+    margin-top: -25px;
 }
 .banner-text{
     background-color: black;
     opacity: .8;
     width: 75%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 7px;
     text-align: center;
-    position: absolute;
-    bottom: 50px;
-    right: 200px;
+    position: relative;
+    bottom: 0px;
+    
     font-size: 18px;
 }
 
@@ -49,4 +41,16 @@
     color: white;
     font-size: 20px;
     padding: 1em;
+}
+
+.page-content{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-color{
+    background: #108dc7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ef8e38, #108dc7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ef8e38, #108dc7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

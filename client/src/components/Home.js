@@ -10,11 +10,6 @@ class App extends React.Component {
     render() {
         return (
               <div className="page-content">
-                <img 
-                 src={ require('../assets/home_food.jpg') } 
-                 alt="food background"
-                 className = "background-transparent" 
-                />
                 <div>
                   <img
                     src={ require('../assets/Concession_Stand.jpg')}
@@ -33,8 +28,10 @@ class App extends React.Component {
                   </p>
                 </div>
 
-                <div>
-                  
+                <div className = "body-text"> 
+                  <h1>
+                    
+                  </h1>
                 </div>
               </div>
               
