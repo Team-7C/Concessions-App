@@ -19,7 +19,8 @@ class Sign_In extends React.Component {
     }
     
     render() {
-        const changeState = this.props.changeState;
+        const changeUser = this.props.changeUser;
+        const changePage = this.props.changePage;
 
         return (
             <div>
@@ -29,9 +30,12 @@ class Sign_In extends React.Component {
                 <input type="text" ref="password_input" placeholder="password" onChange={() => {
                     this.changePassword(this.refs.password_input.value)}} />
 
-                <button onClick={(a) => {a.preventDefault(); changeState('home', this.state.userName, this.state.password)}}> Submit </button>
-            </div>
+                <button onClick={(a) => {a.preventDefault(); changeUser(this.state.userName, this.state.password); changePage('home')}}> Submit </button>
 
+                
+                <button onClick={(a) => {a.preventDefault(); changePage('new_user')}}> New User?  Click here to create your account. </button>
+
+            </div>
         );
     }
 }

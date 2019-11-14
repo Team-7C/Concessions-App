@@ -3,6 +3,7 @@ import { Route, Switch, Redirect  } from 'react-router-dom';
 import Home from "./components/Home.js";
 import './components/Home.css';
 import Sign_In from "./components/Sign_In.js";
+import New_User from "./components/New_User.js";
 import './views/Home/Home.css';
 
 import 'react-mdl/extra/material.css';
@@ -17,10 +18,14 @@ class App extends React.Component {
       this.state = {
         selectedPage: 'home',
         username: '',
-        password: ''
+        password: '',
+        phone: '',
+        email: ''
       };
         
-        this.changeState = this.changeState.bind(this);
+        this.changePage = this.changePage.bind(this);
+        this.changeUser = this.changeUser.bind(this);
+        this.createUser = this.createUser.bind(this);
         
     }
     
@@ -43,15 +48,22 @@ class App extends React.Component {
                 { this.state.username === '' ? (
                     <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'sign'})}}>Sign In</a>
                 ) : (
-                    <a href="/" onClick={(a) => {a.preventDefault(); this.changeState('home', '', '')}}>Sign Out</a>   
+                    <a href="/" onClick={(a) => {a.preventDefault(); this.changeUser('', ''); this.changePage('home')}}>Sign Out</a>   
                 )}
 
             </Navigation>
         )
     }
     
-    changeState(new_val, new_password, new_username){
-        this.setState({selectedPage: new_val, username: new_username, password: new_password});
+    changePage(new_val){
+        this.setState({selectedPage: new_val});   }
+    changeUser(new_password, new_username){
+        this.setState({username: new_username, password: new_password});
+        //should also retrieve phone and email from user
+    }
+    createUser(new_user, new_password, new_phone, new_email){
+        this.setState({username: new_user, password: new_password, phone: new_phone, email: new_email});
+        //should also save user to database
     }
 
     render() {
@@ -73,9 +85,14 @@ class App extends React.Component {
                       ['home']: <Home/>,
                       ['menu']: null,
                       ['venders']: null,
+<<<<<<< HEAD
+                      ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
+                      ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
+=======
                       ['sign']: <Sign_In changeState={this.changeState}/>,
                       ['cart']: null,
                       ['checkout']: null,
+>>>>>>> 981b5826e9969771a04e1aad882a8313f6606904
                      }[this.state.selectedPage]}
                     
               </Content>
