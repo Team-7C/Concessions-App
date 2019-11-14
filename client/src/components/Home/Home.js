@@ -11,13 +11,13 @@ class App extends React.Component {
         return (
               <div className="page-content">
                 <img 
-                 src={ require('../assets/home_food.jpg') } 
+                 src={ require('../../assets/home_food.jpg') } 
                  alt="food background"
                  className = "background-transparent" 
                 />
                 <div>
                   <img
-                    src={ require('../assets/Concession_Stand.jpg')}
+                    src={ require('../../assets/Concession_Stand.jpg')}
                     alt="concession"
                     className = "logo"
                   />
