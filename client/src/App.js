@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch, Redirect  } from 'react-router-dom';
 import Home from "./components/Home.js";
+import Menu from "./components/Menu/Menu.js";
 import './views/Home/Home.css';
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
@@ -14,6 +15,8 @@ class App extends React.Component {
         selectedPage: 'home'
       };
     }
+
+
 
     menuItems(){
         return (
@@ -43,7 +46,7 @@ class App extends React.Component {
               <Content>
                    {{
                       ['home']: <Home/>,
-                      ['menu']: null,
+                      ['menu']: <Menu/>,
                       ['venders']: null,
                       ['sign']: null,
                      }[this.state.selectedPage]}
