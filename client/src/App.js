@@ -36,9 +36,7 @@ class App extends React.Component {
 
               </Header>
               
-              <Drawer title="Navigation Bar">
-                    {this.menuItems()}
-              </Drawer>
+              
 
               <Content>
                    {{
