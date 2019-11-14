@@ -81,6 +81,11 @@ class App extends React.Component {
               </Drawer> */}
 
               <Content>
+              <img 
+                 src={ require('../src/assets/home_food.jpg') } 
+                 alt="food background"
+                 className = "background-transparent" 
+                />
                    {{
                       ['home']: <Home/>,
                       ['menu']: null,
