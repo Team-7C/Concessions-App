@@ -36,6 +36,7 @@ class Menu extends React.Component {
 
     render() {
         const data = this.props.data;
+        const addToCart = this.props.addToCart;
 
         return (
 
@@ -67,7 +68,7 @@ class Menu extends React.Component {
                 </div>
 
                 <div className="column2" >
-                    <ItemList items={data.items}/>
+                    <ItemList items={data.items} addToCart={addToCart}/>
                     {/*<p className="title">ITEM LIST </p>
                         <div className="list">
                             <p className="item">Food</p>
