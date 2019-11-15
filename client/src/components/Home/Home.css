@@ -4,7 +4,7 @@
     height: 250px;
     padding-top: 7em;
     z-index: 2;
-    position: fixed; 
+    position: static; 
     left: 50%;
     transform: translateX(-50%);
     top: 75%;
@@ -19,14 +19,19 @@
     margin-right: auto;
     border-radius: 7px;
     text-align: center;
-    position: relative;
     bottom: 0px;
-    
     font-size: 18px;
-    position: fixed;
-	transform:translate(17%, -50%);
+    position: center;
 }
 
+.image-border{
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 7px;
+    text-align: center;
+}
 .banner-text h1{
     font-size: 50px;
     font-weight: bold;
@@ -55,4 +60,14 @@
     background: #108dc7;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #ef8e38, #108dc7);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #ef8e38, #108dc7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.banner-text h2{
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    padding: 2em;
+}
+
+.text-grid{
+    display: inline;
 }
