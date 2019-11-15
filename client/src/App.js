@@ -20,12 +20,14 @@ class App extends React.Component {
         username: '',
         password: '',
         phone: '',
-        email: ''
+        email: '',
+        cart: []
       };
         
         this.changePage = this.changePage.bind(this);
         this.changeUser = this.changeUser.bind(this);
         this.createUser = this.createUser.bind(this);
+        this.addToCart = this.addToCart.bind(this);
         
     }
 
@@ -48,6 +50,10 @@ class App extends React.Component {
             </Navigation>
         )
     }
+
+    addToCart(item){
+        this.state.cart.push(item);
+    }
     
     changePage(new_val){
         this.setState({selectedPage: new_val});   
@@ -62,8 +68,9 @@ class App extends React.Component {
     }
 
     render() {
-        return (
+        console.log(this.state.cart);
 
+        return (
         <div className="demo-big-content">
           <Layout fixedHeader>
               <Header className = "header-color" title={"Team 7C Concession App"}>
@@ -79,10 +86,10 @@ class App extends React.Component {
                     { this.state.selectedPage !== 'menu' ? (
                         <img src={ require('../src/assets/home_food.jpg') } alt="food background" className = "background-transparent"/>
                     ):(null)}
-                    
+
                    {{
                       ['home']: <Home/>,
-                      ['menu']: <Menu data={this.props.data}/>,
+                      ['menu']: <Menu data={this.props.data} addToCart={this.addToCart}/>,
                       ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
                       ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
                       ['cart']: <Cart/>,

@@ -4,7 +4,7 @@
 }
 .column1 {
     float: left;
-    width: 30%;
+    width: 40%;
     height: 100%;
 	padding: 0% 2%;
     background-Color: rgba(255,255,255, .9);
@@ -15,6 +15,8 @@
 	float: right;
     opacity: .95;
     width: 60%;
+    left:10%;
+    position: relative;
 }
 .menu {
     text-align: center;
@@ -42,22 +44,32 @@ input[type='text'] {
     background: #ffffff;
     margin-top: 5%;
     margin-left: 5%;
-    font-size: 150%;
-    width: 90%;
+    width: 65%;
     height: 160px;
-}
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px #9E9E9E;}
 .food_pic{
     margin-top: 14px;
     margin-left: 14px;
     height: 82%;
-    width: 50%;
+    width: 65%;
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px #9E9E9E;
+    
 }
 .rightcol{
     position: relative;
-    top: -75%;
-    left: 55%;
-    height: 100%;
+    top: -82%;
+    left: 71%;
+    height: 80%;
+    width: 25%;
     text-decoration-color: white;
+    font-size: 120%;
+    text-anchor: middle;
+    text-align: center;
+    border-radius: 25px;
+    background-Color: rgba(0,0,0, .4);
+    box-shadow: 5px 5px 10px #9E9E9E;
 }
 .foodtext{
     color: black;
