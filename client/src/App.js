@@ -4,6 +4,7 @@ import Home from "./components/Home/Home.js";
 import Menu from "./components/Menu/Menu.js";
 import Sign_In from "./components/SignIn/SignIn.js";
 import New_User from "./components/SignUp/SignUp.js";
+import Cart from "./components/Cart/Cart.js";
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import './assets/home_food.jpg';
@@ -65,7 +66,7 @@ class App extends React.Component {
 
         <div className="demo-big-content">
           <Layout fixedHeader>
-              <Header className = "header-color" title={"Team 7C Concession App"} scroll>
+              <Header className = "header-color" title={"Team 7C Concession App"}>
                     {this.menuItems()}
 
               </Header>
@@ -85,7 +86,7 @@ class App extends React.Component {
                       ['menu']: <Menu data={this.props.data}/>,
                       ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
                       ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
-                      ['cart']: null,
+                      ['cart']: <Cart/>,
                      }[this.state.selectedPage]}
                     
               </Content>

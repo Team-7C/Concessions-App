@@ -37,7 +37,7 @@
         {
             "id": 3, 
             "vid": 2, 
-            "name": "Chicken Sandwhich",
+            "name": "Chicken Sandwich",
             "type": "Meal", 
             "base_price": 4, 
             "addons": {
@@ -220,7 +220,7 @@
         {
             "id": 14, 
             "vid": 7, 
-            "name": "Sub sandwhich",
+            "name": "Sub sandwich",
             "type": "Meal", 
             "base_price": 5, 
             "addons": {
