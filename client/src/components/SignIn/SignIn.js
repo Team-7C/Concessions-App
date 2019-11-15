@@ -1,4 +1,5 @@
 import React from 'react';
+import './SignIn.css'
 
 
 class Sign_In extends React.Component {
@@ -28,7 +29,7 @@ class Sign_In extends React.Component {
                 <input type="text" ref="username_input" class="text" placeholder="username" onChange={() => {
                     this.changeUsername(this.refs.username_input.value)}} />
                 <br/>
-                <input type="text" ref="password_input" placeholder="password" onChange={() => {
+                <input type="password" ref="password_input" placeholder="password" onChange={() => {
                     this.changePassword(this.refs.password_input.value)}} />
 
                 <br/>

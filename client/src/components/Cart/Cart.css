@@ -9,9 +9,9 @@
     background-color: #F0F8FF;
     position: relative;
     box-sizing: block;
-    margin-top: 100px;
-    height: 700px;
-    width: 500px;
+    margin-top: 50px;
+    height: 90%;
+    width: 70%;
     border-radius: 5px;
     text-align: initial;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -20,26 +20,27 @@
 #cartTitle {
     position: absolute;
     text-align: center;
-    text-decoration: underline;
     font-family: sans-serif;
-    font-size: 50px;
-    padding-left: 200px;
-    padding-top: 40px;
+    font-size: 25px;
+    padding-left: 48%;
+    padding-top: 20px;
     color: #2F4F4F;
 }
 
 #itemsBox {
-    position: absolute;
+    position: relative;
     border-style: ridge;
     background-color: rgb(255,255,255);
-    height: 500px;
-    width: 400px;
-    margin-left: 50px;
-    margin-top: 100px;
+    height: 65%;
+    width: 90%;
+    margin-left: 40px;
+    margin-top: 70px;
 }
 
 #confirmTitle {
-    position: absolute;
+    position: relative;
+    top: 5%;
+    left: 32%;
     font-size: 20px;
     padding-left: 18px;
     padding-top: 10px;
@@ -58,4 +59,19 @@
     color:rgb(255, 255, 255);
     border:none;
     border-radius: 5px;
+}
+
+.paypal{
+    position: relative;
+    top: 0%;
+    left: 25%;
+
+}
+.items{
+    position: relative;
+    color: black;
+    font-size: 16px;
+    top: 5%;
+    left: 5%;
+
 }

@@ -60,10 +60,10 @@ class SignUp extends React.Component {
                 <input type="text" ref="username_input" placeholder="Username" onChange={() => {
                     this.changeUsername(this.refs.username_input.value)}} />
                 <br/>
-                <input type="text" ref="password_input" placeholder="Password" onChange={() => {
+                <input type="password" ref="password_input" placeholder="Password" onChange={() => {
                     this.changePassword(this.refs.password_input.value)}} />
                 <br/>
-                <input type="text" ref="password_confirm_input" placeholder="Re-enter Password" onChange={() => {
+                <input type="password" ref="password_confirm_input" placeholder="Re-enter Password" onChange={() => {
                     this.changeConfirmPassword(this.refs.password_confirm_input.value)}} />
                 <br/>
                 <label> {this.state.message} </label>

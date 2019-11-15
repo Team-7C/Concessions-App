@@ -12,6 +12,9 @@ class Menu extends React.Component {
             filterMaxPrice: 10000000,
             filterVendor: ''
         };
+
+        this.textUpdate = this.textUpdate.bind(this);
+        this.priceUpdate = this.priceUpdate.bind(this);
     }
 
     textUpdate(value) {
@@ -22,10 +25,16 @@ class Menu extends React.Component {
     }
 
     priceUpdate(val1, val2) {
+        if(val1) {
         this.setState({
-            filterMinPrice: val1,
+            filterMinPrice: val1
+        })
+        }
+    else if(val2) {
+        this.setState({
             filterMaxPrice: val2
         })
+    }
     }
 
     vendorUpdate(value) {
@@ -51,24 +60,27 @@ class Menu extends React.Component {
 
                     <Search 
                         filterText={this.state.filterText} 
-                        textUpdate={this.textUpdate.bind(this)}
-                        filterMinPrice={this.state.filterMinPrice}
-                        filterMaxPrice={this.state.filterMaxPrice} 
-                        priceUpdate={this.priceUpdate.bind(this)}
+                        textUpdate={this.textUpdate}
+                        priceUpdate={this.priceUpdate}
                         filterVendor={this.filterVendor}   
-                        vendorUpdate={this.vendorUpdate.bind(this)}
+                        vendorUpdate={this.vendorUpdate.bind(this)
+                        }
                     />
+                    {/*
                     <p className="title">SHOPPING CART </p>
                     <div>
                         <button className="button">Add</button>
                         <button className="button">Remove</button>
                          List of my items go here
                     </div>
+                    */}
 
                 </div>
 
                 <div className="column2" >
-                    <ItemList items={data.items} addToCart={addToCart}/>
+                    <ItemList items={data.items} addToCart={addToCart} filtertext={this.state.filterText}
+                    filterMinPrice={this.state.filterMinPrice} filterMaxPrice={this.state.filterMaxPrice} 
+                     />
                     {/*<p className="title">ITEM LIST </p>
                         <div className="list">
                             <p className="item">Food</p>
