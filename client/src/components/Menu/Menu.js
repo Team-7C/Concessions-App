@@ -35,10 +35,16 @@ class Menu extends React.Component {
     }
 
     render() {
-		const data = this.props.data;
+        const data = this.props.data;
 
         return (
+
             <div className="row">
+            <img 
+            src={ require('../../assets/home_food.jpg') } 
+            alt="food background"
+            className = "background-menu" 
+           />
 
                 <div className="column1">
 
@@ -60,7 +66,7 @@ class Menu extends React.Component {
 
                 </div>
 
-                <div className="column2">
+                <div className="column2" >
                     <ItemList items={data.items}/>
                     {/*<p className="title">ITEM LIST </p>
                         <div className="list">
