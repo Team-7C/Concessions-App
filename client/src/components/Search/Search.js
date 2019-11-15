@@ -2,16 +2,6 @@ import React from 'react';
 import NumberFormat from 'react-number-format';
 
 class Search extends React.Component {
-	textUpdate() {
-		const val = this.searchValue.value;
-		this.props.textUpdate(val)
-    }
-
-    priceUpdate() {
-        const val1 = this.filterMin.value;
-        const val2 = this.filterMax.value;
-        this.props.priceUpdate(val1, val2)
-    }
 
     vendorUpdate() {
         const val = this.searchValue.value;
@@ -19,37 +9,38 @@ class Search extends React.Component {
     }
     
 	render() {
+
+        const textUpdate = this.props.textUpdate;
+        const priceUpdate = this.props.priceUpdate;
+
 		return (
 			<div>
                 <p>SEARCH: &nbsp;
-                    <input 
-                        type="text" 
-                        placeholder="Type to Search Your Favorite" 
-                        ref={ (value) => this.searchValue = value }
-                        onChange={this.textUpdate.bind(this)}
-                    />
+                    <input type="text" ref="search" class="text" placeholder="search" onChange={() => {
+                    textUpdate(this.refs.search.value)}} />
                 </p> 
                 <p>PRICE: &nbsp;
                     <NumberFormat
+                        ref="minPrice"
                         className="price" 
                         thousandSeparator={true} 
                         prefix={'$'} decimalScale={2} 
                         fixedDecimalScale={true} 
                         placeholder="Min"
-                        ref={ (value) => this.filterMin = value }
-                        onChange={this.priceUpdate.bind(this)}
+                        onChange={() => {priceUpdate(this.refs.minPrice.value, this.refs.maxPrice.value)}}
                     />
                     &nbsp; &lt; &nbsp;
                     <NumberFormat
+                        ref="maxPrice"
                         className="price" 
                         thousandSeparator={true} 
                         prefix={'$'} decimalScale={2} 
                         fixedDecimalScale={true} 
                         placeholder="Max"
-                        ref={ (value) => this.filterMax = value }
-                        onChange={this.priceUpdate.bind(this)}
+                        onChange={() => {console.log(this.refs.maxPrice.value);priceUpdate(this.refs.minPrice.value, this.refs.maxPrice.value)}}
                     />
                 </p>
+                {/*
                 <p>VENDOR: &nbsp;
                     <input 
                         type="text"
@@ -58,6 +49,7 @@ class Search extends React.Component {
                         onChange={this.vendorUpdate.bind(this)}
                     />
                 </p>
+                */}
 			</div>
 		);
 	}

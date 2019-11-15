@@ -1,4 +1,6 @@
 import React from 'react';
+import Paypal from './Paypal.js';
+import ItemList from './CartItems.js';
 import './Cart.css';
 
 class Cart extends React.Component {
@@ -10,6 +12,8 @@ class Cart extends React.Component {
     }
 
     render() {
+        const cart = this.props.cart;
+
         return (
             <div id="mainContainer">
             
@@ -17,10 +21,15 @@ class Cart extends React.Component {
                     <div><b id="cartTitle">Cart</b></div>
                     <div id="itemsBox">
                         <b id="confirmTitle">Please confirm your purchases:</b>
-                        <div id="items"></div>
+                        <div id="items" className="items">
+                            <ItemList cart={cart}/> 
+                        </div>
                     </div>
-                    <input id="checkoutButton" type="button" value="Checkout"
-                    onChange={(e) => console.log(e)}/>
+                    <div className="paypal"> 
+                         <Paypal cart={cart}/>
+                    </div>
+                    {/*<input id="checkoutButton" type="button" value="Checkout"
+                    onChange={(e) => console.log(e)}/>*/}
                 </div>
             </div>
         );

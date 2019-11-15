@@ -48,6 +48,7 @@ input[type='text'] {
     height: 160px;
     border-radius: 25px;
     box-shadow: 5px 5px 10px #9E9E9E;}
+    
 .food_pic{
     margin-top: 14px;
     margin-left: 14px;
@@ -88,7 +89,7 @@ input[type='text'] {
     margin-top: 40px;
 }
 .background-menu{
-    opacity: .75;
+    opacity: .4;
     width: 100%;
     height: auto;
     min-height: 100%;
