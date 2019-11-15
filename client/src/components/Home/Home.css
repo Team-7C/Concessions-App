@@ -1,15 +1,15 @@
 
 .logo{
-    position: relative;
     width: 250px;
     height: 250px;
     padding-top: 7em;
     z-index: 2;
-    position: relative; 
+    position: fixed; 
     left: 50%;
     transform: translateX(-50%);
     top: 75%;
     margin-top: -25px;
+	transform:translate(-50%, -150%);
 }
 .banner-text{
     background-color: black;
@@ -23,6 +23,8 @@
     bottom: 0px;
     
     font-size: 18px;
+    position: fixed;
+	transform:translate(17%, -50%);
 }
 
 .banner-text h1{

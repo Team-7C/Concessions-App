@@ -1,6 +1,7 @@
 import React from 'react';
 import './Menu.css';
 import Search from '../Search/Search';
+import ItemList from './ItemList.js';
 
 class Menu extends React.Component {
     constructor(props) {
@@ -34,32 +35,41 @@ class Menu extends React.Component {
     }
 
     render() {
+		const data = this.props.data;
+
         return (
-            <div>
-                <header className="menu">
-                    MENU
-                </header>
-                <Search 
-                    filterText={this.state.filterText} 
-                    textUpdate={this.textUpdate.bind(this)}
-                    filterMinPrice={this.state.filterMinPrice}
-                    filterMaxPrice={this.state.filterMaxPrice} 
-                    priceUpdate={this.priceUpdate.bind(this)}
-                    filterVendor={this.filterVendor}   
-                    vendorUpdate={this.vendorUpdate.bind(this)}
-                />
-                <p className="title">ITEM LIST </p>
-                <div className="list">
-                    <p className="item">Food</p>
-                    <p className="item">Drink</p>
-                    <p className="item">Other</p>
+            <div className="row">
+
+                <div className="column1">
+
+                    <Search 
+                        filterText={this.state.filterText} 
+                        textUpdate={this.textUpdate.bind(this)}
+                        filterMinPrice={this.state.filterMinPrice}
+                        filterMaxPrice={this.state.filterMaxPrice} 
+                        priceUpdate={this.priceUpdate.bind(this)}
+                        filterVendor={this.filterVendor}   
+                        vendorUpdate={this.vendorUpdate.bind(this)}
+                    />
+                    <p className="title">SHOPPING CART </p>
+                    <div>
+                        <button className="button">Add</button>
+                        <button className="button">Remove</button>
+                         List of my items go here
+                    </div>
+
                 </div>
-                <p className="title">SHOPPING CART </p>
-                <div>
-                    <button className="button">Add</button>
-                    <button className="button">Remove</button>
-                    List of my items go here
-                </div>
+
+                <div className="column2">
+                    <ItemList items={data.items}/>
+                    {/*<p className="title">ITEM LIST </p>
+                        <div className="list">
+                            <p className="item">Food</p>
+                            <p className="item">Drink</p>
+                            <p className="item">Other</p>
+                        </div>
+                    */}
+                    </div>
             </div>
         );
     }

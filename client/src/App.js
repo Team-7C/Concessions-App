@@ -10,6 +10,7 @@ import './assets/home_food.jpg';
 import './App.css'
 import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 
+
 class App extends React.Component {
     constructor(props) {
       super(props);
@@ -33,17 +34,14 @@ class App extends React.Component {
                 <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'home'})}}>Home</a>
 
                 <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'menu'})}}>Menu</a>
-                <a href="/" alt="cart" className = "cart" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'cart'})}}>
-                <div>
+                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'cart'})}}>
                 <img src={ require('../src/assets/shopping_cart.png')} alt="cart logo" className = "cart_logo"/>
                 Cart 
-                </div>
                 </a>
-                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'checkout'})}}>Checkout</a>
                 { this.state.username === '' ? (
                     <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'sign'})}}>Sign In</a>
                 ) : (
-                    <a href="/" onClick={(a) => {a.preventDefault(); this.changeUser('', ''); this.changePage('home')}}>Sign Out</a>   
+                <a href="/" onClick={(a) => {a.preventDefault(); this.changeUser('', ''); this.changePage('home')}}>Hello {this.state.username}, Sign Out</a>   
                 )}
 
             </Navigation>
@@ -51,8 +49,9 @@ class App extends React.Component {
     }
     
     changePage(new_val){
-        this.setState({selectedPage: new_val});   }
-    changeUser(new_password, new_username){
+        this.setState({selectedPage: new_val});   
+    }
+    changeUser(new_username, new_password){
         this.setState({username: new_username, password: new_password});
         //should also retrieve phone and email from user
     }
@@ -83,12 +82,10 @@ class App extends React.Component {
                 />
                    {{
                       ['home']: <Home/>,
-                      ['menu']: <Menu/>,
-                      ['venders']: null,
+                      ['menu']: <Menu data={this.props.data}/>,
                       ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
                       ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
                       ['cart']: null,
-                      ['checkout']: null,
                      }[this.state.selectedPage]}
                     
               </Content>

@@ -1,24 +1,52 @@
 .form{
-    background-color: black;
-    opacity: .8;
-    width: 40%;
-    height: 57%;
+    background-color: #FFFFFF;
+    opacity: .95;
+    width: 30%;
+    height: 45%;
+    top: 10;
+    padding-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0px;
+    text-align: center;
+    font-size: 18px;
+	position: fixed;
+	transform:translate(116%, 25%);
+}
+.form_sign_up{
+    background-color: #ffffff;
+    opacity: .95;
+    width: 30%;
+	height: 65%;
+    padding-top: 1em;
     margin-left: auto;
     margin-right: auto;
     border-radius: 0px;
     text-align: center;
     position: relative;
     bottom: 0px;
-
-    font-size: 18px;
+	font-size: 18px;
+	position: fixed;
+	transform:translate(116%,  -20%);
 }
 .banner-text h5{
-    padding-top: 10%;
     font-size: 20px;
     font-weight: bold;
-    color: white;
+    background-color: #ffffff;
+	color: black;
 }
-input[type='text'] {
+.form input[type='text'] {
+	margin: 1rem;
+	background: #fff;
+	font-size: 1.0rem;
+	border: none;
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	padding: 0 1rem;
+	width: 40%;
+	height: 2rem;
+}
+.form_sign_up input[type='text'] {
 	margin: 1rem;
 	background: #fff;
 	font-size: 1.0rem;
