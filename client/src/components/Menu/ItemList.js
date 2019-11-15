@@ -1,4 +1,5 @@
 import React from 'react';
+import './Menu.css';
 
 class ItemList extends React.Component {
 	render() {
@@ -11,16 +12,24 @@ class ItemList extends React.Component {
 		const filtered = data.filter(contains)
 		const itemList = filtered.map(item => {
 			return (
-				<tr key={item.name} onClick={() => {
-					 
+                
+                <div className='item'>
+                <img 
+                 src={ require('../../assets/pizza.png') } 
+                 alt="food background"
+                 className = "food_pic" 
+                />
+				<div className='rightcol' onClick={() => {
 				   }}>
-					<td>{item.id} </td>	
-					<td> {item.name} </td>
-				</tr>
+					<a className='foodtext'> {item.id} </a>	
+					<a className='foodtext'> {item.name} </a>
+				</div>
+                </div>
 			);
 		});
+        console.log(itemList);
 
-		return <div>{itemList}</div>;
+		return (<div>{itemList}</div>);
 	}
 }
 export default ItemList;

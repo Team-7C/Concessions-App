@@ -65,7 +65,7 @@ class App extends React.Component {
 
         <div className="demo-big-content">
           <Layout fixedHeader>
-              <Header className = "header-color" title={"Team 7C Concession App"} scroll>
+              <Header className = "header-color" title={"Team 7C Concession App"}>
                     {this.menuItems()}
 
               </Header>
@@ -75,11 +75,10 @@ class App extends React.Component {
               </Drawer> */}
 
               <Content>
-              <img 
-                 src={ require('../src/assets/home_food.jpg') } 
-                 alt="food background"
-                 className = "background-transparent" 
-                />
+                    { this.state.selectedPage !== 'menu' ? (
+                        <img src={ require('../src/assets/home_food.jpg') } alt="food background" className = "background-transparent"/>
+                    ):(null)}
+                    
                    {{
                       ['home']: <Home/>,
                       ['menu']: <Menu data={this.props.data}/>,
