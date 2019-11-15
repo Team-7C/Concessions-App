@@ -9,8 +9,8 @@ class App extends React.Component {
 
     render() {
         return (
-              <div className="page-content">
-                <div>
+          <div className="page-content">
+              <div>
                   <img
                     src={ require('../../assets/Concession_Stand.jpg')}
                     alt="concession"

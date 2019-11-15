@@ -1,5 +1,5 @@
 import React from 'react';
-import './SignUp.css'
+import '../SignIn/SignIn.css'
 
 
 class New_User extends React.Component {
@@ -55,7 +55,8 @@ class New_User extends React.Component {
         const createUser = this.props.createUser;
 
         return (
-            <div className="form">
+            <div className="form_sign_up">
+                    <h5>Create a New Account</h5>
                 <input type="text" ref="username_input" placeholder="Username" onChange={() => {
                     this.changeUsername(this.refs.username_input.value)}} />
                 <br/>
@@ -75,11 +76,7 @@ class New_User extends React.Component {
                 <br/>
                 <button onClick={(a) => {a.preventDefault(); createUser(this.state.userName, this.state.password, this.state.phone, this.state.email); changePage('home')}}> Submit </button>
 
-                
             </div>
-
-            
-
         );
     }
 }
