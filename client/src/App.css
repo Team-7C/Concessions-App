@@ -15,10 +15,6 @@
     float: left !important;
     margin-top: 19px !important;
 }
-.cart{
-    display: flex;
-    align-items: right;
-}
 .nav_bar{
     display: flex;
     align-items: right;

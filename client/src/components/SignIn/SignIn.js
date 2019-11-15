@@ -1,5 +1,4 @@
 import React from 'react';
-import './SignIn.css'
 
 
 class Sign_In extends React.Component {
@@ -25,24 +24,20 @@ class Sign_In extends React.Component {
 
         return (
             <div className = "form">
-                <div className = "banner-text">
                     <h5>Input your login information </h5>
-                </div>
-                <p>
-                <input type="text" ref="username_input" placeholder="username" onChange={() => {
+                <input type="text" ref="username_input" class="text" placeholder="username" onChange={() => {
                     this.changeUsername(this.refs.username_input.value)}} />
-                </p>
-                <p>
+                <br/>
                 <input type="text" ref="password_input" placeholder="password" onChange={() => {
                     this.changePassword(this.refs.password_input.value)}} />
-                </p>
 
+                <br/>
                 <button onClick={(a) => {a.preventDefault(); changeUser(this.state.userName, this.state.password); changePage('home')}}> Submit </button>
 
                 <br/>
                 <button onClick={(a) => {a.preventDefault(); changePage('new_user')}}> New User?  Click here to create your account. </button>
 
-            </div>
+                </div>
         );
     }
 }

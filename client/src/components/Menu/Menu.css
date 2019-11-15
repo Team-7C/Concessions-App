@@ -1,11 +1,27 @@
-body {
-    background: white; 
+.row{
+    height: 100%;
+    width: 100%;
+    position: fixed;
 }
-
+.column1 {
+    float: left;
+    opacity: .95;
+	width: 30%;
+    height: 100%;
+	padding: 0% 2%;
+    background: #ffffff;
+}
+.column2 {
+	float: right;
+    opacity: .95;
+    width: 60%;
+    height: 100%;
+	padding: 5% 2%;
+	background-color: #ffffff;
+}
 .menu {
     text-align: center;
     font-size: 50px;
-    margin-top: 15px;
 }
 
 .title {
@@ -14,7 +30,17 @@ body {
     margin-top: 40px;
     margin-left: 10px;
 }
-
+input[type='text'] {
+	margin: 1rem;
+	background: #fff;
+	font-size: 1.0rem;
+	border: none;
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	padding: 0 1rem;
+	width: 5%;
+	height: 2rem;
+}
 .item {
     margin-top: 15px;
     margin-left: 10px;
