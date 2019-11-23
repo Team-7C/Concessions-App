@@ -1,6 +1,6 @@
 var should = require('should'), 
     mongoose = require('mongoose'), 
-    Item = require('../models/ItemSchema'), 
+    Item = require('../models/itemSchema'), 
     config = require('../config/config');
 
 var item, id;
@@ -38,7 +38,7 @@ describe('Item Schema Unit Tests', function() {
     this.timeout(10000);
 
     it('saves properly when all required properties provided', function(done){
-      new Item(item).save(function(err, customer){
+      new Item(item).save(function(err, item){
         should.not.exist(err);
         id = item._id;
         done();
