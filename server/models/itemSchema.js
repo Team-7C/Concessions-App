@@ -4,12 +4,12 @@ var mongoose = require('mongoose'),
 
 // Create your schema for the data in the listings.json file that will define how data is saved in your database
 var itemSchema = new Schema({
-  id: { type: Number, required: true, unique:true},
-  vid: { type: Number, required: true },
-  name: {type: String, required: true}, 
-  type: {type: String, required: true}, //possibly delete
-  base_price: {type: String, required: true},
-  total_price: {type: String, required: true},
+  id: { type: Number, required: [true, 'ID is required'], unique:true},
+  vid: { type: Number, required: [true, 'VID is required'] },
+  name: {type: String, required: [true, 'Name is required']}, 
+  type: {type: String, required: [true, 'Type is required']}, //possibly delete
+  base_price: {type: Number, required: [true, 'Base price is required']},
+  total_price: Number,
   addons: {
     supersize: { size: String, upcharge: Number },
     extra: { name: String, price: Number }
@@ -31,4 +31,4 @@ itemSchema.pre('save', function(next) {
 var Item = mongoose.model('Item', itemSchema);
 
 /* Export the model to make it avaiable to other parts of your Node application */
-module.exports = itemSchema;
+module.exports = Item;
