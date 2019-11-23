@@ -11,8 +11,8 @@ var itemSchema = new Schema({
   base_price: {type: Number, required: [true, 'Base price is required']},
   total_price: Number,
   addons: {
-    supersize: { size: String, upcharge: Number },
-    extra: { name: String, price: Number }
+    supersize: { name: String, upcharge: Number },
+    extra: { name: String, upcharge: Number }
  },
   created_at: Date,
   updated_at: Date
