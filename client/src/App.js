@@ -72,7 +72,7 @@ class App extends React.Component {
         return (
         <div className="demo-big-content">
           <Layout fixedHeader>
-              <Header className = "header-color" title={"Team 7C Concession App"}>
+              <Header title={"Team 7C Concession App"}>
                     {this.menuItems()}
 
               </Header>
@@ -82,10 +82,9 @@ class App extends React.Component {
               </Drawer> */}
 
               <Content>
-                    { this.state.selectedPage !== 'menu' ? (
+                    {/* { this.state.selectedPage !== 'menu' ? (
                         <img src={ require('../src/assets/home_food.jpg') } alt="food background" className = "background-transparent"/>
-                    ):(null)}
-
+                    ):(null)} */}
                    {{
                       ['home']: <Home/>,
                       ['menu']: <Menu data={this.props.data} addToCart={this.addToCart}/>,
