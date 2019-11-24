@@ -49,15 +49,8 @@ class Menu extends React.Component {
 
         return (
 
-            <div className="row">
-            <img 
-            src={ require('../../assets/home_food.jpg') } 
-            alt="food background"
-            className = "background-menu" 
-           />
-
-                <div className="column1">
-
+            <div class="mdl-grid no-spacing">
+                  <div class="mdl-cell mdl-cell--3-col mdl-typography--text-center">
                     <Search 
                         filterText={this.state.filterText} 
                         textUpdate={this.textUpdate}
@@ -66,30 +59,14 @@ class Menu extends React.Component {
                         vendorUpdate={this.vendorUpdate.bind(this)
                         }
                     />
-                    {/*
-                    <p className="title">SHOPPING CART </p>
-                    <div>
-                        <button className="button">Add</button>
-                        <button className="button">Remove</button>
-                         List of my items go here
-                    </div>
-                    */}
-
-                </div>
-
-                <div className="column2" >
+                  </div>
+                  <div class="mdl-cell mdl-cell--9-col">
                     <ItemList items={data.items} addToCart={addToCart} filtertext={this.state.filterText}
                     filterMinPrice={this.state.filterMinPrice} filterMaxPrice={this.state.filterMaxPrice} 
                      />
-                    {/*<p className="title">ITEM LIST </p>
-                        <div className="list">
-                            <p className="item">Food</p>
-                            <p className="item">Drink</p>
-                            <p className="item">Other</p>
-                        </div>
-                    */}
-                    </div>
+                  </div>
             </div>
+
         );
     }
 }
