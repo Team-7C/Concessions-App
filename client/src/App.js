@@ -9,7 +9,7 @@ import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import './assets/home_food.jpg';
 import './App.css'
-import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
+import {Layout, Header, Navigation, Drawer, Content, Footer} from 'react-mdl';
 
 
 class App extends React.Component {
@@ -72,7 +72,7 @@ class App extends React.Component {
         return (
         <div className="demo-big-content">
           <Layout fixedHeader>
-              <Header title={"Team 7C Concession App"}>
+              <Header title={"Team 7C Concession App"} class = "mdl-color--orange-800">
                     {this.menuItems()}
 
               </Header>
@@ -94,6 +94,7 @@ class App extends React.Component {
                      }[this.state.selectedPage]}
                     
               </Content>
+
           </Layout>
       </div>
         );
