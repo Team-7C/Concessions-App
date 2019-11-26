@@ -150,7 +150,7 @@ img {
     margin: 0;
     padding: 0;
     background-color: rgba(63, 81, 181, 0.6);
-    background-image: linear-gradient(rgba(63, 81, 181, 0.3), rgba(63, 81, 181, 0.3)), url('../../assets/home_food.jpg');
+    background-image: linear-gradient(rgba(0, 1, 5, 0.3), rgba(55, 57, 73, 0.3)), url('../../assets/food_background.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -178,16 +178,10 @@ img {
     transform: translateX(-50%);
   }
   
-  
-  /* ABOUT KITTY INTRO + CARDS */
-  
   .intro-section,
   .cards-section {
     max-width: 960px;
   }
-  
-  
-  /* ABOUT KITTY INTRO */
   
   .intro-section {
     padding: 5em 2em 5em;
@@ -236,7 +230,6 @@ img {
     margin: 0.5em;
     border-radius: 50%;
   }
-  
   
   /* CARDS SECTION */
   
@@ -305,12 +298,11 @@ img {
     border-radius: 50%;
   }
   
-  
   /* FULLWIDTH BACKGROUND SECTION */
   
   .fullwidth-panel {
     color:black ;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(190, 190, 190, 0.6);
   }
   
   .fullwidth-panel p {
