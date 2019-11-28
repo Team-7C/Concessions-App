@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/UFWebApps/React_Template_Repo.git"
+    "url": "git+https://github.com/UFWebApps/React_Template_Repo.git"
   },
   "keywords": [],
   "author": "Dakota Rennemann",
@@ -26,7 +26,8 @@
     "concurrently": "^4.1.0",
     "express": "^4.17.1",
     "mocha": "^6.2.1",
-    "mongoose": "^5.7.1",
+    "mongodb": "^3.3.4",
+    "mongoose": "^5.7.12",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10",
     "react-mdl": "^1.11.0",
@@ -35,5 +36,9 @@
     "should": "^13.2.3",
     "supertest": "^4.0.2"
   },
-  "homepage": "https://github.com/UFWebApps/React_Template_Repo#readme"
+  "homepage": "https://github.com/UFWebApps/React_Template_Repo#readme",
+  "bugs": {
+    "url": "https://github.com/UFWebApps/React_Template_Repo/issues"
+  },
+  "devDependencies": {}
 }

@@ -6,23 +6,23 @@ var mongoose = require('mongoose'),
 var customerSchema = new Schema({
   uid: { type: Number, required: true, unique: true},
   credentials: {
-    username: {type: String, required: true},
-    password: {type: String, required: true},
+    username: {type: String, required: [true, 'Username is required']},
+    password: {type: String, required: [true, 'Password is required']},
   },
-  name: {type: String, required: true}, 
+  name: {type: String, required: [true, 'Name is required']}, 
   email: String,
-  phone: {type: String, required: true},
+  phone: {type: String, required: [true, "Phone number is required"]},
   created_at: Date,
   updated_at: Date
 });
 
 // Create a 'pre' function that adds the updated_at (and created_at if not already there) property 
 customerSchema.pre('save', function(next) {
-        var curr = new Date();
-        this.updated_at = curr;
-        if(!this.created_at)
-                this.created_at = curr;
-        next();
+  var curr = new Date();
+  this.updated_at = curr;
+  if(!this.created_at)
+    this.created_at = curr;
+  next();
 });
 
 /* Use your schema to instantiate a Mongoose model */
