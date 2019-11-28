@@ -29,6 +29,7 @@ exports.create = function(req, res) {
 /* Show a particular customer */
 exports.read = function(req, res) {
     /* Send the customer as JSON from the request */
+
     res.json(req.customer);
 };
 
@@ -88,7 +89,7 @@ exports.customerByUID = function(req, res, next, uid) {
     Customer.findOne({uid: uid}).exec(function(err, customer) {
         if (err) res.status(400).send(err);
         else {
-            res.customer = customer;
+            req.customer = customer;
             next();
         }
     });
