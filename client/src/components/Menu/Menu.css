@@ -8,7 +8,7 @@
     height: 100%;
 	padding: 0% 2%;
     background-Color: rgba(255,255,255, .9);
-    position: fixed;
+    position: relative;
     color: black;
 }
 .column2 {
