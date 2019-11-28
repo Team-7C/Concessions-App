@@ -86,13 +86,15 @@ class App extends React.Component {
                         <img src={ require('../src/assets/home_food.jpg') } alt="food background" className = "background-transparent"/>
                     ):(null)}
 
-                   {{
-                      ['home']: <Home/>,
-                      ['menu']: <Menu data={this.props.data} addToCart={this.addToCart}/>,
-                      ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
-                      ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
-                      ['cart']: <Cart cart={this.state.cart}/>,
-                     }[this.state.selectedPage]}
+                    {
+                        {
+                            ['home']: <Home/>,
+                            ['menu']: <Menu custData={this.props.custData} addToCart={this.addToCart}/>,
+                            ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
+                            ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
+                            ['cart']: <Cart cart={this.state.cart}/>,
+                        } [this.state.selectedPage]
+                    }
                     
               </Content>
           </Layout>

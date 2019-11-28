@@ -1,14 +1,4 @@
-var transactionSchema = new Schema({
-    id: { type: Number, required: true, unique: true},
-    price: { type: String },
-    time: {type: Date, default: Date.now }, 
-    quantity: {type: String},
-    customerid: { type: Number }, 
-    itemid: { type: Number },
-    created_at: Date,
-    updated_at: Date
-  });
-  {
+{
     "transactions": [
         {
             "id": 1, 
