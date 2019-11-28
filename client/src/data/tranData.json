@@ -1,0 +1,83 @@
+{
+    "transactions": [
+        {
+            "id": 1, 
+            "price": , 
+            "time": , //date
+            "quantity": , //string
+            "customerid": 9,
+            "itemid": [1, 2]
+        },
+        {
+            "id": 2, 
+            "price": , 
+            "time": ,
+            "quantity": , 
+            "customerid": 10,
+            "itemid": 
+        },
+        {
+            "id": 3, 
+            "price": , 
+            "time": ,
+            "quantity": , 
+            "customerid": 8,
+            "itemid": 
+        },
+        {
+            "id": 4, 
+            "price": , 
+            "time": ,
+            "quantity": , 
+            "customerid": 7,
+            "itemid": 
+        },
+        {
+            "id": 5, 
+            "price": , 
+            "time": ,
+            "quantity": , 
+            "customerid": 1,
+            "itemid": 
+        },
+        {
+            "id": 6, 
+            "price": , 
+            "time": ,
+            "quantity": , 
+            "customerid": 2,
+            "itemid": 
+        },
+        {
+            "id": 7, 
+            "price": , 
+            "time": ,
+            "quantity": , 
+            "customerid": 3,
+            "itemid": 
+        },
+        {
+            "id": 8, 
+            "price": , 
+            "time": ,
+            "quantity": , 
+            "customerid": 4,
+            "itemid": 
+        },
+        {
+            "id": 9, 
+            "price": , 
+            "time": ,
+            "quantity": , 
+            "customerid": 5,
+            "itemid": 
+        },{
+            "id": 10, 
+            "price": , 
+            "time": ,
+            "quantity": , 
+            "customerid": 6,
+            "itemid": 
+        }
+    ]
+}

@@ -60,15 +60,14 @@ class ItemList extends React.Component {
 		const itemList = filtered3.map(item => {
 			return (                
                 <div>
-                    <Card shadow={0} style={{width: '512px', margin: 'auto'}}>
+                    <Card shadow={6} style={{width: '512px', margin: 'auto', display: 'auto'}}>
                         <CardTitle style={{color: '#fff', height: '176px', background: 'url(http://www.getmdl.io/assets/demos/welcome_card.jpg) center / cover'}}> {item.name}</CardTitle>
                         <CardText>
                             {/* {item.name}<br /> */}
                             ${item.base_price}<br />
                         </CardText>
                         <CardActions border>
-                            <Button colored onClick={(a) => {a.preventDefault(); addToCart(cloneDeep(item))}}>Get Started</Button>
-                            <div className="mdl-layout-spacer"></div>
+                            <Button colored onClick={(a) => {a.preventDefault(); addToCart(cloneDeep(item))}}>Add to Cart</Button>
                             <Icon name="shopping_cart" />
                         </CardActions>
                     </Card>
