@@ -15,7 +15,7 @@ class Cart extends React.Component {
         const cart = this.props.cart;
 
         return (
-            <div id="mainContainer">
+            <div id="mainContainer" className="maincart">
             
                 <div id="cartBox">
                     <div><b id="cartTitle">Cart</b></div>
