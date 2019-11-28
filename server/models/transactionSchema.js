@@ -5,11 +5,12 @@ var mongoose = require('mongoose'),
 // Create your schema for the data in the listings.json file that will define how data is saved in your database
 var transactionSchema = new Schema({
   id: { type: Number, required: true, unique: true},
-  price: { type: String },
+  cid: Number,
+  vid: Number,
+  itemInfo: { id: Number , addOns: String },
+  addOns: [String],
+  price: Number,
   time: {type: Date, default: Date.now }, 
-  quantity: {type: String},
-  customerid: { type: Number }, 
-  itemid: { type: Number },
   created_at: Date,
   updated_at: Date
 });

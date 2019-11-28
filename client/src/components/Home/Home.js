@@ -17,8 +17,8 @@ class App extends React.Component {
                 <div class="hero-section">
 
                   <div class="hero-text mdl-typography--text-center">
-                    <h1 class="mdl-typography--display-2">7C Concession App</h1>
-                      <p class="mdl-typography--display-1">
+                    <h1 class="mdl-typography--display-3 mdl-typography--font-regular">7C Concession App</h1>
+                      <p class="mdl-typography--headline">
                         It's Like Grubhub, but not really.
                       </p>
                   </div>
@@ -27,7 +27,7 @@ class App extends React.Component {
 
                 <div id="intro1" class="mdl-grid intro-section--no-spacing fullwidth-panel" style={{paddingTop: '50px', paddingBottom: '50px'}}>
                   <div class="about mdl-cell mdl-cell--6-col mdl-typography--text-center">
-                    <p class="mdl-typography--headline">
+                    <p class="mdl-typography--display-3">
                       Browse Your Options    
                     </p>
                     <p>
@@ -38,14 +38,14 @@ class App extends React.Component {
                     <img
                     src={ require('../../assets/couple_looking_menu.jpg') } 
                     alt="food background" 
-                    style = {{height: '350px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}>
+                    style = {{height: '350px', display: 'block', marginLeft: 'auto', marginRight: 'auto', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
                     </img>
                   </div>
                 </div>
 
                 <div id="intro2" class="mdl-grid intro-section--no-spacing fullwidth-panel" style={{paddingTop: '50px', paddingBottom: '50px'}}>
                   <div class="about mdl-cell mdl-cell--6-col mdl-typography--text-center">
-                    <p class="mdl-typography--headline">
+                    <p class="mdl-typography--display-3">
                       Pick and Choose   
                     </p>
                     <p>
@@ -56,14 +56,14 @@ class App extends React.Component {
                     <img
                     src={ require('../../assets/women_selecting_food.jpg') } 
                     alt="food background" 
-                    style = {{height: '350px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}>
+                    style = {{height: '350px', display: 'block', marginLeft: 'auto', marginRight: 'auto', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
                     </img>
                   </div>
                 </div>
               
                 <div id="intro3" class="mdl-grid intro-section--no-spacing fullwidth-panel" style={{paddingTop: '50px', paddingBottom: '50px'}} >
                   <div class="about mdl-cell mdl-cell--6-col mdl-typography--text-center">
-                    <p class="mdl-typography--headline">
+                    <p class="mdl-typography--display-3">
                       Confirm Your Order  
                     </p>
                     <p>
@@ -74,7 +74,7 @@ class App extends React.Component {
                     <img
                     src={ require('../../assets/food_deliver_stadium.jpg') } 
                     alt="food background" 
-                    style = {{height: '350px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}>
+                    style = {{height: '350px', display: 'block', marginLeft: 'auto', marginRight: 'auto', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
                     </img>
                   </div>
                 </div>
@@ -82,35 +82,16 @@ class App extends React.Component {
               </div>
             
             </div>
-
-              <div id="intro" class="mdl-grid intro-section--no-spacing fullwidth-panel1" style={{paddingTop: '100px', paddingBottom: '25px'}}>
-                  <div class="about mdl-cell mdl-cell--6-col mdl-typography--text-center">
-                    <p class="mdl-typography--headline">
-                      About this App  
-                    </p>
-                  </div>
-                  <div class="about mdl-cell mdl-cell--6-col mdl-typography--text-center">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint dolorum consectetur natus sequi, est similique! Temporibus rem consequuntur laudantium, illo excepturi velit quas. Culpa ipsum dolor tempore accusantium sed iusto.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, dicta aliquid, inventore a ullam excepturi similique sit, nobis incidunt laboriosam amet maxime iusto nam facilis possimus quo optio? Dolor, et?
-                    </p>
-                  </div>
-                </div>
-
-            {/* <Footer class="mdl-mini-footer">
+            <Footer class="mdl-mini-footer mdl-color--grey-500">
               <div class="mdl-mini-footer__left-section">
                 <div class="mdl-logo">7C Concession App &ndash; designed by a lot of people</div>
                 <ul class="mdl-mini-footer__link-list">
-                  <li><a href="#">Help</a></li>
-                  <li><a href="#">Privacy & Terms</a></li>
+                  
                 </ul>
                 &copy; Team 7C Fall 2019
               </div>
-            </Footer> */}
+            </Footer>
           </div>
-            
         );
     }
 }
