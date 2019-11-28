@@ -87,7 +87,7 @@ class App extends React.Component {
                     ):(null)} */}
                    {{
                       ['home']: <Home/>,
-                      ['menu']: <Menu data={this.props.data} addToCart={this.addToCart}/>,
+                      ['menu']: <Menu itemData={this.props.itemData} addToCart={this.addToCart}/>,
                       ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
                       ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
                       ['cart']: <Cart cart={this.state.cart}/>,
