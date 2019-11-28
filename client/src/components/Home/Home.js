@@ -3,126 +3,95 @@ import { Route, Switch, Redirect  } from 'react-router-dom';
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import './Home.css'
-import {Layout, Header, Navigation, Drawer, Content, Grid, Cell} from 'react-mdl';
+import {Layout, Header, Navigation, Drawer, Content, Grid, Cell, Footer} from 'react-mdl';
 
 class App extends React.Component {
 
     render() {
         return (
-          <div className="page-content">
-            <Grid style = {{textAlign: 'center'}}>
-            <Cell col ={12}>
-                <div>
-                  <img
-                    src={ require('../../assets/Concession_Stand.jpg')}
-                    alt="concession"
-                    style = {{height: '250px'}}
-                  />
-                </div>
-              </Cell>
-            </Grid>
-            <Grid>
-              <Cell col ={12}>
-                {/* <div>
-                  <img
-                    src={ require('../../assets/Concession_Stand.jpg')}
-                    alt="concession"
-                    className = "logo"
-                  />
-                </div> */}
+          <div>
+            <div class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
 
-                <div className = "banner-text">
-                  <h1>
-                    Team 7C Concession App. 
-                  </h1>
-                  <hr/>
-                  <p>
-                    It's like Grubhub, but not.
-                  </p>
-                </div>
-              </Cell>
-            </Grid>
+              <div class="page-content">
+                
+                <div class="hero-section">
 
-            <Grid>
-              <Cell col = {12}>
-                <div className = "banner-text">
-                  <h1>
-                    So how does it work? 
-                  </h1>
-                  <hr/>
-                  <p>
-                    Through the power of coding, anything is possible. 
-                  </p>
+                  <div class="hero-text mdl-typography--text-center">
+                    <h1 class="mdl-typography--display-3 mdl-typography--font-regular">7C Concession App</h1>
+                      <p class="mdl-typography--headline">
+                        It's Like Grubhub, but not really.
+                      </p>
+                  </div>
+      
                 </div>
-              </Cell>
-            </Grid>
-            <Grid>
-             <Cell col = {6} >
-               <div className = "banner-text">
-                 <h1>
-                  Step 1: Open the Menu
-                 </h1>
-                 <hr/>
-                 <p>
-                   There are so many options available. Anything from pizza to buritos, we have it all! 
-                 </p>
-               </div>
-             </Cell>
-             <Cell col = {6} >
-              <div className = "image-border">
-                  <img
-                    src={ require('../../assets/couple_looking_menu.jpg')}
-                    alt="concession"
-                    style = {{height: '300px'}}
-                  />
+
+                <div id="intro1" class="mdl-grid intro-section--no-spacing fullwidth-panel" style={{paddingTop: '50px', paddingBottom: '50px'}}>
+                  <div class="about mdl-cell mdl-cell--6-col mdl-typography--text-center">
+                    <p class="mdl-typography--display-3">
+                      Browse Your Options    
+                    </p>
+                    <p>
+                      Explore restaurants that deliver near you, or try yummy takeout fare. With a place for every taste, it’s easy to find food you crave.
+                    </p>
+                  </div>
+                  <div class="about mdl-cell mdl-cell--6-col ">
+                    <img
+                    src={ require('../../assets/couple_looking_menu.jpg') } 
+                    alt="food background" 
+                    style = {{height: '350px', display: 'block', marginLeft: 'auto', marginRight: 'auto', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
+                    </img>
+                  </div>
+                </div>
+
+                <div id="intro2" class="mdl-grid intro-section--no-spacing fullwidth-panel" style={{paddingTop: '50px', paddingBottom: '50px'}}>
+                  <div class="about mdl-cell mdl-cell--6-col mdl-typography--text-center">
+                    <p class="mdl-typography--display-3">
+                      Pick and Choose   
+                    </p>
+                    <p>
+                      Limitless options at your fingertips. Once you decide on what you want, add them to your cart with one simple click.
+                    </p>
+                  </div>
+                  <div class="about mdl-cell mdl-cell--6-col ">
+                    <img
+                    src={ require('../../assets/women_selecting_food.jpg') } 
+                    alt="food background" 
+                    style = {{height: '350px', display: 'block', marginLeft: 'auto', marginRight: 'auto', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
+                    </img>
+                  </div>
+                </div>
+              
+                <div id="intro3" class="mdl-grid intro-section--no-spacing fullwidth-panel" style={{paddingTop: '50px', paddingBottom: '50px'}} >
+                  <div class="about mdl-cell mdl-cell--6-col mdl-typography--text-center">
+                    <p class="mdl-typography--display-3">
+                      Confirm Your Order  
+                    </p>
+                    <p>
+                      Let us know you want your food. Wherever you're sitting, we'll tell our people where to deliver your food. Every time.
+                    </p>
+                  </div>
+                  <div class="about mdl-cell mdl-cell--6-col ">
+                    <img
+                    src={ require('../../assets/food_deliver_stadium.jpg') } 
+                    alt="food background" 
+                    style = {{height: '350px', display: 'block', marginLeft: 'auto', marginRight: 'auto', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
+                    </img>
+                  </div>
+                </div>
+                    
               </div>
-             </Cell>
-            </Grid>  
-            <Grid>
-             <Cell col = {6} >
-             <div className = "image-border">
-                  <img
-                    src={ require('../../assets/women_selecting_food.jpg')}
-                    alt="concession"
-                    style = {{height: '300px'}}
-                  />
+            
+            </div>
+            <Footer class="mdl-mini-footer mdl-color--grey-500">
+              <div class="mdl-mini-footer__left-section">
+                <div class="mdl-logo">7C Concession App &ndash; designed by a lot of people</div>
+                <ul class="mdl-mini-footer__link-list">
+                  
+                </ul>
+                &copy; Team 7C Fall 2019
               </div>
-             </Cell>
-             <Cell col = {6}>
-               <div className = "banner-text">
-                 <h1>
-                  Step 2: Select Your Food
-                 </h1>
-                 <hr/>
-                 <p>
-                   Just looking at all the options can make you hungry. Make sure to add your choices to the cart! 
-                 </p>
-               </div>
-             </Cell>
-            </Grid>  
-            <Grid>
-            <Cell col = {6} >
-               <div className = "banner-text">
-                 <h1>
-                  Step 3: Complete Your Order
-                 </h1>
-                 <hr/>
-                 <p>
-                   With all that food in your shopping cart, it would be a shame not to order it all. Don't forget to confirm your order so you can get your food right away!
-                 </p>
-               </div>
-             </Cell>
-             <Cell col = {6} >
-             <div className = "image-border">
-                  <img
-                    src={ require('../../assets/food_deliver_stadium.jpg')}
-                    alt="concession"
-                    style = {{height: '300px'}}
-                  />
-              </div>
-             </Cell>
-            </Grid>
-          </div>        
+            </Footer>
+          </div>
         );
     }
 }

@@ -1,0 +1,56 @@
+
+.logo{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    padding-top: 7em;
+    z-index: 2;
+    position: relative; 
+    left: 50%;
+    transform: translateX(-50%);
+    top: 75%;
+    margin-top: -25px;
+}
+.banner-text{
+    background-color: black;
+    opacity: .8;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 7px;
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+    
+    font-size: 18px;
+}
+
+.banner-text h1{
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+}
+
+.banner-text hr{
+    border-top: 5px dotted white;
+    width: 50%;
+    margin: auto;
+}
+
+.banner-text p{
+    color: white;
+    font-size: 20px;
+    padding: 1em;
+}
+
+.page-content{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-color{
+    background: #108dc7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ef8e38, #108dc7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ef8e38, #108dc7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

@@ -4,7 +4,7 @@
 }
 .column1 {
     float: left;
-    width: 40%;
+    width: 25%;
     height: 100%;
 	padding: 0% 2%;
     background-Color: rgba(255,255,255, .9);
@@ -14,7 +14,7 @@
 .column2 {
 	float: right;
     opacity: .95;
-    width: 60%;
+    width: 75%;
     left:10%;
     position: relative;
 }
@@ -97,4 +97,13 @@ input[type='text'] {
     position: fixed;
     left: 0;
     z-index: -4;
+}
+
+.item-grid{
+    width: 90vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    grid-row-gap: 2rem;
+    grid-column-gap: 50px;
 }

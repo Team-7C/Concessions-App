@@ -9,7 +9,7 @@ import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import './assets/home_food.jpg';
 import './App.css'
-import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
+import {Layout, Header, Navigation, Drawer, Content, Footer} from 'react-mdl';
 
 
 class App extends React.Component {
@@ -72,7 +72,7 @@ class App extends React.Component {
         return (
         <div className="demo-big-content">
           <Layout fixedHeader>
-              <Header className = "header-color" title={"Team 7C Concession App"}>
+              <Header title={"Team 7C Concession App"} class = "mdl-color--orange-800">
                     {this.menuItems()}
 
               </Header>
@@ -82,21 +82,19 @@ class App extends React.Component {
               </Drawer> */}
 
               <Content>
-                    { this.state.selectedPage !== 'menu' ? (
+                    {/* { this.state.selectedPage !== 'menu' ? (
                         <img src={ require('../src/assets/home_food.jpg') } alt="food background" className = "background-transparent"/>
-                    ):(null)}
-
-                    {
-                        {
-                            ['home']: <Home/>,
-                            ['menu']: <Menu  itemData={this.props.itemData} addToCart={this.addToCart}/>,
-                            ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
-                            ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
-                            ['cart']: <Cart cart={this.state.cart}/>,
-                        } [this.state.selectedPage]
-                    }
+                    ):(null)} */}
+                   {{
+                      ['home']: <Home/>,
+                      ['menu']: <Menu data={this.props.data} addToCart={this.addToCart}/>,
+                      ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
+                      ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
+                      ['cart']: <Cart cart={this.state.cart}/>,
+                     }[this.state.selectedPage]}
                     
               </Content>
+
           </Layout>
       </div>
         );
