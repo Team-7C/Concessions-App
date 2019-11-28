@@ -44,7 +44,7 @@ class Menu extends React.Component {
     }
 
     render() {
-        const data = this.props.data;
+        const itemData = this.props.itemData;
         const addToCart = this.props.addToCart;
 
         return (
@@ -61,7 +61,7 @@ class Menu extends React.Component {
                     />
                   </div>
                   <div class="mdl-cell mdl-cell--9-col">
-                    <ItemList items={data.items} addToCart={addToCart} filtertext={this.state.filterText}
+                    <ItemList items={itemData.items} addToCart={addToCart} filtertext={this.state.filterText}
                     filterMinPrice={this.state.filterMinPrice} filterMaxPrice={this.state.filterMaxPrice} 
                      />
                   </div>
