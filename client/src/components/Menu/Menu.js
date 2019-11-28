@@ -50,7 +50,7 @@ class Menu extends React.Component {
         return (
 
             <div class="mdl-grid no-spacing">
-                  <div class="mdl-cell mdl-cell--3-col mdl-typography--text-center">
+                  <div class="mdl-cell mdl-cell--12-col mdl-typography--text-center">
                     <Search 
                         filterText={this.state.filterText} 
                         textUpdate={this.textUpdate}
@@ -60,7 +60,7 @@ class Menu extends React.Component {
                         }
                     />
                   </div>
-                  <div class="mdl-cell mdl-cell--9-col">
+                  <div class="mdl-cell mdl-cell--12-col">
                     <ItemList items={data.items} addToCart={addToCart} filtertext={this.state.filterText}
                     filterMinPrice={this.state.filterMinPrice} filterMaxPrice={this.state.filterMaxPrice} 
                      />
