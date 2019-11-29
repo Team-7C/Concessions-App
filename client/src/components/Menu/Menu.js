@@ -2,6 +2,7 @@ import React from 'react';
 import './Menu.css';
 import Search from '../Search/Search';
 import ItemList from './ItemList.js';
+import Checkbox from '../Checkbox/Checkbox';
 
 
 class Menu extends React.Component {
@@ -11,37 +12,78 @@ class Menu extends React.Component {
             filterText: '',
             filterMinPrice: 0,
             filterMaxPrice: 10000000,
-            filterVendor: ''
+            filterVendor: '',
+            meal: false,
+            snack: false,
+            drink: false,
+            dessert: false,
+            other: false
         };
 
         this.textUpdate = this.textUpdate.bind(this);
         this.priceUpdate = this.priceUpdate.bind(this);
+        this.vendorUpdate = this.vendorUpdate.bind(this);
+        this.typeUpdate = this.typeUpdate.bind(this);
     }
 
     textUpdate(value) {
-        //set the text inside the search bar to value
         this.setState({
           filterText: value
         })
     }
 
-    priceUpdate(val1, val2) {
-        if(val1) {
-        this.setState({
-            filterMinPrice: val1
-        })
+    priceUpdate(newPrice, x) {
+        if(newPrice === "") {
+            this.setState({
+                filterMinPrice: 0,
+                filterMaxPrice: 10000000
+            })
         }
-    else if(val2) {
-        this.setState({
-            filterMaxPrice: val2
-        })
-    }
+        else if (x === 0) {
+            this.setState({
+                filterMinPrice: newPrice
+            })
+        }
+        else {
+            this.setState({
+                filterMaxPrice: newPrice
+            })
+        }
     }
 
-    vendorUpdate(value) {
+    vendorUpdate(ven) {
         this.setState({
-          filterVendor: value
+          filterVendor: ven
         })
+    }
+
+    typeUpdate(selected, type) {
+        console.log(selected)
+        if (type === "Meal") {
+            this.setState({
+                meal: selected
+            })
+        }
+        else if (type === "Snack") {
+            this.setState({
+                snack: selected
+            })
+        }
+        else if (type === "Drink") {
+            this.setState({
+                drink: selected
+            })
+        }
+        else if (type === "Dessert") {
+            this.setState({
+                dessert: selected
+            })
+        }
+        else {
+            this.setState({
+                other: selected
+            })
+        }
     }
 
     render() {
@@ -55,15 +97,33 @@ class Menu extends React.Component {
                     <Search 
                         filterText={this.state.filterText} 
                         textUpdate={this.textUpdate}
-                        priceUpdate={this.priceUpdate}
-                        filterVendor={this.filterVendor}   
-                        vendorUpdate={this.vendorUpdate.bind(this)
-                        }
+                        filterMinPrice={this.state.filterMinPrice} 
+                        filterMaxPrice={this.state.filterMaxPrice}
+                        priceUpdate={this.priceUpdate} 
+                        vendorUpdate={this.vendorUpdate}
+                    />
+                    <Checkbox 
+                        filterType={this.state.filterType}
+                        typeUpdate={this.typeUpdate}
+                        meal={this.state.meal}
+                        snack={this.state.snack}
+                        drink={this.state.drink}
+                        dessert={this.state.dessert}
+                        other={this.state.other}
                     />
                   </div>
                   <div class="mdl-cell mdl-cell--9-col">
-                    <ItemList items={itemData.items} addToCart={addToCart} filtertext={this.state.filterText}
-                    filterMinPrice={this.state.filterMinPrice} filterMaxPrice={this.state.filterMaxPrice} 
+                    <ItemList 
+                        items={itemData.items} 
+                        addToCart={addToCart} 
+                        filtertext={this.state.filterText}
+                        filterMinPrice={this.state.filterMinPrice} 
+                        filterMaxPrice={this.state.filterMaxPrice}
+                        meal={this.state.meal}
+                        snack={this.state.snack}
+                        drink={this.state.drink}
+                        dessert={this.state.dessert}
+                        other={this.state.other}
                      />
                   </div>
             </div>
@@ -71,5 +131,6 @@ class Menu extends React.Component {
         );
     }
 }
+
 
 export default Menu;

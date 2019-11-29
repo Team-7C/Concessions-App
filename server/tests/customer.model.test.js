@@ -1,7 +1,24 @@
 var should = require('should'), 
     mongoose = require('mongoose'), 
-    Customer = require('../models/customerSchema'), 
+    Customer = require('../models/customerSchema'),
+    crypto = require('crypto'),
     config = require('../config/config');
+
+/*** Password Salting Functions ***/
+
+/* Create a salt that is length-bytes long*/
+function saltShaker(length) {
+  return crypto.randomBytes(length).toString('hex');
+};
+
+/* Create a SHA512 hash of password for a given salt */
+function hashPass(password, salt) {
+  var hmac = crypto.createHmac('sha512', salt);
+  hmac.update(password);
+  return hmac.digest('hex');
+};
+
+/*** Unit Tests ***/
 
 var customer, id;
 
@@ -9,12 +26,17 @@ customer = {
     "uid": 87,
     "credentials": {
         "username": "joe", 
-        "password": "biden"
+        "password": "biden",
+        "salt": "w/e"
     }, 
     "name": "Joe Biden",
     "email": "helllllaaaa@yahoo.com",
     "phone": "555-002-2451"
 }
+
+var salt = saltShaker(20);
+customer.credentials.salt = salt;
+customer.credentials.password = hashPass(customer.credentials.password, salt);
 
 describe('Customer Schema Unit Tests', function() {
 
@@ -43,6 +65,7 @@ describe('Customer Schema Unit Tests', function() {
         credentials: {
             username: customer.username,
             password: customer.password,
+            salt: customer.salt,
         },
         name: customer.name,
         phone: customer.phone,
@@ -69,6 +92,7 @@ describe('Customer Schema Unit Tests', function() {
           credentials: {
               username: customer.username,
               password: customer.password,
+              salt: customer.salt
           },
           phone: customer.phone,
         }).save(function(err){
@@ -83,6 +107,7 @@ describe('Customer Schema Unit Tests', function() {
           credentials: {
               username: customer.username,
               password: customer.password,
+              salt: customer.salt
           },
           name: customer.name,
         }).save(function(err){

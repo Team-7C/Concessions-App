@@ -7,7 +7,7 @@ var transactionSchema = new Schema({
   id: { type: Number, required: true, unique: true},
   cid: Number,
   vid: Number,
-  itemInfo: { id: Number , addOns: String },
+  itemInfo: [ {id: Number , addOns: Boolean} ],
   addOns: [String],
   price: Number,
   time: {type: Date, default: Date.now }, 
@@ -23,7 +23,6 @@ transactionSchema.pre('save', function(next) {
                 this.created_at = curr;
         next();
 });
-
 /* Use your schema to instantiate a Mongoose model */
 var Transaction = mongoose.model('Transaction', transactionSchema);
 

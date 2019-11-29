@@ -2,82 +2,112 @@
     "transactions": [
         {
             "id": 1, 
-            "price": , 
-            "time": , //date
-            "quantity": , //string
-            "customerid": 9,
-            "itemid": [1, 2]
+            "cid": 9,
+            "vid": 9,
+            "itemInfo": { "id": 19, "addOns": true },
+            "addOns": "Add whipped cream",
+            "price":  5.99, 
+            "time": "2019-11-23"
         },
         {
             "id": 2, 
-            "price": , 
-            "time": ,
-            "quantity": , 
-            "customerid": 10,
-            "itemid": 
+            "cid": 10,
+            "vid": 8,
+            "itemInfo": [{"id": 16, "addOns": false}, 
+                         {"id": 17, "addOns": false}],
+            "price": 9.49, 
+            "time": "2019-11-21"
         },
         {
             "id": 3, 
-            "price": , 
-            "time": ,
-            "quantity": , 
-            "customerid": 8,
-            "itemid": 
+            "cid": 7,
+            "vid": 7,
+            "itemInfo": { "id": 7, "addOns": true},
+            "addOns": "Upgrade to meal",
+            "price": 9.00, 
+            "time": "2019-11-17" 
         },
         {
             "id": 4, 
-            "price": , 
-            "time": ,
-            "quantity": , 
-            "customerid": 7,
-            "itemid": 
+            "cid": 8,
+            "vid": 6,
+            "itemInfo": { "id": 11, "addOns": true},
+            "addOns": "Add guacamole",
+            "price": 10.98, 
+            "time": "2019-11-08"
         },
         {
             "id": 5, 
-            "price": , 
-            "time": ,
-            "quantity": , 
-            "customerid": 1,
-            "itemid": 
+            "cid": 1,
+            "vid": 5,
+            "itemInfo": { "id": 9, "addOns": true},
+            "addOns": ["Upgrade to meal", "Add extra biscuits"],
+            "price": 17.99, 
+            "time": "2019-11-06"
         },
         {
             "id": 6, 
-            "price": , 
-            "time": ,
-            "quantity": , 
-            "customerid": 2,
-            "itemid": 
+            "cid": 3,
+            "vid": 4,
+            "itemInfo": [{"id": 7, "addOns": true}, 
+                         {"id": 8, "addOns": false}],            
+            "addOns": "Add side of nachos",
+            "price": 8.98, 
+            "time": "2019-11-16" 
         },
         {
             "id": 7, 
-            "price": , 
-            "time": ,
-            "quantity": , 
-            "customerid": 3,
-            "itemid": 
+            "cid": 2,
+            "vid": 4,
+            "itemInfo": { "id": 8, "addOns": true},
+            "addOns": "Supersize",
+            "price": 4.98, 
+            "time": "2019-11-13" 
         },
         {
             "id": 8, 
-            "price": , 
-            "time": ,
-            "quantity": , 
-            "customerid": 4,
-            "itemid": 
+            "cid": 4,
+            "vid": 3,
+            "itemInfo": { "id": 5, "addOns": false},
+            "price": 1.99, 
+            "time": "2019-11-07"
         },
         {
             "id": 9, 
-            "price": , 
-            "time": ,
-            "quantity": , 
-            "customerid": 5,
-            "itemid": 
-        },{
+            "cid": 5,
+            "vid": 2,
+            "itemInfo": { "id": 2, "addOns": true},
+            "addOns": "Upgrade to meal",
+            "price": 7.99, 
+            "time": "2019-11-22"
+        },
+        {
             "id": 10, 
-            "price": , 
-            "time": ,
-            "quantity": , 
-            "customerid": 6,
-            "itemid": 
+            "cid": 6,
+            "vid": 1,
+            "itemInfo": { "id": 1, "addOns":  true},
+            "addOns": ["Upgrade to large", "Add pepperoni"],
+            "price": 11.49, 
+            "time": "2019-11-19"
+        },
+        {
+            "id": 11, 
+            "cid": 4,
+            "vid": 3,
+            "itemInfo": { "id": 5, "addOns": true},
+            "addOns": "Add ice",
+            "price": 3.49, 
+            "time": "2019-11-11"
+        },
+        {
+            "id": 12, 
+            "cid": 4,
+            "vid": 3,
+            "itemInfo": [{"id": 5, "addOns": true}, 
+                         {"id": 6, "addOns": false}],    
+            "addOns": "Upgrade to venti",
+            "price": 11.49, 
+            "time": "2019-11-14"
         }
     ]
 }

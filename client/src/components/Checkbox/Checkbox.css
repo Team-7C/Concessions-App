@@ -1,3 +1,8 @@
+.checkbox {
+    margin-top: 20px;
+    box-shadow: 10px 10px;
+    background-color: lightskyblue;
+}
 .food {
     font-size: 20px;
     margin-top: 15px;

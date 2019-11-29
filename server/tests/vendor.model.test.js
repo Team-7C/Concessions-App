@@ -1,7 +1,24 @@
 var should = require('should'), 
     mongoose = require('mongoose'), 
     Vendor = require('../models/vendorSchema'), 
+    crypto = require('crypto'),
     config = require('../config/config');
+
+/*** Password Salting Functions ***/
+
+/* Create a salt that is length-bytes long*/
+function saltShaker(length) {
+  return crypto.randomBytes(length).toString('hex');
+};
+
+/* Create a SHA512 hash of password for a given salt */
+function hashPass(password, salt) {
+  var hmac = crypto.createHmac('sha512', salt);
+  hmac.update(password);
+  return hmac.digest('hex');
+};
+
+/*** Unit Tests ***/
 
 var vendor, id;
 
@@ -9,11 +26,16 @@ vendor = {
     "vid": 69, 
     "credentials": {
         "username": "sub",
-        "password": "way"
+        "password": "way",
+        "salt": "w/e"
     },
     "name": "Subway Restaraunts", 
     "phone": "777-777-7777"
 }
+
+var salt = saltShaker(20);
+vendor.credentials.salt = salt;
+vendor.credentials.password = hashPass(vendor.credentials.password, salt);
 
 describe('Vendor Schema Unit Tests', function() {
 
@@ -42,6 +64,7 @@ describe('Vendor Schema Unit Tests', function() {
         credentials: {
             username: vendor.credentials.username,
             password: vendor.credentials.password,
+            salt: vendor.credentials.salt
         },
         name: vendor.name,
         phone: vendor.phone,
@@ -68,6 +91,7 @@ describe('Vendor Schema Unit Tests', function() {
           credentials: {
               username: vendor.credentials.username,
               password: vendor.credentials.password,
+              salt: vendor.credentials.salt
           },
           phone: vendor.phone,
         }).save(function(err){
@@ -82,6 +106,7 @@ describe('Vendor Schema Unit Tests', function() {
           credentials: {
               username: vendor.credentials.username,
               password: vendor.credentials.password,
+              salt: vendor.credentials.salt
           },
           name: vendor.name,
         }).save(function(err){

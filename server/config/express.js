@@ -4,12 +4,11 @@ const path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     customerRouter = require('../routes/customer.server.routes');
+    itemsRouter = require('../routes/item.server.routes');
+    vendorsRouter = require('../routes/vendor.server.routes');
 
 module.exports.init = () => {
-    /* 
-        connect to database
-        - reference README for db uri
-    */
+
     mongoose.connect(process.env.DB_URI || require('./config').db.uri, {
         useNewUrlParser: true
     });
@@ -28,6 +27,12 @@ module.exports.init = () => {
 
     // Customer API router
     app.use('/api/customers', customerRouter);
+
+    // Item API router
+    app.use('/api/items', itemsRouter);
+
+    // Vendor API router
+    app.use('/api/vendors', vendorsRouter);
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files

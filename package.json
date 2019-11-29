@@ -33,8 +33,10 @@
     "react-mdl": "^1.11.0",
     "react-number-format": "^4.3.1",
     "react-paypal-express-checkout": "^1.0.5",
+    "request": "^2.88.0",
     "should": "^13.2.3",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "xmlhttprequest": "^1.8.0"
   },
   "homepage": "https://github.com/UFWebApps/React_Template_Repo#readme",
   "bugs": {

@@ -1,3 +1,9 @@
+.maincart {
+    background-image: url("../../assets/seafood.jpg");
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
 #mainContainer {
     width: 100%;
     height: 100%;
