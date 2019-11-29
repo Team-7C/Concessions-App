@@ -5,323 +5,68 @@
             "vid": 1, 
             "name": "Cheese Pizza",
             "type": "Meal", 
-            "base_price": 6.99, 
-            "addons": {
-                "supersize": {
-                    "size": "Upgrade to large", 
-                    "upcharge": 2.00
-                }, 
-                "extra": {
-                    "name": "Add pepperoni", 
-                    "price": 2.50
+
+            "base_price": 8, 
+            "addons": [
+                {
+                    "selected": false,
+                    "desc": "Large size",
+                    "upcharge": 3.00
+                },
+                {
+                    "selected": false,
+                    "desc": "Cheese crust",
+                    "upcharge": 1.50,
+                },
+                {
+                    "selected": false,
+                    "desc": "Add pepperoni",
+                    "upcharge": 1.25
                 }
-            }
+            ]
         },
         {
             "id": 2, 
             "vid": 1, 
             "name": "Mozzarella Sticks",
-            "type": "Snack", 
-            "base_price": 4.50, 
-            "addons": {
-                "supersize": {
-                    "size": "Add 2 sticks", 
-                    "upcharge": 2.00
-                }, 
-                "extra": {
-                    "name": "Add extra Sauce", 
-                    "price": 0.50
+            "type": "Side", 
+            "base_price": 4.25, 
+            "addons": [
+                {
+                    "selected": false,
+                    "desc": "Add 2 more sticks",
+                    "upcharge": 1.75
+                },
+                {
+                    "selected": false,
+                    "desc": "Add extra sauce",
+                    "upcharge": 0.75
                 }
-            }
+            ]
         },
         {
             "id": 3, 
-            "vid": 2, 
-            "name": "Chicken Sandwhich",
-            "type": "Meal", 
-            "base_price": 4.99, 
-            "addons": {
-                "supersize": {
-                    "size": "Add fries and drink", 
-                    "upcharge": 3.00
-                }, 
-                "extra": {
-                    "name": "Add sauce", 
-                    "price": 0
+            "vid": 2,
+            "name": "Chicken Sandwich",
+            "type": "Entree", 
+            "base_price": 4, 
+            "addons": [
+                {
+                    "selected": false,
+                    "desc": "Add lettuce",
+                    "upcharge": 0.25
+                },
+                {
+                    "selected": false,
+                    "desc": "Add tomato",
+                    "upcharge": 0.25
+                },
+                {
+                    "selected": false,
+                    "desc": "Add American cheese",
+                    "upcharge": 0.75
                 }
-            }
-        },
-        {
-            "id": 4, 
-            "vid": 2, 
-            "name": "Chicken Nuggets",
-            "type": "Snack", 
-            "base_price": 4.50, 
-            "addons": {
-                "supersize": {
-                    "size": "Add fries and drink", 
-                    "upcharge": 2.99
-                }, 
-                "extra": {
-                    "name": "Add extra sauce", 
-                    "price": 0.99
-                }
-            }
-        },
-        {
-            "id": 5, 
-            "vid": 3, 
-            "name": "Hot Coffee",
-            "type": "Drink", 
-            "base_price": 1.99, 
-            "addons": {
-                "supersize": {
-                    "size": "Upgrade to venti",
-                    "upcharge": 2.00
-                }, 
-                "extra": {
-                    "name": "Add ice", 
-                    "price": 1.50
-                }
-            }
-        },
-        {
-            "id": 6, 
-            "vid": 3, 
-            "name": "Avocado Toast",
-            "type": "Meal", 
-            "base_price": 7.50, 
-            "addons": {
-                "supersize": {
-                    "size": "Add small coffee", 
-                    "upcharge": 0.99
-                }, 
-                "extra": {
-                    "name": "Add extra bread", 
-                    "price": 0.99
-                }
-            }
-        },
-        {
-            "id": 7, 
-            "vid": 4, 
-            "name": "Dorito's Loco Taco",
-            "type": "Meal", 
-            "base_price": 3.99, 
-            "addons": {
-                "supersize": {
-                    "size": "Add side of nachos",
-                    "upcharge": 2.00
-                }, 
-                "extra": {
-                    "name": "Add mild sauce", 
-                    "price": 0
-                }
-            }
-        },
-        {
-            "id": 8, 
-            "vid": 4, 
-            "name": "Baja Blast Freeze",
-            "type": "Drink", 
-            "base_price": 2.99, 
-            "addons": {
-                "supersize": {
-                    "size": "Supersize", 
-                    "upcharge": 1.99
-                }, 
-                "extra": {
-                    "name": "Add extra flavor", 
-                    "price": 0.99
-                }
-            }
-        },
-        {
-            "id": 9, 
-            "vid": 5, 
-            "name": "Fried Chicken Bucket",
-            "type": "Meal", 
-            "base_price": 10.50, 
-            "addons": {
-                "supersize": {
-                    "size": "Upgrade to meal", 
-                    "upcharge": 4.99
-                }, 
-                "extra": {
-                    "name": "Add extra biscuits", 
-                    "price": 2.50
-                }
-            }
-        },
-        {
-            "id": 10, 
-            "vid": 5, 
-            "name": "Fried Chicken Wings",
-            "type": "Meal", 
-            "base_price": 7.99, 
-            "addons": {
-                "supersize": {
-                    "size": "Upgrade to meal", 
-                    "upcharge": 4.50
-                }, 
-                "extra": {
-                    "name": "Add extra sauce", 
-                    "price": 0.99
-                }
-            }
-        },
-        {
-            "id": 11, 
-            "vid": 6, 
-            "name": "Burrito Bowl",
-            "type": "Meal", 
-            "base_price": 7.99, 
-            "addons": {
-                "supersize": {
-                    "size": "Add double meat", 
-                    "upcharge": 2.50
-                }, 
-                "extra": {
-                    "name": "Add guacamole", 
-                    "price": 2.99
-                }
-            }
-        },
-        {
-            "id": 12, 
-            "vid": 6, 
-            "name": "Burrito",
-            "type": "Meal", 
-            "base_price": 6.99, 
-            "addons": {
-                "supersize": {
-                    "size": "Add double meat", 
-                    "upcharge": 2.50
-                }, 
-                "extra": {
-                    "name": "Add guacamole", 
-                    "price": 2.99
-                }
-            }
-        },
-        {
-            "id": 13, 
-            "vid": 6, 
-            "name": "Tortilla Chips",
-            "type": "Snack", 
-            "base_price": 2.99, 
-            "addons": {
-                "supersize": {
-                    "size": "Upgrade to salsa sampler", 
-                    "upcharge": 3.99
-                }, 
-                "extra": {
-                    "name": "Add guacamole", 
-                    "price": 3.99
-                }
-            }
-        },
-        {
-            "id": 14, 
-            "vid": 7, 
-            "name": "Turkey Sub",
-            "type": "Meal", 
-            "base_price": 5.50, 
-            "addons": {
-                "supersize": {
-                    "size": "Upgrade to meal", 
-                    "upcharge": 3.50
-                }, 
-                "extra": {
-                    "name": "Add extra protein", 
-                    "price": 2.99
-                }
-            }
-        },
-        {
-            "id": 15, 
-            "vid": 7, 
-            "name": "Chicken Caeaser Salad",
-            "type": "Meal", 
-            "base_price": 5.99, 
-            "addons": {
-                "supersize": {
-                    "size": "Upgrade to meal", 
-                    "upcharge": 3.50
-                }, 
-                "extra": {
-                    "name": "Add extra protein", 
-                    "price": 2
-                }
-            }
-        },
-        {
-            "id": 16, 
-            "vid": 8, 
-            "name": "Orange Chicken Rice Bowl",
-            "type": "Meal", 
-            "base_price": 5.99, 
-            "addons": {
-                "supersize": {
-                    "size": "Upgrade to noodle bowl", 
-                    "upcharge": 1.99
-                }, 
-                "extra": {
-                    "name": "Add extra protein", 
-                    "price": 2.50
-                }
-            }
-        },
-        {
-            "id": 17, 
-            "vid": 8, 
-            "name": "Spring rolls(3)",
-            "type": "Snack", 
-            "base_price": 3.50, 
-            "addons": {
-                "supersize": {
-                    "size": "Add extra roll", 
-                    "upcharge": 1.00
-                }, 
-                "extra": {
-                    "name": "Add soy sauce", 
-                    "price": 0.00
-                }
-            }
-        },
-        {
-            "id": 18, 
-            "vid": 9, 
-            "name": "Ice Cream Cone",
-            "type": "Snack", 
-            "base_price": 2.50, 
-            "addons": {
-                "supersize": {
-                    "size": "Upgrade to waffle cone", 
-                    "upcharge": 0.99
-                }, 
-                "extra": {
-                    "name": "Swirl flavor", 
-                    "price": 0.00
-                }
-            }
-        },
-        {
-            "id": 19, 
-            "vid": 9, 
-            "name": "Banana split",
-            "type": "Meal", 
-            "base_price": 5.99, 
-            "addons": {
-                "supersize": {
-                    "size": "Add extra banana", 
-                    "upcharge": 0.99
-                }, 
-                "extra": {
-                    "name": "Add whipped cream", 
-                    "price": 0.00
-                }
-            }
+            ]
         }
     ]
 }
