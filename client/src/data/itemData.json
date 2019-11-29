@@ -4,9 +4,8 @@
             "id": 1, 
             "vid": 1, 
             "name": "Cheese Pizza",
-            "type": "Meal", 
-
-            "base_price": 8, 
+            "type": "Meal",
+            "base_price": 8.99, 
             "addons": [
                 {
                     "selected": false,
@@ -16,7 +15,7 @@
                 {
                     "selected": false,
                     "desc": "Cheese crust",
-                    "upcharge": 1.50,
+                    "upcharge": 1.50
                 },
                 {
                     "selected": false,

@@ -8,6 +8,7 @@ var customerSchema = new Schema({
   credentials: {
     username: {type: String, required: [true, 'Username is required']},
     password: {type: String, required: [true, 'Password is required']},
+    salt: {type: String, required: [true, 'Password salt is required']}
   },
   name: {type: String, required: [true, 'Name is required']}, 
   email: String,
