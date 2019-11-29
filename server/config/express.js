@@ -4,6 +4,7 @@ const path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     customerRouter = require('../routes/customer.server.routes');
+    itemsRouter = require('../routes/item.server.routes');
 
 module.exports.init = () => {
     /* 
@@ -28,6 +29,9 @@ module.exports.init = () => {
 
     // Customer API router
     app.use('/api/customers', customerRouter);
+
+    // Item API router
+    app.use('/api/items', itemsRouter);
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files

@@ -29,7 +29,6 @@ exports.create = function(req, res) {
 /* Show a particular customer */
 exports.read = function(req, res) {
     /* Send the customer as JSON from the request */
-
     res.json(req.customer);
 };
 
