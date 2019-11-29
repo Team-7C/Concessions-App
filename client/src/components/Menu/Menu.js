@@ -1,8 +1,8 @@
-
 import React from 'react';
 import './Menu.css';
 import Search from '../Search/Search';
 import ItemList from './ItemList.js';
+
 
 class Menu extends React.Component {
     constructor(props) {
