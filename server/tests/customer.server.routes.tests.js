@@ -107,7 +107,7 @@ describe('Customer CRUD Tests', function() {
                 agent.get('/api/customers/' + uid)
                     .expect(400)
                     .end(function(err, res) {
-                        id = undefined;
+                        uid = undefined;
                         done();
                     });
             });
