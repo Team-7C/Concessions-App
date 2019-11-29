@@ -5,6 +5,7 @@
             "vid": 1, 
             "name": "Cheese Pizza",
             "type": "Meal", 
+
             "base_price": 8, 
             "addons": [
                 {
@@ -45,7 +46,7 @@
         },
         {
             "id": 3, 
-            "vid": 2, 
+            "vid": 2,
             "name": "Chicken Sandwich",
             "type": "Entree", 
             "base_price": 4, 
