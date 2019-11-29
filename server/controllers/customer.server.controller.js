@@ -79,9 +79,8 @@ exports.list = function (req, res) {
     Customer.find({}, function(err, customer) {
         if (err) return err;
         res.send(customer);
-    }).sort( { name: 1 } );
+    }).sort({name: 1});
 };
-
 
 /* Find a customer by uid and then pass it to the next request handler */
 exports.customerByUID = function(req, res, next, uid) {
