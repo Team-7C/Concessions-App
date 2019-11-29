@@ -26,31 +26,14 @@ class ItemList extends React.Component {
         
 		const itemList = filtered.map(item => {
 			return (                
-                <div>
-                    <Card shadow={6} style={{width: '512px', margin: 'auto', display: 'auto'}}>
-                        <CardTitle style={{color: '#fff', height: '176px', background: 'url(http://www.getmdl.io/assets/demos/welcome_card.jpg) center / cover'}}> {item.name}</CardTitle>
-                        <CardText>
-                            {/* {item.name}<br /> */}
-                            ${item.base_price}<br />
-                        </CardText>
-                        <CardActions border>
-                            <Button colored onClick={(a) => {a.preventDefault(); addToCart(cloneDeep(item))}}>Add to Cart</Button>
-                            <Icon name="shopping_cart" />
-                        </CardActions>
-                    </Card>
-                    {/* <Card shadow={0} style={{width: '256px', height: '256px', background: '#3E4EB8'}}>
-                        <CardTitle expand style={{alignItems: 'flex-start', color: '#fff', background: 'url(http://www.getmdl.io/assets/demos/dog.png) bottom right 15% no-repeat #46B6AC'}}>
-                            <h4 style={{marginTop: '0'}}>
-                                {item.name}<br />
-                                ${item.base_price}<br />
-                            </h4>
-                        </CardTitle>
-                        <CardActions border style={{borderColor: 'rgba(250, 190, 88, 1)', display: 'flex', boxSizing: 'border-box', alignItems: 'center', color: '#fff'}}>
-                            <Button style={{color: 'white'}} onClick={(a) => {a.preventDefault(); addToCart(cloneDeep(item))}}>Add to Cart</Button>
-                            <div className="mdl-layout-spacer"></div>
-                            <Icon name="shopping_cart" />
-                        </CardActions>
-                    </Card> */}
+                <div className = "card">
+                    <div className = "info">
+                        <div className = "name">{item.name}</div>
+                        <div className = "position">${item.base_price}</div>
+                        <button onClick={(a) => {a.preventDefault(); addToCart(cloneDeep(item))}}> Add to Cart </button>
+                    </div>
+                   
+
                 {/* <img 
                  src={ require('../../assets/popcorn.PNG') } 
                  alt="food background"
