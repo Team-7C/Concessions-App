@@ -1,8 +1,24 @@
 /* This controller dictates how the customer data is handled with CRUD requests */
+//import { saltShaker, hashPass } from '../saltPasswords.js';
 
 var mongoose = require('mongoose'),
+    crypto = require('crypto'),
     Customer = require('../models/customerSchema.js');
-    
+
+/*** Password Salting Functions ***/
+
+/* Create a salt that is length-bytes long*/
+function saltShaker(length) {
+    return crypto.randomBytes(length).toString('hex');
+};
+
+/* Create a SHA512 hash of password for a given salt */
+function hashPass(password, salt) {
+    var hmac = crypto.createHmac('sha512', salt);
+    hmac.update(password);
+    return hmac.digest('hex');
+};
+
 /*** CRUD Operations ***/
 
 /* Create a customer */
@@ -11,7 +27,10 @@ exports.create = function(req, res) {
     /* Instantiate a new customer */
     var customer = new Customer(req.body);
 
-    /* TODO: Salt password before saving to database for security */ 
+    /* Salt password before saving to database for security */ 
+    var salt = saltShaker(20);
+    customer.credentials.salt = salt;
+    customer.credentials.password = hashPass(customer.credentials.password, salt);
 
     /* Save the customer to the database */
     customer.save(function(err) {
@@ -39,10 +58,12 @@ exports.update = function(req, res) {
 
     /* Replace the customer's properties with the new properties found in req.body */
     customer.uid = req.body.uid;
-    customer.credentials = {
-        username: req.body.credentials.username,
-        password: req.body.credentials.password,
-    };
+
+    /* Salt password before saving to database for security */ 
+    var salt = saltShaker(20);
+    customer.credentials.salt = salt;
+    customer.credentials.password = hashPass(req.body.credentials.password, salt);
+
     customer.name = req.body.name;
     if (req.body.email) customer.email = req.body.email;
     customer.phone = req.body.phone;

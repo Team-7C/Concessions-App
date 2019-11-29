@@ -8,6 +8,7 @@ var vendorSchema = new Schema({
   credentials: {
     username: {type: String, required: true},
     password: {type: String, required: true},
+    salt: {type: String, required: true}
   },
   name: {type: String, required: true},
   email: String,
@@ -18,11 +19,11 @@ var vendorSchema = new Schema({
 
 // Create a 'pre' function that adds the updated_at (and created_at if not already there) property 
 vendorSchema.pre('save', function(next) {
-        var curr = new Date();
-        this.updated_at = curr;
-        if(!this.created_at)
-                this.created_at = curr;
-        next();
+  var curr = new Date();
+  this.updated_at = curr;
+  if(!this.created_at)
+    this.created_at = curr;
+  next();
 });
 
 /* Use your schema to instantiate a Mongoose model */
