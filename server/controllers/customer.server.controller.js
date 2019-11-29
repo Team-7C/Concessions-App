@@ -62,6 +62,7 @@ exports.update = function(req, res) {
     /* Salt password before saving to database for security */ 
     var salt = saltShaker(20);
     customer.credentials.salt = salt;
+    customer.credentials.username = req.body.credentials.username;
     customer.credentials.password = hashPass(req.body.credentials.password, salt);
 
     customer.name = req.body.name;
@@ -91,7 +92,6 @@ exports.delete = function(req, res) {
         res.send({ message: "Customer deleted successfully!" });
     }).catch(err => { if (err) return err; });
 };
-/*** End of CRUD operations ***/
 
 /*** Useful search functions ***/
 
