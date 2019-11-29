@@ -39,9 +39,10 @@ describe('Vendor CRUD Tests', function() {
                         should.not.exist(err);
                         should.exist(res);
                         res.body.name.should.equal('Domino\'s Pizza');
+                        res.body.email.should.equal('contactus@dominos.com');
                         res.body.phone.should.equal('111-111-1111');
-                        res.body.credentials.username.should.equal('dom');
-                        res.body.credentials.password.should.equal('piz');
+                        // res.body.credentials.username.should.equal('dom');
+                        // res.body.credentials.password.should.equal('piz');
                         done();
                     });
             }
@@ -53,7 +54,8 @@ describe('Vendor CRUD Tests', function() {
             vid: 410,
             credentials: {
                 username: "5guys",
-                password: "baf"
+                password: "baf",
+                salt: "w/e"
             },
             name: "Five Guys",
             email: "five@guys.com",
@@ -78,7 +80,8 @@ describe('Vendor CRUD Tests', function() {
             vid: 410,
             credentials: {
                 username: "5guys",
-                password: "baf"
+                password: "baf",
+                salt: "w/e"
             },
             name: "Five Guys",
             email: "fiveguys@gmail.com",

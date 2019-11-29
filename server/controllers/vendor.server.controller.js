@@ -1,8 +1,23 @@
 /* This controller dictates how the vendor data is handled with CRUD requests */
 
 var mongoose = require('mongoose'),
+    crypto = require('crypto'),
     Vendor = require('../models/vendorSchema.js');
     
+/*** Password Salting Functions ***/
+
+/* Create a salt that is length-bytes long*/
+function saltShaker(length) {
+    return crypto.randomBytes(length).toString('hex');
+};
+
+/* Create a SHA512 hash of password for a given salt */
+function hashPass(password, salt) {
+    var hmac = crypto.createHmac('sha512', salt);
+    hmac.update(password);
+    return hmac.digest('hex');
+};
+
 /*** CRUD Operations ***/
 
 /* Create a vendor */
@@ -11,7 +26,10 @@ exports.create = function(req, res) {
     /* Instantiate a new vendor */
     var vendor = new Vendor(req.body);
 
-    /* TODO: Salt password before saving to database for security */ 
+    /* Salt password before saving to database for security */ 
+    var salt = saltShaker(20);
+    vendor.credentials.salt = salt;
+    vendor.credentials.password = hashPass(vendor.credentials.password, salt);
 
     /* Save the vendor to the database */
     vendor.save(function(err) {
@@ -39,10 +57,13 @@ exports.update = function(req, res) {
 
     /* Replace the vendor's properties with the new properties found in req.body */
     vendor.vid = req.body.vid;
-    vendor.credentials = {
-        username: req.body.credentials.username,
-        password: req.body.credentials.password,
-    };
+
+    /* Salt password before saving to database for security */ 
+    var salt = saltShaker(20);
+    vendor.credentials.salt = salt;
+    vendor.credentials.username = req.body.credentials.username;
+    vendor.credentials.password = hashPass(req.body.credentials.password, salt);
+
     vendor.name = req.body.name;
     if (req.body.email) vendor.email = req.body.email;
     vendor.phone = req.body.phone;
@@ -70,7 +91,6 @@ exports.delete = function(req, res) {
         res.send({ message: "vendor deleted successfully!" });
     }).catch(err => { if (err) return err; });
 };
-/*** End of CRUD operations ***/
 
 /*** Useful search functions ***/
 
