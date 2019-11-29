@@ -32,7 +32,7 @@ module.exports.init = () => {
     app.use('/api/items', itemsRouter);
 
     // Vendor API router
-    app.user('/api/vendors', vendorsRouter);
+    app.use('/api/vendors', vendorsRouter);
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files

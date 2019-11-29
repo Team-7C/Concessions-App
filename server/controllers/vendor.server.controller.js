@@ -65,7 +65,7 @@ exports.delete = function(req, res) {
 
     var vendor = req.vendor;
 
-    vendor.remove({vid: vendor.vid}).then(vendor => {
+    Vendor.remove({vid: vendor.vid}).then(vendor => {
         if (!vendor) return res.status(400).send({ message: "vendor not found!" });
         res.send({ message: "vendor deleted successfully!" });
     }).catch(err => { if (err) return err; });
@@ -76,7 +76,7 @@ exports.delete = function(req, res) {
 
 /* Retrieve all vendors in an alphabetically sorted list */
 exports.list = function (req, res) {
-    vendor.find({}, function(err, vendor) {
+    Vendor.find({}, function(err, vendor) {
         if (err) return err;
         res.send(vendor);
     }).sort({name: 1});
@@ -84,7 +84,7 @@ exports.list = function (req, res) {
 
 /* Find a vendor by vid and then pass it to the next request handler */
 exports.vendorByVID = function(req, res, next, vid) {
-    vendor.findOne({vid: vid}).exec(function(err, vendor) {
+    Vendor.findOne({vid: vid}).exec(function(err, vendor) {
         if (err) res.status(400).send(err);
         else {
             req.vendor = vendor;
