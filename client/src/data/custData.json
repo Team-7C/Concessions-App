@@ -1,0 +1,114 @@
+{
+    "customers": [
+        {
+            "uid": 1,
+            "credentials": {
+                "username": "dorian", 
+                "password": "meth",
+                "salt": "w/e"
+            }, 
+            "name": "Dorian Meade",
+            "email": "dorianmeade@aol.com",
+            "phone": "555-555-5555"
+        },
+        {
+            "uid": 2,
+            "credentials": {
+                "username": "david", 
+                "password": "aaron",
+                "salt": "w/e"
+            }, 
+            "name": "David Meade",
+            "email": "david@aol.com",
+            "phone": "555-666-1234"
+        },
+        {
+            "uid": 3,
+            "credentials": {
+                "username": "amanda", 
+                "password": "snoopy",
+                "salt": "w/e"
+            }, 
+            "name": "Amanda Bryan",
+            "email": "mandyrox@yahoo.com",
+            "phone": "555-777-6284"
+        },
+        {
+            "uid": 4,
+            "credentials": {
+                "username": "matthew", 
+                "password": "isahippie",
+                "salt": "w/e"
+            }, 
+            "name": "Matt Edwards",
+            "email": "mattbraps@gmail.com",
+            "phone": "555-123-4567"
+        },
+        {
+            "uid": 5,
+            "credentials": {
+                "username": "easy", 
+                "password": "login",
+                "salt": "w/e"
+            }, 
+            "name": "Bye World",
+            "email": "bye@gmail.com",
+            "phone": "555-214-5345"
+        },
+        {
+            "uid": 6,
+            "credentials": {
+                "username": "joe", 
+                "password": "biden",
+                "salt": "w/e"
+            }, 
+            "name": "Joe Biden",
+            "email": "helllllaaaa@yahoo.com",
+            "phone": "555-002-2451"
+        },
+        {
+            "uid": 7,
+            "credentials": {
+                "username": "jordan", 
+                "password": "scumbag",
+                "salt": "w/e"
+            }, 
+            "name": "Jordan Bag",
+            "email": "homie@gmail.com",
+            "phone": "555-228-3345"
+        },
+        {
+            "uid": 8,
+            "credentials": {
+                "username": "dom", 
+                "password": "nic",
+                "salt": "w/e"
+            }, 
+            "name": "Dom Nic",
+            "email": "domnic@gmail.com",
+            "phone": "123-456-7890"
+        },
+        {
+            "uid": 9,
+            "credentials": {
+                "username": "dor", 
+                "password": "ian",
+                "salt": "w/e"
+            }, 
+            "name": "Dori",
+            "email": "dori@gmail.com",
+            "phone": "228-228-2288"
+        },
+        {
+            "uid": 10,
+            "credentials": {
+                "username": "wen", 
+                "password": "yu",
+                "salt": "w/e"
+            }, 
+            "name": "Wen-Yu Chen",
+            "email": "groupie@gmail.com",
+            "phone": "444-222-7777"
+        }
+    ]
+}

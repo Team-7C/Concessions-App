@@ -1,0 +1,71 @@
+{
+    "items": [
+        {
+            "id": 1, 
+            "vid": 1, 
+            "name": "Cheese Pizza",
+            "type": "Meal",
+            "base_price": 8.99, 
+            "addons": [
+                {
+                    "selected": false,
+                    "desc": "Large size",
+                    "upcharge": 3.00
+                },
+                {
+                    "selected": false,
+                    "desc": "Cheese crust",
+                    "upcharge": 1.50
+                },
+                {
+                    "selected": false,
+                    "desc": "Add pepperoni",
+                    "upcharge": 1.25
+                }
+            ]
+        },
+        {
+            "id": 2, 
+            "vid": 1, 
+            "name": "Mozzarella Sticks",
+            "type": "Side", 
+            "base_price": 4.25, 
+            "addons": [
+                {
+                    "selected": false,
+                    "desc": "Add 2 more sticks",
+                    "upcharge": 1.75
+                },
+                {
+                    "selected": false,
+                    "desc": "Add extra sauce",
+                    "upcharge": 0.75
+                }
+            ]
+        },
+        {
+            "id": 3, 
+            "vid": 2,
+            "name": "Chicken Sandwich",
+            "type": "Entree", 
+            "base_price": 4, 
+            "addons": [
+                {
+                    "selected": false,
+                    "desc": "Add lettuce",
+                    "upcharge": 0.25
+                },
+                {
+                    "selected": false,
+                    "desc": "Add tomato",
+                    "upcharge": 0.25
+                },
+                {
+                    "selected": false,
+                    "desc": "Add American cheese",
+                    "upcharge": 0.75
+                }
+            ]
+        }
+    ]
+}

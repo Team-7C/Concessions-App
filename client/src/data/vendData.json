@@ -1,0 +1,104 @@
+{
+    "vendors": [
+        {
+            "vid": 1, 
+            "credentials": {
+                "username": "dom",
+                "password": "piz",
+                "salt": "w/e"
+            },
+            "name": "Domino's Pizza",
+            "email": "contactus@dominos.com",
+            "phone": "111-111-1111"
+        },
+        {
+            "vid": 2, 
+            "credentials": {
+                "username": "chick",
+                "password": "fila",
+                "salt": "w/e"
+            },
+            "name": "Chick-fil-A",
+            "email": "contactus@chickfila.com",
+            "phone": "222-222-2222"
+        },
+        {
+            "vid": 3, 
+            "credentials": {
+                "username": "star",
+                "password": "bux",
+                "salt": "w/e"
+            },
+            "name": "Starbucks", 
+            "email": "contactus@starbucks.com",
+            "phone": "333-333-3333"
+        },
+        {
+            "vid": 4, 
+            "credentials": {
+                "username": "taco",
+                "password": "bell",
+                "salt": "w/e"
+            },
+            "name": "Taco Bell", 
+            "email": "contactus@tacobell.com",
+            "phone": "444-444-444"
+        },
+        {
+            "vid": 5, 
+            "credentials": {
+                "username": "friend",
+                "password": "chicken",
+                "salt": "w/e"
+            },
+            "name": "KFC", 
+            "email": "contactus@kfc.com",
+            "phone": "555-555-555"
+        },
+        {
+            "vid": 6, 
+            "credentials": {
+                "username": "chip",
+                "password": "py",
+                "salt": "w/e"
+            },
+            "name": "Chiptole Mexican Grill", 
+            "email": "contactus@chipotle.com",
+            "phone": "666-666-6666"
+        },
+        {
+            "vid": 7, 
+            "credentials": {
+                "username": "sub",
+                "password": "way",
+                "salt": "w/e"
+            },
+            "name": "Subway Restaraunts", 
+            "email": "contactus@subway.com",
+            "phone": "777-777-7777"
+        },
+        {
+            "vid": 8, 
+            "credentials": {
+                "username": "pan",
+                "password": "da",
+                "salt": "w/e"
+            },
+            "name": "Panda Express", 
+            "email": "contactus@pandaexpress.com",
+            "phone": "888-888-8888"
+        },
+        {
+            "vid": 9, 
+            "credentials": {
+                "username": "cul",
+                "password": "ver",
+                "salt": "w/e"
+            },
+            "name": "Culver's", 
+            "email": "contactus@culvers.com",
+            "phone": "999-999-9999"
+        }
+
+    ]
+}
