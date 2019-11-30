@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch, Redirect  } from 'react-router-dom';
-<<<<<<< HEAD
 import Home from "./components/Home/Home.js";
 import Menu from "./components/Menu/Menu.js";
 import Sign_In from "./components/SignIn/SignIn.js";
@@ -8,7 +7,7 @@ import New_User from "./components/SignUp/SignUp.js";
 import Cart from "./components/Cart/Cart.js";
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
-import './assets/home_food.jpg';
+// import './assets/home_food.jpg';
 import './App.css'
 import {Layout, Header, Navigation, Drawer, Content, Footer} from 'react-mdl';
 
@@ -100,26 +99,6 @@ class App extends React.Component {
       </div>
         );
     }
-=======
-import Home from "./views/Home/Home"
-import NotFound from "./views/NotFound"
-import Header from "./components/Header/Header"
-
-
-const App = () => {
-  return (
-    <div>
-      <Header />
-      <Switch>
-        <Route exact path="/Home" component={Home} />
-        <Route exact path="/">
-          <Redirect to="/Home" />
-        </Route>
-        <Route component={NotFound}/>
-      </Switch>
-    </div>
-  );
->>>>>>> c6c6811c64ba2383c092855013c6ed0e1e5d671b
 }
 
 export default App;
