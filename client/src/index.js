@@ -8,7 +8,7 @@ import 'react-mdl/extra/material.js';
 import custData from './data/custData.json';
 import itemData from './data/itemData.json';
 import vendData from './data/vendData.json';
-//import tranData from './data/tranData.json';
+import tranData from './data/tranData.json';
 //The app is now passing the data as a property
 
 ReactDOM.render(
@@ -16,7 +16,7 @@ ReactDOM.render(
         custData={custData}
         itemData={itemData}
         vendData={vendData}
-        //tranData={tranData}
+        tranData={tranData}
     />,
     document.getElementById('root'));
 
