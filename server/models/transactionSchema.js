@@ -8,7 +8,7 @@ var transactionSchema = new Schema({
   uid: {type: Number, required: [true, "Customer ID is required"] }, // Customer who made transaction
   items: [
     {
-      id: Number,                            // Unique item
+      id: {type: Number, required: [true, 'At least one item is required']},                           // Unique item
       quantity: {type: Number, default: 1},  // Number of instances in transaction
       addons: [{aid: Number}]                // Addons (that have upcharges) applied to item
     }
