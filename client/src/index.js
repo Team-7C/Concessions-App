@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
+<<<<<<< HEAD
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import custData from './data/custData.json';
@@ -10,6 +11,8 @@ import itemData from './data/itemData.json';
 import vendData from './data/vendData.json';
 //import tranData from './data/tranData.json';
 //The app is now passing the data as a property
+=======
+>>>>>>> c6c6811c64ba2383c092855013c6ed0e1e5d671b
 
 ReactDOM.render(
     <App 
