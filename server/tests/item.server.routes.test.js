@@ -38,8 +38,9 @@ describe('Item CRUD Tests', function() {
                     .end(function(err, res) {
                         should.not.exist(err);
                         should.exist(res);
+                        console.log(res.body);
                         res.body.vid.should.equal(1);
-                        res.body.name.should.equal("Cheese Pizza");
+                        res.body.name.should.equal("Cheese Pizza (11\")");
                         res.body.type.should.equal("Meal");
                         res.body.base_price.should.equal(8.99);
                         // TODO: Make the testing of the addons work...(?)
@@ -61,7 +62,7 @@ describe('Item CRUD Tests', function() {
             base_price: 5,
             addons: [
                 {
-                    selected: false,
+                    aid: 1,
                     desc: "Add relish",
                     upcharge: 0.50,
                 }
@@ -90,7 +91,7 @@ describe('Item CRUD Tests', function() {
             base_price: 5.25,
             addons: [
                 {
-                    selected: false,
+                    aid: 1,
                     desc: "Add relish",
                     upcharge: 0.50,
                 }
@@ -105,6 +106,11 @@ describe('Item CRUD Tests', function() {
                 res.body.name.should.equal('Hotdog');
                 res.body.type.should.equal('Entree');
                 res.body.base_price.should.equal(5.25);
+                // res.body.addons[0].should.equal({
+                //     aid: 1,
+                //     desc: "Add relish",
+                //     upcharge: 0.50
+                // });
                 done();
             });
     });
