@@ -37,22 +37,17 @@ class Checkbox extends React.Component {
         }
 
 		return (
-			<div className="checkbox">
-                <header className="food">Meal</header>
-                <input type="checkbox" onChange={() => {temp("Meal")}}
-                />
-                <header className="food">Snack</header>
-                <input type="checkbox" onChange={() => {temp("Snack")}} 
-                />
-                <header className="food">Drink</header>
-                <input type="checkbox" onChange={() => {temp("Drink")}} 
-                />
-                <header className="food">Dessert</header>
-                <input type="checkbox" onChange={() => {temp("Dessert")}} 
-                />
-                <header className="food">Other</header>
-                <input type="checkbox" onChange={() => {temp("Other")}} 
-                />
+			<div style = {{display: 'inline-block'}}>
+                <header className = "food">Filter by:</header>
+                <label className = "food"><input type="checkbox" onChange={() => {temp("Meal")}}/>Meal</label>
+                
+                <label className = "food"><input type="checkbox" onChange={() => {temp("Snack")}}/>Snack</label>
+                
+                <label className = "food"><input type="checkbox" onChange={() => {temp("Drink")}}/>Drink</label>
+                
+                <label className = "food"><input type="checkbox" onChange={() => {temp("Dessert")}}/>Dessert</label>
+                
+               <label className = "food"><input type="checkbox" onChange={() => {temp("Other")}}/>Other</label> 
 			</div>
 		);
 	}

@@ -3,6 +3,8 @@ import './Menu.css';
 import Search from '../Search/Search';
 import ItemList from './ItemList.js';
 import Checkbox from '../Checkbox/Checkbox';
+import {Footer} from 'react-mdl';
+
 
 class Menu extends React.Component {
     constructor(props) {
@@ -90,10 +92,10 @@ class Menu extends React.Component {
         const addToCart = this.props.addToCart;
 
         return (
-
-            <div class="mdl-grid no-spacing">
-                  <div class="mdl-cell mdl-cell--3-col mdl-typography--text-center">
-                    <Search 
+            <div class="mdl-grid no-spacing" style = {{backgroundColor: "rgba(190, 190, 190, 0.6)"}}>
+                  <div class="mdl-cell mdl-cell--4-col">
+                      <div className = "section" style = {{textAlign:'center'}}>
+                      <Search 
                         filterText={this.state.filterText} 
                         textUpdate={this.textUpdate}
                         filterMinPrice={this.state.filterMinPrice} 
@@ -110,8 +112,10 @@ class Menu extends React.Component {
                         dessert={this.state.dessert}
                         other={this.state.other}
                     />
+                      </div>
+                   
                   </div>
-                  <div class="mdl-cell mdl-cell--9-col">
+                  <div class="mdl-cell mdl-cell--8-col">
                     <ItemList 
                         items={itemData.items} 
                         addToCart={addToCart} 
@@ -126,7 +130,6 @@ class Menu extends React.Component {
                      />
                   </div>
             </div>
-
         );
     }
 }

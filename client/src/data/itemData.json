@@ -28,7 +28,7 @@
             "id": 2, 
             "vid": 1, 
             "name": "Mozzarella Sticks (4)",
-            "type": "Side", 
+            "type": "Snack", // Side
             "base_price": 4.25, 
             "addons": [
                 {
@@ -47,8 +47,8 @@
             "id": 3, 
             "vid": 2,
             "name": "Chicken Sandwich",
-            "type": "Entree", 
-            "base_price": 4.39, 
+            "type": "Meal", // Entree
+            "base_price": 4.39,
             "addons": [
                 {
                     "aid": 1,

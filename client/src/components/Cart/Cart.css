@@ -1,6 +1,6 @@
 .maincart {
     background-image: url("../../assets/seafood.jpg");
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
