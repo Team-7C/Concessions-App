@@ -6,21 +6,23 @@ var should = require('should'),
 var item, id;
 
 item = {
-    "id": 87, 
+    "id": 6, 
     "vid": 3, 
     "name": "Hot Coffee",
-    "type": "Snack", 
-    "base_price": 3,
-    "addons": {
-        "supersize": {
-            "size": "Upgrade to venti",
-            "upcharge": 2
-        },
-        "extra": {
-            "name": "Add ice", 
-            "price": 1
-        }
-    }
+    "type": "Beverage", 
+    "base_price": 3.19,
+    "addons": [
+      {
+        "aid": 1,
+        "desc": "Venti size",
+        "upcharge": 1.09
+      },
+      {
+        "aid": 2,
+        "desc": "Add ice",
+        "upcharge": 0
+      }
+    ]
 }
 
 describe('Item Schema Unit Tests', function() {
@@ -37,7 +39,7 @@ describe('Item Schema Unit Tests', function() {
 
     this.timeout(10000);
 
-    it('saves properly when all required properties provided', function(done){
+    it('saves properly when all required properties are provided', function(done){
       new Item(item).save(function(err, item){
         should.not.exist(err);
         id = item._id;
@@ -45,65 +47,83 @@ describe('Item Schema Unit Tests', function() {
       });
     });
 
-    it('throws an error when id not provided', function(done){
+    it('throws an error when id is not provided', function(done){
       new Item({
         vid: item.vid,
         name: item.name,
         type: item.type,
         base_price: item.base_price,
+        addons: item.addons
       }).save(function(err){
         should.exist(err);
         done();
-      })
+      });
     });
 
-    it('throws an error when vid not provided', function(done){
+    it('throws an error when vid is not provided', function(done){
         new Item({
           id: item.id,
           name: item.name,
           type: item.type,
           base_price: item.base_price,
+          addons: item.addons
         }).save(function(err){
           should.exist(err);
           done();
-        })
+        });
       });  
 
-      it('throws an error when name not provided', function(done){
+      it('throws an error when name is not provided', function(done){
         new Item({
           id: item.id,
           vid: item.vid,
           type: item.type,
           base_price: item.base_price,
+          addons: item.addons
         }).save(function(err){
           should.exist(err);
           done();
-        })
+        });
       });  
 
-      it('throws an error when not type provided', function(done){
+      it('throws an error when type is not provided', function(done){
         new Item({
           id: item.id,
           vid: item.vid,
           name: item.name,
           base_price: item.base_price,
+          addons: item.addons
         }).save(function(err){
           should.exist(err);
           done();
-        })
+        });
       });
   
-      it('throws an error when base price not provided', function(done){
+      it('throws an error when base price is not provided', function(done){
         new Item({
           id: item.id,
           vid: item.vid,
           name: item.name,
           type: item.type,
+          addons: item.addons
         }).save(function(err){
           should.exist(err);
           done();
-        })
-      });  
+        });
+      });
+
+      it('does not throw an error when addons are not provided', function(done){
+        new Item({
+          id: item.id,
+          vid: item.vid,
+          name: item.name,
+          type: item.type,
+          base_price: item.base_price
+        }).save(function(err){
+          should.not.exist(err);
+          done();
+        });
+      });
 
   });
 

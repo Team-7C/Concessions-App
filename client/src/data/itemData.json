@@ -3,22 +3,22 @@
         {
             "id": 1, 
             "vid": 1, 
-            "name": "Cheese Pizza",
+            "name": "Cheese Pizza (11\")",
             "type": "Meal",
             "base_price": 8.99, 
             "addons": [
                 {
-                    "selected": false,
-                    "desc": "Large size",
+                    "aid": 1,
+                    "desc": "Large size (14\")",
                     "upcharge": 3.00
                 },
                 {
-                    "selected": false,
+                    "aid": 2,
                     "desc": "Cheese crust",
                     "upcharge": 1.50
                 },
                 {
-                    "selected": false,
+                    "aid": 3,
                     "desc": "Add pepperoni",
                     "upcharge": 1.25
                 }
@@ -27,17 +27,17 @@
         {
             "id": 2, 
             "vid": 1, 
-            "name": "Mozzarella Sticks",
-            "type": "Snack", 
+            "name": "Mozzarella Sticks (4)",
+            "type": "Snack", // Side
             "base_price": 4.25, 
             "addons": [
                 {
-                    "selected": false,
+                    "aid": 1,
                     "desc": "Add 2 more sticks",
                     "upcharge": 1.75
                 },
                 {
-                    "selected": false,
+                    "aid": 2,
                     "desc": "Add extra sauce",
                     "upcharge": 0.75
                 }
@@ -47,23 +47,51 @@
             "id": 3, 
             "vid": 2,
             "name": "Chicken Sandwich",
-            "type": "Meal", 
-            "base_price": 4, 
+            "type": "Meal", // Entree
+            "base_price": 4.39,
             "addons": [
                 {
-                    "selected": false,
+                    "aid": 1,
                     "desc": "Add lettuce",
                     "upcharge": 0.25
                 },
                 {
-                    "selected": false,
+                    "aid": 2,
                     "desc": "Add tomato",
                     "upcharge": 0.25
                 },
                 {
-                    "selected": false,
+                    "aid": 3,
                     "desc": "Add American cheese",
                     "upcharge": 0.75
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "vid": 2,
+            "name": "Waffle Fries",
+            "type": "Side",
+            "base_price": 2.49,
+            "addons": [
+                {
+                    "aid": 1,
+                    "desc": "Large size",
+                    "upcharge": 1.29
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "vid": 2,
+            "name": "Chocolate Chunk Cookie",
+            "type": "Dessert",
+            "base_price": 1.35,
+            "addons": [
+                {
+                    "aid": 1,
+                    "desc": "6 pack",
+                    "upcharge": 6.14
                 }
             ]
         }
