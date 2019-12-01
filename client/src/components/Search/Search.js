@@ -9,8 +9,8 @@ class Search extends React.Component {
         const vendorUpdate = this.props.vendorUpdate;
 
 		return (
-			<div className="search">
-                <p>SEARCH: &nbsp;
+			<div >
+                <p style = {{fontSize: '17px', fontStyle: 'italic'}}>SEARCH: &nbsp;
                     <input 
                         type="text" 
                         ref="search" 
@@ -20,7 +20,7 @@ class Search extends React.Component {
                         textUpdate(this.refs.search.value)}} 
                     />
                 </p> 
-                <p>PRICE: &nbsp;
+                <p style = {{fontSize: '17px', fontStyle: 'italic'}}>PRICE: &nbsp;
                     <NumberFormat
                         ref="min"
                         className="price" 
@@ -41,7 +41,7 @@ class Search extends React.Component {
                         onChange={() => {priceUpdate(this.refs.max.state.numAsString, 1) }}
                     />
                 </p>
-                <p>VENDOR: &nbsp;
+                <p style = {{fontSize: '17px', fontStyle: 'italic'}}>VENDOR: &nbsp;
                     <input 
                         type="text"
                         ref="ven"
