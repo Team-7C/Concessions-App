@@ -73,7 +73,7 @@ exports.list = function (req, res) {
     Transaction.find({}, function(err, transaction) {
         if (err) return err;
         res.send(transaction);
-    }).sort({name: 1});
+    }).sort({tid: 1});
 };
 
 /* Find a transaction by tid and then pass it to the next request handler */
