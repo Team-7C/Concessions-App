@@ -56,33 +56,63 @@ class ItemList extends React.Component {
 		const filtered = data.filter(contains)
         const filtered2 = filtered.filter(price)
         const filtered3 = filtered2.filter(myType)
+
+        //console.log("filtered3 results",filtered3)
+
+        function findExtraIndex(item) {
+            
+            console.log("addons list from find extra function",item.addons)
+            let i = 0;
+            for(i; i < item.addons.length; i++)
+            {
+                return(findExtras(item,i));
+            }
+            
+        }
+
         
+        function findExtras(item, number) {
+            console.log(item.addons[number])
+            return(
+                <div className = "card">
+                <div className = "info">
+                    <div className = "name">{item.addons[number].desc}</div>
+                    <div className = "name">{item.addons.length}</div>
+                    <div className = "position">${item.addons[number].upcharge}</div>
+                    
+                </div>
+            </div>
+            );
         
-		const itemList = filtered3.map(item => {
+    }
+
+        const extraList = filtered3.map(items => {
+            items.addons.map(addons => {
+                console.log(addons)
+                
+            })
+		});
+
+		const itemList = filtered3.map(items => {
 			return (                
                 <div className = "card">
                     <div className = "info">
-                        <div className = "name">{item.name}</div>
-                        <div className = "position">${item.base_price}</div>
-                        <button onClick={(a) => {a.preventDefault(); addToCart(cloneDeep(item))}}> Add to Cart </button>
-
-                        <label class="btn" for="modal-1">Extra Options</label>
-                            <input class="modal-state" id="modal-1" type="checkbox" />
-                            <div class="modal">
-                                <label class="modal__bg" for="modal-1"></label>
-                                <div class="modal__inner">
-                                    <label class="modal__close" for="modal-1"></label>
-                                    <h2>Caaaats FTW!</h2>
-                                    <p><img src="https://i.imgur.com/HnrkBwB.gif" alt="" />Aliquam in sagittis nulla. Curabitur euismod diam eget risus venenatis, sed dictum lectus bibendum. Nunc nunc nisi, hendrerit eget nisi id, rhoncus rutrum velit. Nunc vel mauris dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam fringilla quis nisi eget imperdiet.</p>
-                                </div>
+                        <div className = "name">{items.name}</div>
+                        <div className = "position">${items.base_price}</div>
+                        <button onClick={(a) => {a.preventDefault(); addToCart(cloneDeep(items))}}> Add to Cart </button>
+                        {/* modal code below... preferably the modal should show a card for each addon */}
+                        <label class="btn" for={items.id}>Extra Options</label>
+                        <input class="modal-state" id={items.id} type="checkbox" />
+                        <div class="modal">
+                            <label class="modal__bg" for={items.id}></label>
+                            <div class="modal__inner">
+                                <label class="modal__close" for={items.id}></label>
+                                <h2>{items.name} Extra Options:</h2>
+                                {extraList}
+                                {findExtraIndex(items)}
                             </div>
-            </div>
-
-
-
-
-                   
-
+                        </div>
+                    </div>
                 {/* <img 
                  src={ require('../../assets/popcorn.PNG') } 
                  alt="food background"
@@ -100,6 +130,7 @@ class ItemList extends React.Component {
 			);
 		});
 
+        
 		return (<div>{itemList}</div>);
 	}
 }
