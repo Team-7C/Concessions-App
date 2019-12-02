@@ -26,18 +26,22 @@ class Sign_In extends React.Component {
         return (
             <div className="signin_main">
                 <div className = "form">
-                        <h5>Input your login information </h5>
-                    <input type="text" ref="username_input" class="text" placeholder="username" onChange={() => {
-                        this.changeUsername(this.refs.username_input.value)}} />
+                    <h5>Sign Into Your Chomper Account</h5>
+
+                    <label>Username:</label>
+                    <input type="text" ref="username_input" onChange={() => {
+                         this.changeUsername(this.refs.username_input.value)}} />
                     <br/>
-                    <input type="password" ref="password_input" placeholder="password" onChange={() => {
-                        this.changePassword(this.refs.password_input.value)}} />
+
+                    <label>Password:</label>
+                    <input type="password" ref="password_input" onChange={() => {
+                         this.changePassword(this.refs.password_input.value)}} />
 
                     <br/>
-                    <button onClick={(a) => {a.preventDefault(); changeUser(this.state.userName, this.state.password); changePage('home')}}> Submit </button>
+                    <button className = "button2" onClick={(a) => {a.preventDefault(); changeUser(this.state.userName, this.state.password); changePage('home')}}> Log In!</button>
 
                     <br/>
-                    <button onClick={(a) => {a.preventDefault(); changePage('new_user')}}> New User?  Click here to create your account. </button>
+                    <button onClick={(a) => {a.preventDefault(); changePage('new_user')}}> New User? Click here to sign up. </button>
 
                 </div>
             </div>
