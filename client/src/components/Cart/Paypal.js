@@ -1,6 +1,5 @@
 import React from 'react';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
-import NumberFormat from 'react-number-format';
 
 
 class Paypal extends React.Component {
@@ -37,14 +36,15 @@ class Paypal extends React.Component {
             // => sometimes it may take about 0.5 second for everything to get set, or for the button to appear
         }
  
-        let env = 'sandbox'; // you can set here to 'production' for production
+        let mode = 'sandbox'; // you can set here to 'production' for production
         let currency = 'USD'; // or you can set this value from your props or state
+        
         // Document on Paypal's currency code: https://developer.paypal.com/docs/classic/api/currency_codes/
  
         const client = {
-            sandbox:    'AQ3Wq7G7JNxvVPBFBmOdc-YXJo2eIXqKjFlRALYx-fPgPZy4kXscRk2_5mJyqdjtPmQlz8XxNwebDoeh',
-            production: 'YOUR-PRODUCTION-APP-ID',
+            sandbox: 'AT_r2STBkN8RltKbdaFmtrXNGSJX0fFkHBfoKuduobCWA9tE5o9AV0L-J6Y3nC0D3F20cjKNpkiGkLjq'
         }
+        
         // In order to get production's app-ID, you will have to send your app to Paypal for approval first
         // For sandbox app-ID (after logging into your developer account, please locate the "REST API apps" section, click "Create App"):
         //   => https://developer.paypal.com/docs/classic/lifecycle/sb_credentials/
@@ -53,13 +53,10 @@ class Paypal extends React.Component {
  
 		// NB. You can also have many Paypal express checkout buttons on page, just pass in the correct amount and they will work!
 		
-
-		
         return (
-			
 			<form>
 				<h4> {"Subtotal (" + num_items + " items): " + "$" + total.toFixed(2)} </h4>
-	            <PaypalExpressBtn env={env} client={client} currency={currency} total={total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} />
+	            <PaypalExpressBtn mode={mode} client={client} currency={currency} total={total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} />
 			</form>
 		);
 		
