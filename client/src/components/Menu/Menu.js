@@ -92,43 +92,45 @@ class Menu extends React.Component {
         const addToCart = this.props.addToCart;
 
         return (
-            <div class="mdl-grid no-spacing" style = {{backgroundColor: "rgba(190, 190, 190, 0.6)"}}>
-                  <div class="mdl-cell mdl-cell--4-col">
-                      <div className = "section" style = {{textAlign:'center'}}>
-                      <Search 
-                        filterText={this.state.filterText} 
-                        textUpdate={this.textUpdate}
-                        filterMinPrice={this.state.filterMinPrice} 
-                        filterMaxPrice={this.state.filterMaxPrice}
-                        priceUpdate={this.priceUpdate} 
-                        vendorUpdate={this.vendorUpdate}
-                    />
-                    <Checkbox 
-                        filterType={this.state.filterType}
-                        typeUpdate={this.typeUpdate}
-                        meal={this.state.meal}
-                        snack={this.state.snack}
-                        drink={this.state.drink}
-                        dessert={this.state.dessert}
-                        other={this.state.other}
-                    />
-                      </div>
-                   
-                  </div>
-                  <div class="mdl-cell mdl-cell--8-col">
-                    <ItemList 
-                        items={itemData.items} 
-                        addToCart={addToCart} 
-                        filtertext={this.state.filterText}
-                        filterMinPrice={this.state.filterMinPrice} 
-                        filterMaxPrice={this.state.filterMaxPrice}
-                        meal={this.state.meal}
-                        snack={this.state.snack}
-                        drink={this.state.drink}
-                        dessert={this.state.dessert}
-                        other={this.state.other}
-                     />
-                  </div>
+            <div className="menuMain">
+                <div class="mdl-grid no-spacing" style = {{backgroundColor: "rgba(190, 190, 190, 0.6)"}}>
+                    <div class="mdl-cell mdl-cell--4-col">
+                        <div className = "section" style = {{textAlign:'center'}}>
+                        <Search 
+                            filterText={this.state.filterText} 
+                            textUpdate={this.textUpdate}
+                            filterMinPrice={this.state.filterMinPrice} 
+                            filterMaxPrice={this.state.filterMaxPrice}
+                            priceUpdate={this.priceUpdate} 
+                            vendorUpdate={this.vendorUpdate}
+                        />
+                        <Checkbox 
+                            filterType={this.state.filterType}
+                            typeUpdate={this.typeUpdate}
+                            meal={this.state.meal}
+                            snack={this.state.snack}
+                            drink={this.state.drink}
+                            dessert={this.state.dessert}
+                            other={this.state.other}
+                        />
+                        </div>
+                    
+                    </div>
+                    <div class="mdl-cell mdl-cell--8-col">
+                        <ItemList 
+                            items={itemData.items} 
+                            addToCart={addToCart} 
+                            filtertext={this.state.filterText}
+                            filterMinPrice={this.state.filterMinPrice} 
+                            filterMaxPrice={this.state.filterMaxPrice}
+                            meal={this.state.meal}
+                            snack={this.state.snack}
+                            drink={this.state.drink}
+                            dessert={this.state.dessert}
+                            other={this.state.other}
+                        />
+                    </div>
+                </div>
             </div>
         );
     }

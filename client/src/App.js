@@ -4,6 +4,7 @@ import Home from "./components/Home/Home.js";
 import Menu from "./components/Menu/Menu.js";
 import Sign_In from "./components/SignIn/SignIn.js";
 import New_User from "./components/SignUp/SignUp.js";
+import Reset from "./components/Reset/Rest"
 import Cart from "./components/Cart/Cart.js";
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
@@ -27,8 +28,8 @@ class App extends React.Component {
         this.changePage = this.changePage.bind(this);
         this.changeUser = this.changeUser.bind(this);
         this.createUser = this.createUser.bind(this);
+        this.resetPassword = this.resetPassword.bind(this);
         this.addToCart = this.addToCart.bind(this);
-        
     }
 
   menuItems(){
@@ -66,6 +67,13 @@ class App extends React.Component {
         this.setState({username: new_user, password: new_password, phone: new_phone, email: new_email});
         //should also save user to database
     }
+    resetPassword(email, phone, new_password) {
+        //need to pull the user info from DB based on email and phone and reset password
+        //
+        this.setState({
+            password: new_password
+        })
+    }
 
     render() {
 
@@ -90,6 +98,7 @@ class App extends React.Component {
                       ['menu']: <Menu itemData={this.props.itemData} addToCart={this.addToCart}/>,
                       ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
                       ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
+                      ['reset']: <Reset changePage={this.changePage} changeUser={this.changeUser} resetPassword={this.resetPassword}/>,
                       ['cart']: <Cart cart={this.state.cart}/>,
                      }[this.state.selectedPage]}
                     
