@@ -38,11 +38,12 @@ class Sign_In extends React.Component {
                          this.changePassword(this.refs.password_input.value)}} />
 
                     <br/>
-                    <button className = "button2" onClick={(a) => {a.preventDefault(); changeUser(this.state.userName, this.state.password); changePage('home')}}> Log In!</button>
-
+                    <button onClick={(a) => {a.preventDefault(); changeUser(this.state.userName, this.state.password); changePage('home')}}> Submit </button>
                     <br/>
-                    <button onClick={(a) => {a.preventDefault(); changePage('new_user')}}> New User? Click here to sign up. </button>
-
+                    <button onClick={(a) => {a.preventDefault(); changePage('new_user')}}> New User?  Click here to create your account. </button>
+                    
+                    <br/>
+                    <button onClick={(a) => {a.preventDefault(); changePage('reset')}}> Forgot password?  Click here. </button>
                 </div>
             </div>
         );
