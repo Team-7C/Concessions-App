@@ -1,7 +1,6 @@
 import React from 'react';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
 
-
 class Paypal extends React.Component {
 
 	render() {
@@ -36,13 +35,14 @@ class Paypal extends React.Component {
             // => sometimes it may take about 0.5 second for everything to get set, or for the button to appear
         }
  
-        let mode = 'sandbox'; // you can set here to 'production' for production
+        let env = 'sandbox'; // you can set here to 'production' for production
         let currency = 'USD'; // or you can set this value from your props or state
         
         // Document on Paypal's currency code: https://developer.paypal.com/docs/classic/api/currency_codes/
  
         const client = {
-            sandbox: 'AT_r2STBkN8RltKbdaFmtrXNGSJX0fFkHBfoKuduobCWA9tE5o9AV0L-J6Y3nC0D3F20cjKNpkiGkLjq'
+            sandbox: "AQwoZAAHsmA5vBLj_mZffS3NWJjNJODewuV2WakPm-BQilgsawTtnbLvWHNC73idcfiaHBOjaeTDkAS8",
+            production: 'YOUR-PRODUCTION-APP-ID',
         }
         
         // In order to get production's app-ID, you will have to send your app to Paypal for approval first
@@ -56,7 +56,7 @@ class Paypal extends React.Component {
         return (
 			<form>
 				<h4> {"Subtotal (" + num_items + " items): " + "$" + total.toFixed(2)} </h4>
-	            <PaypalExpressBtn mode={mode} client={client} currency={currency} total={total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} />
+	            <PaypalExpressBtn env={env} client={client} currency={currency} total={total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} />
 			</form>
 		);
 		
