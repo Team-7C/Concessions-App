@@ -12,92 +12,48 @@
     width: 30%;
     height: 45%;
     top: 10;
-    padding-top: 1em;
+    padding-top: 3em;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 0px;
+    border-radius: 10px;
     text-align: center;
     font-size: 18px;
 	position: fixed;
 	transform:translate(116%, 25%);
 }
-.form_sign_up{
-    background-color:rgba(255,255,255,0.9);
-    opacity: 1;
-    width: 30%;
-	height: 65%;
-    padding-top: 1em;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 0px;
-    text-align: center;
-    position: relative;
-    bottom: 0px;
-	font-size: 18px;
-	position: fixed;
-	transform:translate(116%,  -20%);
-}
-.banner-text h5{
-    font-size: 20px;
+
+.form h5{
+    font-size: 35px;
     font-weight: bold;
-    background-color: #ffffff;
 	color: black;
 }
 .form input[type='text'] {
-	margin: 1rem;
-	background: #fff;
-	font-size: 1.0rem;
-	border: none;
-	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-	border-radius: 3px;
-	padding: 0 1rem;
-	width: 40%;
-	height: 2rem;
+	width: 50%;
+	padding: 8px 15px;
+	margin: 5px;
+	border-radius: 5px;
 }
 .form input[type='password'] {
-	margin: 1rem;
-	background: #fff;
-	font-size: 1.0rem;
-	border: none;
-	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-	border-radius: 3px;
-	padding: 0 1rem;
-	width: 40%;
-	height: 2rem;
+	width: 50%;
+	padding: 8px 15px;
+	margin: 5px;
+	border-radius: 5px;
 }
-.form_sign_up input[type='text'] {
-	margin: 1rem;
-	background: #fff;
-	font-size: 1.0rem;
-	border: none;
-	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-	border-radius: 3px;
-	padding: 0 1rem;
-	width: 40%;
-	height: 2rem;
+
+.button2 {
+	padding: 19px 39px 18px 39px;
+	color: #FFF;
+	background-color: #238acf !important;
+	font-size: 18px;
+	text-align: center;
+	font-style: normal;
+	border-radius: 5px;
+	width: 50%;
+	border: 1px solid #238acf !important;
+	border-width: 1px 1px 3px;
+	box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+	margin: 10px;
 }
-.form_sign_up input[type='password'] {
-	margin: 1rem;
-	background: #fff;
-	font-size: 1.0rem;
-	border: none;
-	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-	border-radius: 3px;
-	padding: 0 1rem;
-	width: 40%;
-	height: 2rem;
-}
-button {
-	background: #d7d7d7;
-	color: #3b3b3b;
-	padding: 0.6rem 2rem;
-	font-size: 0.8rem;
-	border: solid 1px #c7c7c7;
-	margin: 1rem 0;
-	box-shadow: 20 6px 10px rgba(0, 0, 1, 0.5);
-	border-radius: 30px;
-	outline: none;
-}
-button:hover {
+.button:hover {
 	background: #ddd;
 }

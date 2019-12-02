@@ -17,7 +17,7 @@ class App extends React.Component {
                 <div class="hero-section">
 
                   <div class="hero-text mdl-typography--text-center">
-                    <h1 class="mdl-typography--display-3 mdl-typography--font-regular">7C Concession App</h1>
+                    <h1 class="mdl-typography--display-4 mdl-typography--font-regular">Chomper</h1>
                       <p class="mdl-typography--headline">
                         It's Like Grubhub, but not really.
                       </p>
