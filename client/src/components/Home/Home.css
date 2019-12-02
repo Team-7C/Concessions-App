@@ -230,29 +230,7 @@ img {
     margin: 0.5em;
     border-radius: 50%;
   }
-  
-  /* CARDS SECTION */
-  
-  .cards-section {
-    padding: 5em 0;
-  }
-  
-  .mdl-card__title {
-    min-height: 300px;
-    color: white;
-  }
-  
-  .home-bringing-card .mdl-card__title {
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/234228/kitten-home.jpg') center / cover;
-  }
-  
-  .play-card .mdl-card__title {
-    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/234228/kitten-on-tree.jpg') center / cover;
-  }
-  
-  .image-card {
-    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/234228/image-card.jpg') center / cover;
-  }
+ 
   
   .image-card > .mdl-card__actions {
     height: 52px;
@@ -389,3 +367,21 @@ img {
   .mdl-mini-footer__link-list a {
     color: rgba(0, 0, 0, 0.54);
   }
+
+  .mdl-typography--display-3 {
+    font-family: "Futura";
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 50px;
+  }
+
+  .paragraphs {
+    font-family: "Futura";
+    font-size: 18px;
+    padding-top: 35px;
+    padding-right: 25px;
+    padding-left: 25px;
+
+  }
+
+ 

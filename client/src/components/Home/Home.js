@@ -30,7 +30,7 @@ class App extends React.Component {
                     <p class="mdl-typography--display-3">
                       Browse Your Options    
                     </p>
-                    <p>
+                    <p class="paragraphs">
                       Explore restaurants that deliver near you, or try yummy takeout fare. With a place for every taste, it’s easy to find food you crave.
                     </p>
                   </div>
@@ -48,7 +48,7 @@ class App extends React.Component {
                     <p class="mdl-typography--display-3">
                       Pick and Choose   
                     </p>
-                    <p>
+                    <p class="paragraphs">
                       Limitless options at your fingertips. Once you decide on what you want, add them to your cart with one simple click.
                     </p>
                   </div>
@@ -66,7 +66,7 @@ class App extends React.Component {
                     <p class="mdl-typography--display-3">
                       Confirm Your Order  
                     </p>
-                    <p>
+                    <p class="paragraphs">
                       Let us know you want your food. Wherever you're sitting, we'll tell our people where to deliver your food. Every time.
                     </p>
                   </div>
@@ -84,7 +84,7 @@ class App extends React.Component {
             </div>
             <Footer class="mdl-mini-footer mdl-color--grey-500">
               <div class="mdl-mini-footer__left-section">
-                <div class="mdl-logo">7C Concession App &ndash; designed by a lot of people</div>
+                <div class="mdl-logo">Chomper &ndash; designed by a lot of people</div>
                 <ul class="mdl-mini-footer__link-list">
                   
                 </ul>
