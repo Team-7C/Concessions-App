@@ -13,7 +13,6 @@ class Cart extends React.Component {
 
     render() {
         const cart = this.props.cart;
-
         return (
             <div id="mainContainer" className="maincart">
             

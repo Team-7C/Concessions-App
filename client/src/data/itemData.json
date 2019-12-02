@@ -71,7 +71,7 @@
             "id": 4,
             "vid": 2,
             "name": "Waffle Fries",
-            "type": "Side",
+            "type": "Snack",
             "base_price": 2.49,
             "addons": [
                 {
