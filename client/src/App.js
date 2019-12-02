@@ -72,7 +72,7 @@ class App extends React.Component {
         return (
         <div className="demo-big-content">
           <Layout fixedHeader>
-              <Header title={"Team 7C Concession App"} class = "mdl-color--orange-800">
+              <Header title={"Chomper"} class = "mdl-color--orange-800">
                     {this.menuItems()}
 
               </Header>
