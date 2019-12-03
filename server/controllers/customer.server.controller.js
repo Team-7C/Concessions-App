@@ -1,5 +1,4 @@
 /* This controller dictates how the customer data is handled with CRUD requests */
-//import { saltShaker, hashPass } from '../saltPasswords.js';
 
 var mongoose = require('mongoose'),
     crypto = require('crypto'),
@@ -62,7 +61,6 @@ exports.update = function(req, res) {
     /* Salt password before saving to database for security */ 
     var salt = saltShaker(20);
     customer.credentials.salt = salt;
-    customer.credentials.username = req.body.credentials.username;
     customer.credentials.password = hashPass(req.body.credentials.password, salt);
 
     customer.name = req.body.name;
