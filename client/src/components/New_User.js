@@ -77,8 +77,6 @@ class New_User extends React.Component {
                 
             </div>
 
-            
-
         );
     }
 }

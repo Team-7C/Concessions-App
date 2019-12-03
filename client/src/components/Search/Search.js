@@ -11,6 +11,7 @@ class Search extends React.Component {
 		return (
 			<div >
                 <p style = {{fontSize: '17px', fontStyle: 'italic'}}>SEARCH: &nbsp;
+                    <img src={ require('../../assets/search.png')} alt="search logo" className = "search_logo"/>
                     <input 
                         type="text" 
                         ref="search" 
@@ -21,6 +22,7 @@ class Search extends React.Component {
                     />
                 </p> 
                 <p style = {{fontSize: '17px', fontStyle: 'italic'}}>PRICE: &nbsp;
+                    <img src={ require('../../assets/price.png')} alt="price logo" className = "price_logo"/>
                     <NumberFormat
                         ref="min"
                         className="price" 
@@ -42,6 +44,7 @@ class Search extends React.Component {
                     />
                 </p>
                 <p style = {{fontSize: '17px', fontStyle: 'italic'}}>VENDOR: &nbsp;
+                    <img src={ require('../../assets/vendor.png')} alt="vendor logo" className = "vendor_logo"/>
                     <input 
                         type="text"
                         ref="ven"
