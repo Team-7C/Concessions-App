@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Menu/Menu.css';
+import './Cart.css';
 
 class CartItems extends React.Component {
 	render() {
@@ -15,8 +15,7 @@ class CartItems extends React.Component {
 			if(!item.name)
 			{
 				return(
-					<div>
-						<div>
+					<div className="itemCard">
 							<br/>
 							<a> Add On:  {item.desc}  </a>
 							<a> ${item.upcharge} </a>
@@ -26,11 +25,10 @@ class CartItems extends React.Component {
 						REMOVE 
 						</button>
 						</div>
-					</div>
 				)
 			} else {
 				return ( 
-					<div className="card">               
+					<div className="itemCard">               
 						<br/>
 						<a> {item.name}  </a>
 						<a> ${item.base_price} </a>
