@@ -39,15 +39,25 @@ class Checkbox extends React.Component {
 		return (
 			<div style = {{display: 'inline-block'}}>
                 <header className = "food">Filter by:</header>
-                <label className = "food"><input type="checkbox" onChange={() => {temp("Meal")}}/>Meal</label>
-                
-                <label className = "food"><input type="checkbox" onChange={() => {temp("Snack")}}/>Snack</label>
-                
-                <label className = "food"><input type="checkbox" onChange={() => {temp("Drink")}}/>Drink</label>
-                
-                <label className = "food"><input type="checkbox" onChange={() => {temp("Dessert")}}/>Dessert</label>
-                
-               <label className = "food"><input type="checkbox" onChange={() => {temp("Other")}}/>Other</label> 
+                <label className = "food">
+                    <input className="meal_logo" type="checkbox" onChange={() => {temp("Meal")}}/>Meal
+                    <img src={ require('../../assets/meal_box.png')} alt="meal logo" className = "meal_logo"/>
+                </label>
+                <label className = "food">
+                    <input className="snack" type="checkbox" onChange={() => {temp("Snack")}}/>Snack
+                    <img src={ require('../../assets/snack.png')} alt="snack logo" className = "snack_logo"/>
+                </label>
+                <label className = "food">
+                    <input type="checkbox" onChange={() => {temp("Drink")}}/>Drink
+                    <img src={ require('../../assets/drink.png')} alt="drink logo" className = "meal_logo"/>    
+                </label>
+                <label className = "food">
+                    <input type="checkbox" onChange={() => {temp("Dessert")}}/>Dessert
+                    <img src={ require('../../assets/dessert.png')} alt="dessert logo" className = "meal_logo"/>
+                </label>
+               <label className = "food">
+                   <input type="checkbox" onChange={() => {temp("Other")}}/>Other
+                </label> 
 			</div>
 		);
 	}
