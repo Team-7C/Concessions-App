@@ -11,6 +11,8 @@ import AdminVendor from "./components/Admin/AdminVendor.js";
 import AdminCustomer from "./components/Admin/AdminCustomer.js";
 import AdminTransaction from "./components/Admin/AdminTransaction.js";
 
+import Admin from "./components/Admin/Admin.js";
+
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import './assets/home_food.jpg';
@@ -45,8 +47,6 @@ class App extends React.Component {
                     Home
                 </a>
                               
-                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'admin_display'})}}>Admin</a>
-                              
                 <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'menu'})}}>
                     <img src={ require('../src/assets/menu.png')} alt="menu logo" className = "cart_logo"/>
                         Menu
@@ -64,6 +64,7 @@ class App extends React.Component {
                 ) : (
                 <a href="/" onClick={(a) => {a.preventDefault(); this.changeUser('', ''); this.changePage('home')}}>Hello {this.state.username}, Sign Out</a>   
                 )}
+				<a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'admin'})}}>Admin</a>
 
             </Navigation>
         )
@@ -112,6 +113,7 @@ class App extends React.Component {
                     ):(null)} */}
                    {{
                       ['home']: <Home/>,
+					  ['admin']: <Admin changePage={this.changePage}/>,
                       ['admin_display']: <AdminDisplay changePage={this.changePage}/>,
                       ['admin_vendor']: <AdminVendor changePage={this.changePage}/>,
                       ['admin_cust']: <AdminCustomer changePage={this.changePage}/>,
