@@ -2,7 +2,7 @@ import React from 'react';
 import './AdminDisplay.css'
 
 var req = require('request'),
-    apiURL = 'http://chomperapp.herokuapp.com/api/customers', 
+    apiURL = 'http://chomperapp.herokuapp.com/api/customers/', 
     custys;
 
 req.get(apiURL, function(err, res, body)
@@ -18,7 +18,20 @@ class AdminCustomer extends React.Component {
         this.state = {
             isSelected: 1,
             selectedCustomer: '',
+            uid: '',
+		    credentials: {
+                username: '',  // encrypt for extra security?
+                password: '', // salt passwords for extra security?
+            },
+            name: '',
+            email: '',
+            phone: ''
         };
+        this.changeUsername = this.changeUsername.bind(this);
+        this.changePassword = this.changePassword.bind(this);
+        this.changeName = this.changeName.bind(this);
+        this.changeEmail = this.changeEmail.bind(this);
+        this.changePhone = this.changePhone.bind(this);
     }
 
     getCustomers() {
@@ -49,6 +62,27 @@ class AdminCustomer extends React.Component {
         req.del(apiURL + uid, this.getCustomers());
     }
     
+
+    changeUsername(val){
+        this.setState({userName: val});
+    }
+    
+    changePassword(val){
+        this.setState({password: val});;
+    }
+    
+    changeName(val){
+        this.setState({name: val});
+    }
+	
+	changeEmail(val){
+        this.setState({email: val});
+    }
+	
+	changePhone(val){
+        this.setState({phone: val});
+    }
+
     render() {
         const changePage = this.props.changePage;
 

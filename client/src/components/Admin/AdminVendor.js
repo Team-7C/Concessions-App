@@ -2,7 +2,9 @@ import React from 'react';
 import './AdminDisplay.css'
 import { isContext } from 'vm';
 
-var req = require('request'), vendys;
+var req = require('request'), 
+    count = 10,    
+    vendys;
 
 req.get('https://chomperapp.herokuapp.com/api/vendors', function(err, res, body)
 {
@@ -63,9 +65,10 @@ class AdminVendor extends React.Component {
 
     createVendor(user, pass, name, phone, email)
     {
+        console.log("Posted!");
         req.post('https://chomperapp.herokuapp.com/api/vendors', {
             json: {
-                vid: vendys.length + 1,
+                vid: count + 1,
                 credentials: {
                     username: user,
                     password: pass,
@@ -76,6 +79,7 @@ class AdminVendor extends React.Component {
                 email: email
             }
         }, this.getVendors());
+        count = count+1;
     }
 
     deleteVendor(vid)

@@ -16,7 +16,7 @@ class Admin extends React.Component {
         };
     }
 	
-	 changeUsername(val){
+	changeUsername(val){
         this.setState({userName: val});
     }
     
