@@ -7,6 +7,11 @@
 	height: 137%;
 }
 
+.mdl-cell mdl-cell--8-col {
+  overflow-y: auto;
+  height: 500px;
+}
+
 .row{
     width: 100%;
     top: 10%;

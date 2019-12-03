@@ -18,6 +18,9 @@ import './App.css';
 import {Layout, Header, Navigation, Drawer, Content, Footer} from 'react-mdl';
 
 
+var request = require('request'),
+    count = 10;
+
 class App extends React.Component {
     constructor(props) {
       super(props);
@@ -25,6 +28,7 @@ class App extends React.Component {
         selectedPage: 'home',
         username: '',
         password: '',
+        name: '',
         phone: '',
         email: '',
         cart: []
@@ -102,8 +106,22 @@ class App extends React.Component {
         this.setState({username: new_username, password: new_password});
         //should also retrieve phone and email from user
     }
-    createUser(new_user, new_password, new_phone, new_email){
-        this.setState({username: new_user, password: new_password, phone: new_phone, email: new_email});
+    createUser(user, pass, name, phone, email){
+        this.setState({username: user, password: pass, name: name, phone: phone, email: email});
+        request.post('https://chomperapp.herokuapp.com/api/customers', {
+            json: {
+                uid: count + 1,
+                credentials: {
+                    username: user,
+                    password: pass,
+                    salt: "w/e"
+                },
+                name: name,
+                phone: phone,
+                email: email
+            }
+        })
+        count = count + 1;
         //should also save user to database
     }
     resetPassword(email, phone, new_password) {

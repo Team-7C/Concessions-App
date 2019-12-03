@@ -47,8 +47,7 @@ class Reset extends React.Component {
         return (
             <div className="reset_main">
                 <div className="form_sign_up">
-                    <h5>Create a New Password</h5>
-                    <h9>Enter your email or phone number to confirm your account</h9>
+                    <h5>Reset Password</h5>
                     <br/>
                     <input 
                         type="text" 
@@ -88,7 +87,7 @@ class Reset extends React.Component {
                     <label> {this.state.message} </label>
                     
                     <br/>
-                    <button onClick={(a) => {
+                    <button id="myButton" onClick={(a) => {
                         a.preventDefault(); 
                         resetPassword(this.state.email, this.state.phone, this.state.newPassword); 
                         changePage('home')}}> Reset </button>

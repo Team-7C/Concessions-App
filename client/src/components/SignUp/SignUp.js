@@ -9,6 +9,7 @@ class SignUp extends React.Component {
             userName: '',
             password: '',
             confirmPassword: '',
+            name: '',
             phone: '',
             email: '',
             message: ''
@@ -50,6 +51,10 @@ class SignUp extends React.Component {
         this.setState({email: val});
     }
     
+    changeName(val){
+        this.setState({name: val});
+    }
+
     render() {
         const changeUser = this.props.changeUser;
         const changePage = this.props.changePage;
@@ -58,10 +63,10 @@ class SignUp extends React.Component {
         return (
             <div className="signup_main">
                 <div className="form_sign">
-                    <h5>Create a New Account</h5>
+                    <h5>Create an Account</h5>
 
                     <label>Username:</label>
-                    <input type="text" ref="username_input" onChange={() => {
+                    <input type="username" ref="username_input" onChange={() => {
                         this.changeUsername(this.refs.username_input.value)}} />
                     <br/>
                     <label>Password:</label>
@@ -74,15 +79,21 @@ class SignUp extends React.Component {
                     <br/>
                     <label> {this.state.message} </label>
                     <br/>
+                    <label>Name:</label>
+                    <input id="otherType" ref="name_input" onChange={() => {
+                        this.changeName(this.refs.name_input.value)}} />
+                    <br/>
                     <label>Email:</label>
-                    <input type="text" ref="email_input" onChange={() => {
+                    <input id="otherType" ref="email_input" onChange={() => {
                         this.changeEmail(this.refs.email_input.value)}} />
                     <br/>
                     <label>Phone Number:</label>
-                    <input type="text" ref="phone_input" onChange={() => {
+                    <input id="otherType" ref="phone_input" onChange={() => {
                         this.changePhone(this.refs.phone_input.value)}} />
                     <br/>
-                    <button className = "button3" onClick={(a) => {a.preventDefault(); createUser(this.state.userName, this.state.password, this.state.phone, this.state.email); changePage('home')}}> Sign Up! </button>
+                    <button className = "button3" onClick={(a) => {a.preventDefault(); 
+                        createUser(this.state.userName, this.state.password, this.state.name, this.state.phone, this.state.email); 
+                        changePage('home')}}> Sign Up! </button>
                 </div>
             </div>
         );
