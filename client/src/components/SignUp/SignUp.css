@@ -10,14 +10,14 @@
     background-color:rgba(255,255,255,0.9);
     opacity: 1;
     width: 30%;
-	height: 65%;
+	height: 80%;
     padding-top: 1em;
     margin-left: auto;
     margin-right: auto;
     border-radius: 0px;
     text-align: center;
     position: relative;
-    bottom: 0px;
+    top: 30%;
 	font-size: 18px;
 	position: fixed;
 	transform:translate(116%,  -20%);
