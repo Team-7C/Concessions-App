@@ -28,7 +28,7 @@ class Cart extends React.Component {
                     <h5>Cart</h5>
                     <div id="itemsBox" className="itemsBox">
                         <br/>
-                        <div id="items" class="mdl-cell mdl-cell--8-col">
+                        <div id="items" class="mdl-cell mdl-cell--12-col">
                             <ItemList cart={cart} cartRemove={cartRemove}/> 
                         </div>
                     </div>
