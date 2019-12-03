@@ -142,6 +142,7 @@ input[type='text'] {
     overflow: hidden;
     padding: 10px;
   }
+
   .card:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     cursor: pointer;
@@ -187,6 +188,7 @@ input[type='text'] {
   .player .info {
     flex-direction: column;
     align-items: flex-start;
+    position: fixed;
     flex-grow: 4;
     margin-left: 5px;
     font-weight: 400;
