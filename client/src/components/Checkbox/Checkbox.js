@@ -1,6 +1,5 @@
 import React from 'react';
 import './Checkbox.css'
-import NumberFormat from 'react-number-format';
 
 
 class Checkbox extends React.Component {

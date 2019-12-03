@@ -35,6 +35,7 @@ class App extends React.Component {
         this.createUser = this.createUser.bind(this);
         this.resetPassword = this.resetPassword.bind(this);
         this.addToCart = this.addToCart.bind(this);
+        this.removeFromCart = this.removeFromCart.bind(this);
     }
 
   menuItems(){
@@ -71,6 +72,16 @@ class App extends React.Component {
 
     addToCart(item){
         this.state.cart.push(item);
+    }
+
+    removeFromCart(item) {
+        for (var i = 0; i < this.state.cart.length; i++) {
+            if (this.state.cart[i].name === item) {
+                this.state.cart.splice(i, 1);
+                break;
+            }
+        }
+        this.changePage('cart');
     }
     
     changePage(new_val){
@@ -120,7 +131,7 @@ class App extends React.Component {
                       ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
                       ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
                       ['reset']: <Reset changePage={this.changePage} changeUser={this.changeUser} resetPassword={this.resetPassword}/>,
-                      ['cart']: <Cart cart={this.state.cart}/>,
+                      ['cart']: <Cart cart={this.state.cart} removeItem={this.removeFromCart} changePage={this.changePage}/>,
                      }[this.state.selectedPage]}
                     
               </Content>
