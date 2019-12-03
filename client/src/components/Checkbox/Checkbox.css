@@ -8,3 +8,21 @@
     margin-top: 10px;
     font-style: italic;
 }
+
+.meal_logo {
+    height: 15px;
+    width: 15px;
+    display: inline;
+    background-repeat:no-repeat;
+    background-position:left top;  
+    padding-left:10px;
+}
+
+.snack_logo {
+    height: 15px;
+    width: 15px;
+    display: inline;
+    background-repeat:no-repeat;
+    background-position:left top;  
+    padding-left:10px;
+}

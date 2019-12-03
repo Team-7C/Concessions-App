@@ -2,3 +2,27 @@
     box-shadow: 10px 10px;
     background-color: lightskyblue;
 }
+
+.search_logo {
+    height: 30px;
+    width: 30px;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 0px;
+}
+
+.price_logo {
+    height: 55px;
+    width: 55px;
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-right: 0px;
+}
+
+.vendor_logo {
+    height: 35px;
+    width: 35px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 0px;
+}
