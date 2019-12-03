@@ -10,11 +10,11 @@ class AdminDisplay extends React.Component {
 
         return (
             <div className="adminMain">
-                <div className = "form">
-                    <h>Admin Portal</h>
+                <div className = "formy">
+                    <h5>Admin Portal</h5>
                     <div>
-                    <button class = "myBtn" onClick={(a) => {a.preventDefault(); changePage('admin_vendor')}}>Manage Vendors</button>
-                    <button class = "myBtn" onClick={(a) => {a.preventDefault(); changePage('admin_cust')}}>Manage Customers</button>
+                    <button id = "myButton" onClick={(a) => {a.preventDefault(); changePage('admin_vendor')}}>Manage Vendors</button>
+                    <button id = "myButton" onClick={(a) => {a.preventDefault(); changePage('admin_cust')}}>Manage Customers</button>
                     </div>
                 </div>
             </div>
