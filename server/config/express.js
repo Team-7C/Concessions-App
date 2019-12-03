@@ -1,11 +1,13 @@
 const path = require('path'),
     express = require('express'),
+    cors = require('cors'),
     mongoose = require('mongoose'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     customerRouter = require('../routes/customer.server.routes');
     itemsRouter = require('../routes/item.server.routes');
     vendorsRouter = require('../routes/vendor.server.routes');
+    transactionsRouter = require('../routes/transaction.server.routes');
 
 module.exports.init = () => {
 
@@ -18,6 +20,15 @@ module.exports.init = () => {
 
     // initialize app
     const app = express();
+
+    // Enable CORS for client to use server API
+    app.use(cors());
+
+    app.use(function(req, res, next) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        // res.setHeader('Access-Control-Allow-Headers',' Origin, X-Requested-With, Content-Type, Accept');
+        next();
+    });
 
     // enable request logging for development debugging
     app.use(morgan('dev'));
@@ -33,6 +44,9 @@ module.exports.init = () => {
 
     // Vendor API router
     app.use('/api/vendors', vendorsRouter);
+
+    // Transaction API router
+    app.use('/api/transactions', transactionsRouter);
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files

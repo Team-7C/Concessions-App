@@ -15,6 +15,8 @@ class ItemList extends React.Component {
         var drink = this.props.drink
         var dessert = this.props.dessert
         var other = this.props.other
+        var extras = [];
+
         console.log(meal)
      
         function contains(object) {
@@ -56,50 +58,64 @@ class ItemList extends React.Component {
 		const filtered = data.filter(contains)
         const filtered2 = filtered.filter(price)
         const filtered3 = filtered2.filter(myType)
-        
-        
-		const itemList = filtered3.map(item => {
+
+        //console.log("filtered3 results",filtered3)
+
+        function findExtras(item, number) {
+            console.log(number)
+            console.log(item.addons[number])
+            if(item.addons[number]){
+                return(
+                    <div className = "card">
+                    <div className = "info">
+                        <div className = "name">{item.addons[number].desc}</div>
+                        <div className = "position">${item.addons[number].upcharge}</div>
+                        <input type="checkbox" onChange={() => addToCart(cloneDeep(item.addons[number]))}/>
+                    </div>
+                </div>
+                );  
+            }    
+        }
+
+        const extraList = filtered3.map(items => {
+            items.addons.map(addons => {
+                console.log(addons)
+                
+            })
+		});
+
+		const itemList = filtered3.map(items => {
 			return (                
                 <div className = "card">
                     <div className = "info">
-                        <div className = "name">{item.name}</div>
-                        <div className = "position">${item.base_price}</div>
-                        <button onClick={(a) => {a.preventDefault(); addToCart(cloneDeep(item))}}> Add to Cart </button>
-
-                        <label class="btn" for="modal-1">Extra Options</label>
-                            <input class="modal-state" id="modal-1" type="checkbox" />
-                            <div class="modal">
-                                <label class="modal__bg" for="modal-1"></label>
-                                <div class="modal__inner">
-                                    <label class="modal__close" for="modal-1"></label>
-                                    <h2>Caaaats FTW!</h2>
-                                    <p><img src="https://i.imgur.com/HnrkBwB.gif" alt="" />Aliquam in sagittis nulla. Curabitur euismod diam eget risus venenatis, sed dictum lectus bibendum. Nunc nunc nisi, hendrerit eget nisi id, rhoncus rutrum velit. Nunc vel mauris dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam fringilla quis nisi eget imperdiet.</p>
-                                </div>
+                        <div className = "name">{items.name}</div>
+                        <div className = "position">${items.base_price}</div>
+                        <button class = "btn--blue" onClick={(a) => {a.preventDefault(); addToCart(cloneDeep(items))}}> Add to Cart </button>
+                        {/* modal code below... preferably the modal should show a card for each addon */}
+                        <label class="btn" for={items.id}>Extra Options</label>
+                        <input class="modal-state" id={items.id} type="checkbox" />
+                        <div class="modal">
+                            <label class="modal__bg" for={items.id}></label>
+                            <div class="modal__inner">
+                                <label class="modal__close" for={items.id}></label>
+                                <h2>{items.name} Extra Options:</h2>
+                                {findExtras(items,0)}
+                                {findExtras(items,1)}
+                                {findExtras(items,2)}
+                                {findExtras(items,3)}
+                                {findExtras(items,4)}
+                                <button className = "btn--blue3" onClick={(a) => {a.preventDefault(); addToCart(cloneDeep(items))}}> Add Main Item and Extras to Cart </button>
+                                {/*add someway to close modal by clicking button*/}
+                                <button className = "btn--blue2" onClick={(a) => {a.preventDefault();}}> Add Extras to Cart </button>
                             </div>
-            </div>
+                        </div>
+                    </div>
 
-
-
-
-                   
-
-                {/* <img 
-                 src={ require('../../assets/popcorn.PNG') } 
-                 alt="food background"
-                 className = "food_pic" 
-                />
-				<div className='rightcol' onClick={() => {
-				   }}>
-                       <br/>
-                       <a className='foodtext'> {item.name} </a>
-                        <br/>
-                        <a className='foodtext'> ${item.base_price} </a>
-                        <button onClick={(a) => {a.preventDefault(); addToCart(cloneDeep(item))}}> Add to Cart </button>
-				</div> */}
                 </div>
 			);
 		});
 
+        
 		return (<div>{itemList}</div>);
 	}
 }

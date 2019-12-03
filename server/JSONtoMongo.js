@@ -11,11 +11,13 @@ var fs = require('fs'),
 
     Customer = require('./models/customerSchema.js'), 
     Vendor = require('./models/vendorSchema.js'), 
-    Item = require('./models/itemSchema.js'), 
+    Item = require('./models/itemSchema.js'),
+    Transaction = require('./models/transactionSchema.js'),
 
     cust = require('../client/src/data/custData.json'),
     vend = require('../client/src/data/vendData.json'),
-    item = require('../client/src/data/itemData.json');
+    item = require('../client/src/data/itemData.json'),
+    transaction = require('../client/src/data/tranData.json');
 
 /* Connect to your database using mongoose - remember to keep your key secret*/
 
@@ -87,6 +89,20 @@ for (var i = 0; i < item.items.length; i++) {
     type : item.items[i].type,
     base_price : item.items[i].base_price,
     addons : item.items[i].addons
+  });
+
+  newEntry.save(function(err) {
+    if (err) throw err;
+  });
+}
+
+for (var i = 0; i < transaction.transactions.length; i++) {
+  var newEntry = Transaction({
+    tid : transaction.transactions[i].tid,    
+    uid : transaction.transactions[i].uid,
+    items : transaction.transactions[i].items,
+    subtotal : transaction.transactions[i].subtotal,
+    time : transaction.transactions[i].time
   });
 
   newEntry.save(function(err) {
