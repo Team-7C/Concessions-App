@@ -25,9 +25,8 @@ class Cart extends React.Component {
             <div id="mainContainer" className="maincart">
             
                 <div id="cartBox" className="cartBox">
-                    <div><b id="cartTitle">Cart</b></div>
+                    <h5>Cart</h5>
                     <div id="itemsBox" className="itemsBox">
-                        <b id="confirmTitle">Please confirm your purchases:</b>
                         <br/>
                         <div id="items" class="mdl-cell mdl-cell--8-col">
                             <ItemList cart={cart} cartRemove={cartRemove}/> 

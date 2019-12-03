@@ -61,7 +61,7 @@ class Paypal extends React.Component {
 		
         return (
 			<form>
-				<h4> {"Subtotal (" + num_items + " items): " + "$" + total.toFixed(2)} </h4>
+				<h4 id="subtotal"> {"Subtotal (" + num_items + " items): " + "$" + total.toFixed(2)} </h4>
 	            <PaypalExpressBtn env={env} client={client} currency={currency} total={total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} />
 			</form>
 		);
