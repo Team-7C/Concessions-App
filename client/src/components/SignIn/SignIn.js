@@ -67,6 +67,7 @@ class Sign_In extends React.Component {
 
                     <br/>
                     <button onClick={(a) => {a.preventDefault(); checkLogin(this.state.username, this.state.password); /*changeUser(this.state.userName, this.state.password); changePage('home')*/}}> Submit </button>
+
                     <br/>
                     <button onClick={(a) => {a.preventDefault(); changePage('new_user')}}> New User?  Click here to create your account. </button>
                     
