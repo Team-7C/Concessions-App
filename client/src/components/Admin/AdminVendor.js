@@ -9,7 +9,7 @@ class AdminVendor extends React.Component {
         return (
             <div className="adminMain">
                 <div className = "box">
-                    <h class="newTitle">Manage Vendors</h>
+                    <h className = "newTitle">Manage Vendors</h>
                     <p></p>
 
                 </div>

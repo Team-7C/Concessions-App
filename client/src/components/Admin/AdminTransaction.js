@@ -8,8 +8,8 @@ class AdminTransaction extends React.Component {
 
         return (
             <div className="adminMain">
-                <div className = "form">
-                    <h>Manage Transactions</h>
+                <div className = "box">
+                    <h className = "newTitle">Manage Transactions</h>
                     <p></p>
 
                 </div>

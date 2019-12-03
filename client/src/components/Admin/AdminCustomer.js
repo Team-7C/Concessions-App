@@ -4,12 +4,13 @@ import './AdminDisplay.css'
 class AdminCustomer extends React.Component {
 
     render() {
+        const data = this.props.items;
         const changePage = this.props.changePage;
 
         return (
             <div className="adminMain">
                 <div className = "box">
-                    <h>Manage Customers</h>
+                    <h className = "newTitle">Manage Customers</h>
                     <p></p>
 
                 </div>
