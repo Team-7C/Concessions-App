@@ -352,7 +352,7 @@ input[type='text'] {
   border-radius: 3px;
   position: absolute;
   right: 20px;
-  bottom: 20px;
+  bottom: 50px;
 }
 
 .btn--blue2:hover,
@@ -361,6 +361,27 @@ input[type='text'] {
 }
 
 .btn--blue2:active {
+  background: #2980b9;
+}
+.btn--blue3 {
+  cursor: pointer;
+  background: #2980b9;
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+  color: #fff;
+  border-radius: 3px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.btn--blue3:hover,
+.btn--blue3:focus {
+  background: #3498db;
+}
+
+.btn--blue3:active {
   background: #2980b9;
 }
 p img {

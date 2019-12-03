@@ -76,7 +76,7 @@ class ItemList extends React.Component {
                 );  
             }    
         }
-        
+
         const extraList = filtered3.map(items => {
             items.addons.map(addons => {
                 console.log(addons)
@@ -104,7 +104,9 @@ class ItemList extends React.Component {
                                 {findExtras(items,2)}
                                 {findExtras(items,3)}
                                 {findExtras(items,4)}
-                                <button className = "btn--blue2" onClick={(a) => {a.preventDefault(); addToCart(cloneDeep(items))}}> Add Main Item and Extras to Cart </button>
+                                <button className = "btn--blue3" onClick={(a) => {a.preventDefault(); addToCart(cloneDeep(items))}}> Add Main Item and Extras to Cart </button>
+                                {/*add someway to close modal by clicking button*/}
+                                <button className = "btn--blue2" onClick={(a) => {a.preventDefault();}}> Add Extras to Cart </button>
                             </div>
                         </div>
                     </div>
