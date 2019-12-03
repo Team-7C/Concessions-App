@@ -9,7 +9,6 @@ import Cart from "./components/Cart/Cart.js";
 import AdminDisplay from "./components/Admin/AdminDisplay.js";
 import AdminVendor from "./components/Admin/AdminVendor.js";
 import AdminCustomer from "./components/Admin/AdminCustomer.js";
-import AdminTransaction from "./components/Admin/AdminTransaction.js";
 
 import Admin from "./components/Admin/Admin.js";
 
@@ -128,7 +127,6 @@ class App extends React.Component {
                       ['admin_display']: <AdminDisplay changePage={this.changePage}/>,
                       ['admin_vendor']: <AdminVendor changePage={this.changePage}/>,
                       ['admin_cust']: <AdminCustomer changePage={this.changePage}/>,
-                      ['admin_tran']: <AdminTransaction changePage={this.changePage}/>,
                       ['menu']: <Menu itemData={this.props.itemData} addToCart={this.addToCart}/>,
                       ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
                       ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
