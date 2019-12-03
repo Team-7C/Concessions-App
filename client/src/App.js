@@ -6,6 +6,11 @@ import Sign_In from "./components/SignIn/SignIn.js";
 import New_User from "./components/SignUp/SignUp.js";
 import Reset from "./components/Reset/Rest"
 import Cart from "./components/Cart/Cart.js";
+import AdminDisplay from "./components/Admin/AdminDisplay.js";
+import AdminVendor from "./components/Admin/AdminVendor.js";
+import AdminCustomer from "./components/Admin/AdminCustomer.js";
+import AdminTransaction from "./components/Admin/AdminTransaction.js";
+
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import './assets/home_food.jpg';
@@ -36,6 +41,8 @@ class App extends React.Component {
         return (
             <Navigation alt="Navigation Bar" className = "nav_bar">
                 <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'home'})}}>Home</a>
+
+                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'admin_display'})}}>Admin</a>
 
                 <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'menu'})}}>Menu</a>
                 <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'cart'})}}>
@@ -95,6 +102,10 @@ class App extends React.Component {
                     ):(null)} */}
                    {{
                       ['home']: <Home/>,
+                      ['admin_display']: <AdminDisplay changePage={this.changePage}/>,
+                      ['admin_vendor']: <AdminVendor changePage={this.changePage}/>,
+                      ['admin_cust']: <AdminCustomer changePage={this.changePage}/>,
+                      ['admin_tran']: <AdminTransaction changePage={this.changePage}/>,
                       ['menu']: <Menu itemData={this.props.itemData} addToCart={this.addToCart}/>,
                       ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
                       ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
