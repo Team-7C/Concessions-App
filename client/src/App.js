@@ -35,15 +35,23 @@ class App extends React.Component {
   menuItems(){
         return (
             <Navigation alt="Navigation Bar" className = "nav_bar">
-                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'home'})}}>Home</a>
-
-                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'menu'})}}>Menu</a>
+                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'home'})}}>
+                    <img src={ require('../src/assets/home.png')} alt="home logo" className = "cart_logo"/>
+                    Home
+                </a>
+                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'menu'})}}>
+                    <img src={ require('../src/assets/menu.png')} alt="menu logo" className = "cart_logo"/>
+                        Menu
+                </a>
                 <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'cart'})}}>
-                <img src={ require('../src/assets/shopping_cart.png')} alt="cart logo" className = "cart_logo"/>
-                Cart 
+                    <img src={ require('../src/assets/shopping_cart.png')} alt="cart logo" className = "cart_logo"/>
+                    Cart 
                 </a>
                 { this.state.username === '' ? (
-                    <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'sign'})}}>Sign In</a>
+                    <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'sign'})}}>
+                        <img src={ require('../src/assets/signin.png')} alt="signin logo" className = "cart_logo"/>
+                        Sign In
+                    </a>
                 ) : (
                 <a href="/" onClick={(a) => {a.preventDefault(); this.changeUser('', ''); this.changePage('home')}}>Hello {this.state.username}, Sign Out</a>   
                 )}
@@ -80,7 +88,7 @@ class App extends React.Component {
         return (
         <div className="demo-big-content">
           <Layout fixedHeader>
-              <Header title={"Chomper"} className = "mdl-color--orange-800">
+              <Header title={"Chomper"} class = "mdl-color--orange-800">
                     {this.menuItems()}
 
               </Header>
