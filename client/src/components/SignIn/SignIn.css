@@ -7,17 +7,16 @@
 }
 
 .form{
-    background-color:rgba(255,255,255,0.9);
-    opacity: 1;
-    width: 30%;
-    height: 45%;
-    top: 10;
-    padding-top: 3em;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 18px;
+  background-color:rgba(255,255,255,0.9);
+  opacity: 1;
+  width: 30%;
+  top: 10;
+  height: 75%;
+  padding-top: 3em;
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 18px;
 	position: fixed;
 	transform:translate(116%, 25%);
 }
@@ -40,7 +39,7 @@
 	border-radius: 5px;
 }
 
-.button2 {
+.form-button2 {
 	padding: 19px 39px 18px 39px;
 	color: #FFF;
 	background-color: #238acf !important;
@@ -54,6 +53,6 @@
 	box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
 	margin: 10px;
 }
-.button:hover {
+.form-button2:hover {
 	background: #ddd;
 }

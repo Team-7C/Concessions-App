@@ -13,6 +13,7 @@ class Cart extends React.Component {
 
     render() {
         const cart = this.props.cart;
+        console.log("current cart items", cart)
         return (
             <div id="mainContainer" className="maincart">
             

@@ -6,6 +6,13 @@ import Sign_In from "./components/SignIn/SignIn.js";
 import New_User from "./components/SignUp/SignUp.js";
 import Reset from "./components/Reset/Rest"
 import Cart from "./components/Cart/Cart.js";
+import AdminDisplay from "./components/Admin/AdminDisplay.js";
+import AdminVendor from "./components/Admin/AdminVendor.js";
+import AdminCustomer from "./components/Admin/AdminCustomer.js";
+import AdminTransaction from "./components/Admin/AdminTransaction.js";
+
+import Admin from "./components/Admin/Admin.js";
+
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import './assets/home_food.jpg';
@@ -35,18 +42,29 @@ class App extends React.Component {
   menuItems(){
         return (
             <Navigation alt="Navigation Bar" className = "nav_bar">
-                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'home'})}}>Home</a>
+                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'home'})}}>
+                    <img src={ require('../src/assets/home.png')} alt="home logo" className = "cart_logo"/>
+                    Home
+                </a>
+                              
+                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'menu'})}}>
+                    <img src={ require('../src/assets/menu.png')} alt="menu logo" className = "cart_logo"/>
+                        Menu
+                </a>
 
-                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'menu'})}}>Menu</a>
                 <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'cart'})}}>
-                <img src={ require('../src/assets/shopping_cart.png')} alt="cart logo" className = "cart_logo"/>
-                Cart 
+                    <img src={ require('../src/assets/shopping_cart.png')} alt="cart logo" className = "cart_logo"/>
+                    Cart 
                 </a>
                 { this.state.username === '' ? (
-                    <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'sign'})}}>Sign In</a>
+                    <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'sign'})}}>
+                        <img src={ require('../src/assets/signin.png')} alt="signin logo" className = "cart_logo"/>
+                        Sign In
+                    </a>
                 ) : (
                 <a href="/" onClick={(a) => {a.preventDefault(); this.changeUser('', ''); this.changePage('sign')}}>Hello, {this.state.username} | Sign Out</a>   
                 )}
+				<a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'admin'})}}>Admin</a>
 
             </Navigation>
         )
@@ -80,7 +98,7 @@ class App extends React.Component {
         return (
         <div className="demo-big-content">
           <Layout fixedHeader>
-              <Header title={"Chomper"} class = "mdl-color--orange-800">
+              <Header title={"Chomper"} className = "mdl-color--orange-800">
                     {this.menuItems()}
 
               </Header>
@@ -95,6 +113,11 @@ class App extends React.Component {
                     ):(null)} */}
                    {{
                       ['home']: <Home/>,
+					  ['admin']: <Admin changePage={this.changePage}/>,
+                      ['admin_display']: <AdminDisplay changePage={this.changePage}/>,
+                      ['admin_vendor']: <AdminVendor changePage={this.changePage}/>,
+                      ['admin_cust']: <AdminCustomer changePage={this.changePage}/>,
+                      ['admin_tran']: <AdminTransaction changePage={this.changePage}/>,
                       ['menu']: <Menu itemData={this.props.itemData} addToCart={this.addToCart}/>,
                       ['sign']: <Sign_In changePage={this.changePage} changeUser={this.changeUser}/>,
                       ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
