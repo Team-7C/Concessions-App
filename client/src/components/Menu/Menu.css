@@ -1,9 +1,10 @@
 .menuMain {
   background-image: url("../../assets/menu_burger.jpg");
 	background-size: cover;
-	background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  position: absolute;
 	width: 100%;
-	height: 100%;
+	height: 137%;
 }
 
 .row{
@@ -15,7 +16,7 @@
     width: 25%;
     height: 100%;
 	padding: 0% 2%;
-    background-Color: rgba(255,255,255, .9);
+    background-Color: rgba(141, 26, 26, 0.9);
     position: relative;
     color: black;
 }

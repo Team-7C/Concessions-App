@@ -19,18 +19,19 @@ class SignUp extends React.Component {
         this.setState({userName: val});
     }
     
-    changePassword(val){
+    async changePassword(val){
         this.setState({password: val});
+        await this.props.changePage('new_user')
         this.checkPassword();
     }
     
-    changeConfirmPassword(val){
+    async changeConfirmPassword(val){
         this.setState({confirmPassword: val});
+        await this.props.changePage('new_user')
         this.checkPassword();
     }
     
     checkPassword(){
-        
         if (this.state.password === this.state.confirmPassword)
         {
             this.setState({message: ""})
@@ -56,7 +57,7 @@ class SignUp extends React.Component {
 
         return (
             <div className="signup_main">
-                <div className="form_sign_up">
+                <div className="form_sign">
                     <h5>Create a New Account</h5>
 
                     <label>Username:</label>
