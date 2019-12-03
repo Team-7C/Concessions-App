@@ -6,6 +6,7 @@ import Sign_In from "./components/SignIn/SignIn.js";
 import New_User from "./components/SignUp/SignUp.js";
 import Reset from "./components/Reset/Rest"
 import Cart from "./components/Cart/Cart.js";
+import Admin from "./components/Admin/Admin.js"
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import './assets/home_food.jpg';
@@ -47,6 +48,7 @@ class App extends React.Component {
                 ) : (
                 <a href="/" onClick={(a) => {a.preventDefault(); this.changeUser('', ''); this.changePage('home')}}>Hello {this.state.username}, Sign Out</a>   
                 )}
+				<a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'admin'})}}>Admin</a>
 
             </Navigation>
         )
@@ -100,6 +102,7 @@ class App extends React.Component {
                       ['new_user']: <New_User changePage={this.changePage} changeUser={this.changeUser} createUser={this.createUser}/>,
                       ['reset']: <Reset changePage={this.changePage} changeUser={this.changeUser} resetPassword={this.resetPassword}/>,
                       ['cart']: <Cart cart={this.state.cart}/>,
+					  ['admin']: <Admin changePage={this.changePage}/>,
                      }[this.state.selectedPage]}
                     
               </Content>
