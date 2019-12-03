@@ -9,7 +9,6 @@ import Cart from "./components/Cart/Cart.js";
 import AdminDisplay from "./components/Admin/AdminDisplay.js";
 import AdminVendor from "./components/Admin/AdminVendor.js";
 import AdminCustomer from "./components/Admin/AdminCustomer.js";
-
 import Admin from "./components/Admin/Admin.js";
 
 import 'react-mdl/extra/material.css';
@@ -62,9 +61,13 @@ class App extends React.Component {
                         Sign In
                     </a>
                 ) : (
-                <a href="/" onClick={(a) => {a.preventDefault(); this.changeUser('', ''); this.changePage('sign')}}>Hello, {this.state.username} | Sign Out</a>   
+                <a href="/" onClick={(a) => {a.preventDefault(); this.changeUser('', ''); this.changePage('sign')}}>
+                    <img src={ require('../src/assets/signin.png')} alt="signin logo" className = "cart_logo"/>
+                    Hello, {this.state.username} | Sign Out</a>   
                 )}
-				<a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'admin'})}}>Admin</a>
+				<a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'admin'})}}>
+                    <img src={ require('../src/assets/key.png')} alt="key logo" className = "cart_logo"/>
+                    Admin</a>
 
             </Navigation>
         )
@@ -110,17 +113,8 @@ class App extends React.Component {
           <Layout fixedHeader>
               <Header title={"Chomper"} className = "mdl-color--orange-800">
                     {this.menuItems()}
-
               </Header>
-              
-              {/* <Drawer title="Navigation Bar">
-                    {this.menuItems()}
-              </Drawer> */}
-
               <Content>
-                    {/* { this.state.selectedPage !== 'menu' ? (
-                        <img src={ require('../src/assets/home_food.jpg') } alt="food background" className = "background-transparent"/>
-                    ):(null)} */}
                    {{
                       ['home']: <Home/>,
 					  ['admin']: <Admin changePage={this.changePage}/>,

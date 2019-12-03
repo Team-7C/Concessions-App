@@ -2,18 +2,14 @@ import React from 'react';
 import './AdminDisplay.css'
 import { isContext } from 'vm';
 
-var req = require('request');
-var vendys;
+var req = require('request'), vendys;
 
-req.get('http://chomperapp.herokuapp.com/api/vendors', function(err, res, body)
+req.get('https://chomperapp.herokuapp.com/api/vendors', function(err, res, body)
 {
     vendys = JSON.parse(body);
-})
-
-
+});
 
 class AdminVendor extends React.Component {
-
     
     constructor(props) {
         super(props);
@@ -36,7 +32,7 @@ class AdminVendor extends React.Component {
         this.changeEmail = this.changeEmail.bind(this);
         this.changePhone = this.changePhone.bind(this);
         this.createVendor = this.createVendor.bind(this);
-
+        this.deleteVendor = this.deleteVendor.bind(this);
     }
 
     changeUsername(val){
@@ -59,24 +55,38 @@ class AdminVendor extends React.Component {
         this.setState({phone: val});
     }
 
+    getVendors() {
+        req.get('https://chomperapp.herokuapp.com/api/vendors', function(err, res, body) {
+            vendys = JSON.parse(body);
+        });
+    }
+
     createVendor(user, pass, name, phone, email)
     {
-        /*req.post('http://chomperapp.herokuapp.com/api/vendors', function(err, res, body){
-            
-        })*/
-        console.log("yo");
+        console.log("Posting!");
+        req.post('https://chomperapp.herokuapp.com/api/vendors', {
+            json: {
+                vid: vendys.length + 1,
+                credentials: {
+                    username: user,
+                    password: pass,
+                    salt: "w/e"
+                },
+                name: name,
+                phone: phone,
+                email: email
+            }
+        }, this.getVendors());
     }
 
     deleteVendor(vid)
     {
-        req.del('http://chomperapp.herokuapp.com/api/vendors:vid', function(err, res, body){
-            
-        })
+        req.del('http://chomperapp.herokuapp.com/api/vendors/' + vid, this.getVendors());
     }
 
     render() {
         const changePage = this.props.changePage;
-
+        this.getVendors();
         if(this.state.isSelected === 1)
         {
             return (
@@ -88,7 +98,10 @@ class AdminVendor extends React.Component {
                         <ul>
                             {
                                 vendys.map(item => {
-                                    return <button className = "myBtn" onClick={(a) => {a.preventDefault(); this.setState({selectedVendor: item.name}); this.setState({isSelected: 2})}}>{item.name}</button>  
+                                    return <button className = "myBtn" onClick={(a) => {a.preventDefault(); 
+                                        this.setState({selectedVendor: item.name}); this.setState({isSelected: 2})}}>
+                                        {item.name}
+                                        </button>  
                                 })
                             }
                             <button className = "myBtn" onClick={(a) => {a.preventDefault(); this.setState({isSelected: 3})}}>Add New</button>
@@ -116,13 +129,15 @@ class AdminVendor extends React.Component {
                                                 <li> Identification: {item.vid} </li> 
                                                 <li> Phone: {item.phone} </li> 
                                                 <li> Email: {item.email} </li> 
-                                                <button className = "del" onClick={(a) => {a.preventDefault(); this.deleteVendor(item.vid)}}> Delete this vendor</button>
+                                                <button className = "del" onClick={(a) => {a.preventDefault(); this.deleteVendor(item.vid)}}> 
+                                                Delete this vendor
+                                                </button>
                                                 </>
                                             )
                                         }
                                     })
                                 }
-                            </ul>
+                        </ul>
                     </div>
                 </div>
             ); 
@@ -160,9 +175,12 @@ class AdminVendor extends React.Component {
                             this.changePhone(this.refs.phone_input.value)}} />
                         <br/>
                                                             
-                        <button className = "button3" onClick={(a) => {a.preventDefault(); this.createVendor(this.state.userName, this.state.password, this.state.name, this.state.phone, this.state.email); this.setState({isSelected: 1}); }}> Add Customer </button>
-                                            </div>
-                                        </div>
+                        <button className = "button3" onClick={(a) => {a.preventDefault(); 
+                            this.createVendor(this.state.userName, this.state.password, this.state.name, this.state.phone, this.state.email); this.setState({isSelected: 1}); 
+                        }}>
+                        Add Vendor</button>
+                    </div>
+                </div>
             ); 
         }
     }

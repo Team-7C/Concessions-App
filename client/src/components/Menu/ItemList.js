@@ -17,7 +17,7 @@ class ItemList extends React.Component {
         var other = this.props.other
         var extras = [];
 
-        console.log(meal)
+        // console.log(meal)
      
         function contains(object) {
 			return (object.name.toLowerCase()).includes(filtertext.toLowerCase());
@@ -79,7 +79,7 @@ class ItemList extends React.Component {
 
         const extraList = filtered3.map(items => {
             items.addons.map(addons => {
-                console.log(addons)
+                // console.log(addons)
                 
             })
 		});
