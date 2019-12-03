@@ -61,7 +61,6 @@ exports.update = function(req, res) {
     /* Salt password before saving to database for security */ 
     var salt = saltShaker(20);
     vendor.credentials.salt = salt;
-    vendor.credentials.username = req.body.credentials.username;
     vendor.credentials.password = hashPass(req.body.credentials.password, salt);
 
     vendor.name = req.body.name;

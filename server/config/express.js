@@ -6,6 +6,7 @@ const path = require('path'),
     customerRouter = require('../routes/customer.server.routes');
     itemsRouter = require('../routes/item.server.routes');
     vendorsRouter = require('../routes/vendor.server.routes');
+    transactionsRouter = require('../routes/transaction.server.routes');
 
 module.exports.init = () => {
 
@@ -33,6 +34,9 @@ module.exports.init = () => {
 
     // Vendor API router
     app.use('/api/vendors', vendorsRouter);
+
+    // Transaction API router
+    app.use('/api/transactions', transactionsRouter);
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files

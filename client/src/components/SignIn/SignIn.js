@@ -41,8 +41,10 @@ class Sign_In extends React.Component {
                     <button className = "form-button2" onClick={(a) => {a.preventDefault(); changeUser(this.state.userName, this.state.password); changePage('home')}}> Log In!</button>
 
                     <br/>
-                    <button onClick={(a) => {a.preventDefault(); changePage('new_user')}}> New User? Click here to sign up. </button>
-
+                    <button onClick={(a) => {a.preventDefault(); changePage('new_user')}}> New User?  Click here to create your account. </button>
+                    
+                    <br/>
+                    <button onClick={(a) => {a.preventDefault(); changePage('reset')}}> Forgot password?  Click here. </button>
                 </div>
             </div>
         );
