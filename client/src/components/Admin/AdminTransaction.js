@@ -9,6 +9,7 @@ class AdminTransaction extends React.Component {
         return (
             <div className="adminMain">
                 <div className = "box">
+                    <button className = "backBtn" onClick={(a) => {a.preventDefault(); changePage('admin_display')}}>Back</button>
                     <h className = "newTitle">Manage Transactions</h>
                     <p></p>
 
