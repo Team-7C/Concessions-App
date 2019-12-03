@@ -13,6 +13,12 @@ class Cart extends React.Component {
 
     render() {
         const cart = this.props.cart;
+        const removeItem = this.props.removeItem;
+
+        function cartRemove(item) {
+            removeItem(item);
+        }
+
         console.log("current cart items", cart)
         return (
             <div id="mainContainer" className="maincart">
@@ -22,7 +28,7 @@ class Cart extends React.Component {
                     <div id="itemsBox">
                         <b id="confirmTitle">Please confirm your purchases:</b>
                         <div id="items" className="items">
-                            <ItemList cart={cart}/> 
+                            <ItemList cart={cart} cartRemove={cartRemove}/> 
                         </div>
                     </div>
                     <div className="paypal"> 
