@@ -6,43 +6,45 @@
 	height: 100%;
 }
 
-.form{
-  background-color:rgba(255,255,255,0.9);
+.formy {
+  background-color:rgba(255,255,255);
   opacity: 1;
-  width: 30%;
-  top: 10;
-  height: 75%;
-  padding-top: 3em;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 550px;
+  padding-top: 1em;
   margin: auto;
   border-radius: 10px;
   text-align: center;
   font-size: 18px;
-	position: fixed;
-	transform:translate(116%, 25%);
+  position: absolute;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transform:translate(-50%, -60%);
 }
 
-.form h5{
+.formy h5{
     font-size: 35px;
     font-weight: bold;
 	color: black;
 }
-.form input[type='text'] {
+.formy input[type='username'] {
 	width: 50%;
 	padding: 8px 15px;
 	margin: 5px;
 	border-radius: 5px;
 }
-.form input[type='password'] {
+.formy input[type='password'] {
 	width: 50%;
 	padding: 8px 15px;
 	margin: 5px;
 	border-radius: 5px;
 }
 
-.form-button2 {
+#signButton {
 	padding: 19px 39px 18px 39px;
 	color: #FFF;
-	background-color: #238acf !important;
+	background-color: #238acf;
 	font-size: 18px;
 	text-align: center;
 	font-style: normal;
@@ -53,6 +55,45 @@
 	box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
 	margin: 10px;
 }
-.form-button2:hover {
-	background: #ddd;
+
+#signButton:hover{
+	background-color: rgb(49, 125, 175);
+}
+
+#newUserButton {
+	padding: 19px 39px 18px 39px;
+	color: #FFF;
+	background-color: #238acf;
+	font-size: 18px;
+	text-align: center;
+	font-style: normal;
+	border-radius: 5px;
+	width: 50%;
+	border: 1px solid #238acf !important;
+	border-width: 1px 1px 3px;
+	box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+	margin: 10px;
+}
+
+#newUserButton:hover{
+	background-color: rgb(49, 125, 175);
+}
+
+#resetButton {
+	padding: 19px 39px 18px 39px;
+	color: #FFF;
+	background-color: #238acf;
+	font-size: 18px;
+	text-align: center;
+	font-style: normal;
+	border-radius: 5px;
+	width: 50%;
+	border: 1px solid #238acf !important;
+	border-width: 1px 1px 3px;
+	box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+	margin: 10px;
+}
+
+#resetButton:hover{
+	background-color: rgb(49, 125, 175);
 }

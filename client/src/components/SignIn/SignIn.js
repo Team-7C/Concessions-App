@@ -105,13 +105,14 @@ class Sign_In extends React.Component {
 
         return (
             <div className="signin_main">
-                <div className = "form">
+                <div className = "formy">
                     <h5>Sign In</h5>
 
-                    <label> {this.state.message} </label>
-
+                    {this.state.message ? (
+                     <label> {this.state.message } </label>
+                    ) : (<br/>)}
                     <label>Username:</label>
-                    <input type="text" ref="username_input" onChange={() => {
+                    <input type="username" ref="username_input" onChange={() => {
                          this.changeUsername(this.refs.username_input.value)}} />
                     <br/>
 
@@ -120,13 +121,13 @@ class Sign_In extends React.Component {
                          this.changePassword(this.refs.password_input.value)}} />
 
                     <br/>
-                    <button onClick={(a) => {a.preventDefault(); this.checkLogin(); /*changeUser(this.state.username, this.state.password); changePage('home')*/}}> Submit </button>
+                    <button id="signButton" onClick={(a) => {a.preventDefault(); this.checkLogin(); /*changeUser(this.state.username, this.state.password); changePage('home')*/}}> Submit </button>
 
                     <br/>
-                    <button onClick={(a) => {a.preventDefault(); changePage('new_user')}}> New User?  Click here to create your account. </button>
+                    <button id="newUserButton" onClick={(a) => {a.preventDefault(); changePage('new_user')}}>Sign Up</button>
                     
                     <br/>
-                    <button onClick={(a) => {a.preventDefault(); changePage('reset')}}> Forgot password?  Click here. </button>
+                    <button id="resetButton" onClick={(a) => {a.preventDefault(); changePage('reset')}}>Reset Password</button>
                 </div>
             </div>
         );
