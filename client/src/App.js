@@ -9,7 +9,7 @@ import Cart from "./components/Cart/Cart.js";
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import './assets/home_food.jpg';
-import './App.css'
+import './App.css';
 import {Layout, Header, Navigation, Drawer, Content, Footer} from 'react-mdl';
 
 
@@ -88,7 +88,7 @@ class App extends React.Component {
         return (
         <div className="demo-big-content">
           <Layout fixedHeader>
-              <Header title={"Chomper"} class = "mdl-color--orange-800">
+              <Header title={"Chomper"} className = "mdl-color--orange-800">
                     {this.menuItems()}
 
               </Header>
