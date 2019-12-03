@@ -18,9 +18,9 @@
     text-align: center;
     position: relative;
     top: 30%;
-	font-size: 18px;
-	position: fixed;
-	transform:translate(116%,  -20%);
+    font-size: 18px;
+    position: fixed;
+    transform:translate(116%,  -20%);
 }
 .form_sign_up h5{
     font-size: 35px;

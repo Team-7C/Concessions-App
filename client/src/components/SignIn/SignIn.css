@@ -7,16 +7,16 @@
 }
 
 .form{
-    background-color:rgba(255,255,255,0.9);
-    opacity: 1;
-    width: 30%;
-    top: 10;
-    height: 75%;
-    padding-top: 3em;
-    margin: auto;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 18px;
+  background-color:rgba(255,255,255,0.9);
+  opacity: 1;
+  width: 30%;
+  top: 10;
+  height: 75%;
+  padding-top: 3em;
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 18px;
 	position: fixed;
 	transform:translate(116%, 25%);
 }
