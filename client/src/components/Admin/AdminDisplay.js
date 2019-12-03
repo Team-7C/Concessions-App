@@ -15,7 +15,6 @@ class AdminDisplay extends React.Component {
                     <div>
                     <button class = "myBtn" onClick={(a) => {a.preventDefault(); changePage('admin_vendor')}}>Manage Vendors</button>
                     <button class = "myBtn" onClick={(a) => {a.preventDefault(); changePage('admin_cust')}}>Manage Customers</button>
-                    <button class = "myBtn" onClick={(a) => {a.preventDefault(); changePage('admin_tran')}}>Manage Transactions</button>
                     </div>
                 </div>
             </div>
