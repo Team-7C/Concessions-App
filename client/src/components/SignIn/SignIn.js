@@ -107,10 +107,9 @@ class Sign_In extends React.Component {
             <div className="signin_main">
                 <div className = "formy">
                     <h5>Sign In</h5>
-
                     {this.state.message ? (
                      <label> {this.state.message } </label>
-                    ) : (<br/>)}
+                    ) : (<div/>)}
                     <label>Username:</label>
                     <input type="username" ref="username_input" onChange={() => {
                          this.changeUsername(this.refs.username_input.value)}} />

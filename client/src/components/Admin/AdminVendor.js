@@ -63,7 +63,6 @@ class AdminVendor extends React.Component {
 
     createVendor(user, pass, name, phone, email)
     {
-        console.log("Posting!");
         req.post('https://chomperapp.herokuapp.com/api/vendors', {
             json: {
                 vid: vendys.length + 1,
@@ -91,11 +90,11 @@ class AdminVendor extends React.Component {
         {
             return (
                 <div className="adminMain">
-                    <div className = "box">
-                        <button className = "backBtn" onClick={(a) => {a.preventDefault(); changePage('admin_display')}}>Back</button>
-                        <h className = "newTitle">Manage Vendors</h>
+                    <div className = "formy">
+                        <h5 className = "newTitle">Manage Vendors</h5>
                         <p></p>
-                        <ul>
+                        <ul className="boxy">
+                            <div id="scrollItems">
                             {
                                 vendys.map(item => {
                                     return <button className = "myBtn" onClick={(a) => {a.preventDefault(); 
@@ -104,8 +103,10 @@ class AdminVendor extends React.Component {
                                         </button>  
                                 })
                             }
-                            <button className = "myBtn" onClick={(a) => {a.preventDefault(); this.setState({isSelected: 3})}}>Add New</button>
+                            <button id = "myButton" onClick={(a) => {a.preventDefault(); this.setState({isSelected: 3})}}>Add New</button>
+                            </div>
                         </ul>
+                        <button id="myButton" onClick={(a) => {a.preventDefault(); changePage('admin_display')}}>Back</button>
                     </div>
                 </div>
             ); 
@@ -114,9 +115,8 @@ class AdminVendor extends React.Component {
         {
             return (
                 <div className="adminMain">
-                    <div className = "box">
-                        <button className = "backBtn" onClick={(a) => {a.preventDefault(); this.setState({isSelected: 1})}}>Back</button>
-                        <h className = "newTitle">Vendor Information</h>
+                    <div className = "formy">
+                        <h5 className = "newTitle">Vendor Information</h5>
                         <p></p>
                         <ul className="words">
                                 {
@@ -125,12 +125,14 @@ class AdminVendor extends React.Component {
                                         {
                                             return(
                                                 <>
-                                                <li font-family="Futura"> Name: {item.name} </li> 
-                                                <li> Identification: {item.vid} </li> 
-                                                <li> Phone: {item.phone} </li> 
-                                                <li> Email: {item.email} </li> 
-                                                <button className = "del" onClick={(a) => {a.preventDefault(); this.deleteVendor(item.vid)}}> 
-                                                Delete this vendor
+                                                <div id="wordHolder">
+                                                <li className="desc" font-family="Futura"> <b>Name:</b> {item.name} </li> 
+                                                <li className="desc"> <b>Identification:</b> {item.vid} </li> 
+                                                <li className="desc"> <b>Phone:</b> {item.phone} </li> 
+                                                <li className="desc"> <b>Email:</b> {item.email} </li>
+                                                </div>
+                                                <button id = "myButton" onClick={(a) => {a.preventDefault(); this.deleteVendor(item.vid)}}> 
+                                                Delete
                                                 </button>
                                                 </>
                                             )
@@ -138,6 +140,8 @@ class AdminVendor extends React.Component {
                                     })
                                 }
                         </ul>
+                        <button id = "myButton" onClick={(a) => {a.preventDefault(); this.setState({isSelected: 1})}}>Back</button>
+
                     </div>
                 </div>
             ); 
@@ -146,12 +150,11 @@ class AdminVendor extends React.Component {
         {
             return (
                 <div className="adminMain">
-                    <div className = "box">
-                    <button className = "backBtn" onClick={(a) => {a.preventDefault(); this.setState({isSelected: 1})}}>Back</button>
+                    <div className = "formy">
                     <h5>Add New Vendor</h5>
 
                         <label>Username:</label>
-                        <input type="text" ref="username_input" onChange={() => {
+                        <input type="username" ref="username_input" onChange={() => {
                             this.changeUsername(this.refs.username_input.value)}} />
                         <br/>
                                 
@@ -161,17 +164,17 @@ class AdminVendor extends React.Component {
                         <br/>
                                 
                         <label>Name:</label>
-                        <input type="password" ref="password_confirm_input"onChange={() => {
+                        <input id="otherType" ref="password_confirm_input"onChange={() => {
                             this.changeName(this.refs.password_confirm_input.value)}} />
                         <br/>
                                     
                         <label>Email:</label>
-                        <input type="text" ref="email_input" onChange={() => {
+                        <input id="otherType" ref="email_input" onChange={() => {
                             this.changeEmail(this.refs.email_input.value)}} />
                         <br/>
                                 
                         <label>Phone:</label>
-                        <input type="text" ref="phone_input" onChange={() => {
+                        <input id="otherType" ref="phone_input" onChange={() => {
                             this.changePhone(this.refs.phone_input.value)}} />
                         <br/>
                                                             

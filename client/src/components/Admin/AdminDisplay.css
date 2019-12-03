@@ -7,50 +7,54 @@
 }
 
 
-.form{
-    background-color:rgba(255,255,255,0.9);
-    opacity: 1;
-    width: 30%;
-    height: 35%;
-    top: 10;
-    padding-top: 3em;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 18px;
-	position: fixed;
-	transform:translate(116%, 25%);
+.formy{
+	background-color:rgba(255,255,255);
+	opacity: 1;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 550px;
+	padding-top: 1em;
+	margin: auto;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 18px;
+	position: absolute;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transform:translate(-50%, -60%);
 }
 
-.form h{
-	font-family: "Futura";
-    font-size: 35px;
+.formy h5{
+	font-size: 35px;
+	font-weight: bold;
 	color: black;
 	display: block;
-	padding-bottom: 10%;
+	padding-bottom: 5%;
 }
 .newTitle {
-	font-family: "Futura";
-	font-size: 30px;
+	font-size: 35px;
+	font-weight: bold;
 	color: black;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .myBtn {
-	font-family: "Futura";
-	font-size: 15px;
-	border-color: orange;
-	border-width: 2px;
-	width: auto;
-	display: inline-block;
-	margin-right: 5px;
-
+	padding: 10px 19px 10px 19px;
+	color: #FFF;
+	background-color: green;
+	font-size: 18px;
+	font-style: normal;
+	border-radius: 5px;
+	width: 50%;
+	border: 1px solid #238acf !important;
+	border-width: 1px 1px 3px;
+	box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+	margin: 10px;
 }
 
 .myBtn:hover {
-	opacity: 50%;
+	background-color: rgb(7, 139, 7);
 }
 
 .box{
@@ -63,28 +67,29 @@
 	position: absolute;
 	left: 50%;
 	top: 50%;
+	overflow-y: auto;
 	transform: translate(-50%, -50%);
 	padding-right: 20px;
 	padding-top: 15px;
 
 }
 
-.backBtn {
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin-top: 10px;
-	margin-left: 1px;
-	border: none;
-	background: none;
-	font-size: 18px;
-	font-family: "Futura";
+#scrollItems {
+	overflow-y: auto;
+	max-height: 340px;
+	margin: 5px;
 }
 
-.backBtn:hover {
-	border: none;
-	background: none;
+#wordHolder {
+	text-align: left;
+	transform: translateX(25%);
+	margin-bottom: 20px;
 }
+
+.desc {
+	font-size: 18px;
+}
+
  .del
  {
 	border: none;
@@ -93,6 +98,20 @@
 	font-family: "Futura";
  }
 
+ .boxy{
+	padding-left: 15px;
+ }
+
  .words{
 	 font-display: "Futura";
+	 padding-left: 0px;
+ }
+
+ #otherType {
+	 width: 50%;
+	 padding: 8px 15px;
+	 margin: 5px;
+	 border-radius: 5px;
+	 border-style: inset;
+	 border-width: 2px;
  }
