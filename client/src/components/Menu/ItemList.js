@@ -53,7 +53,6 @@ class ItemList extends React.Component {
                 );
             }
         }
-        
 
 		const filtered = data.filter(contains)
         const filtered2 = filtered.filter(price)
