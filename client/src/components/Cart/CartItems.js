@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Menu/Menu.css';
 
 class CartItems extends React.Component {
 	render() {
@@ -9,6 +10,7 @@ class CartItems extends React.Component {
 			itemRemove(item);
 		}
 		//add way to total item properly in screen
+
 		const itemList = data.map(item => {
 			if(!item.name)
 			{
@@ -16,16 +18,19 @@ class CartItems extends React.Component {
 					<div>
 						<div>
 							<br/>
-							<a> {item.desc}  </a>
+							<a> Add On:  {item.desc}  </a>
 							<a> ${item.upcharge} </a>
+							<button 
+							onClick={(a) => {a.preventDefault(); remove(item.name)}}
+						> 
+						REMOVE 
+						</button>
 						</div>
 					</div>
 				)
-			}
-
-			else{
+			} else {
 				return ( 
-					<div>               
+					<div className="card">               
 						<br/>
 						<a> {item.name}  </a>
 						<a> ${item.base_price} </a>

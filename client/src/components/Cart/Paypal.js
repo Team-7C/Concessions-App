@@ -11,8 +11,14 @@ class Paypal extends React.Component {
         const cart = this.props.cart;
 
         for(var i = 0; i < cart.length; i++){
-        console.log(cart[i]);
-        total += cart[i].base_price;
+            console.log(cart[i]);
+            if (cart[i].upcharge) {
+                total += cart[i].upcharge;
+                console.log("test" + cart[i].upcharge);
+            }
+            else {
+                total += cart[i].base_price;
+            }
             num_items++;
         }
     
@@ -41,7 +47,7 @@ class Paypal extends React.Component {
         // Document on Paypal's currency code: https://developer.paypal.com/docs/classic/api/currency_codes/
  
         const client = {
-            sandbox: "AQwoZAAHsmA5vBLj_mZffS3NWJjNJODewuV2WakPm-BQilgsawTtnbLvWHNC73idcfiaHBOjaeTDkAS8",
+            sandbox: "AQ3Wq7G7JNxvVPBFBmOdc-YXJo2eIXqKjFlRALYx-fPgPZy4kXscRk2_5mJyqdjtPmQlz8XxNwebDoeh",
             production: 'YOUR-PRODUCTION-APP-ID',
         }
         

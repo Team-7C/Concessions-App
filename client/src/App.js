@@ -40,6 +40,8 @@ class App extends React.Component {
     }
 
   menuItems(){
+
+
         return (
             <Navigation alt="Navigation Bar" className = "nav_bar">
                 <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'home'})}}>
@@ -52,10 +54,15 @@ class App extends React.Component {
                         Menu
                 </a>
 
-                <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'cart'})}}>
+                { this.state.cart.length > 0 ? 
+                (<a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'cart'})}}>
+                    <img src={ require('../src/assets/shopping_cart.png')} alt="cart logo" className = "cart_logo"/>
+                    Cart({this.state.cart.length}) </a>) : 
+                    (<a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'cart'})}}>
                     <img src={ require('../src/assets/shopping_cart.png')} alt="cart logo" className = "cart_logo"/>
                     Cart 
-                </a>
+                </a>)}
+  
                 { this.state.username === '' ? (
                     <a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'sign'})}}>
                         <img src={ require('../src/assets/signin.png')} alt="signin logo" className = "cart_logo"/>
@@ -72,6 +79,7 @@ class App extends React.Component {
 
     addToCart(item){
         this.state.cart.push(item);
+        this.changePage('menu');
     }
 
     removeFromCart(item) {

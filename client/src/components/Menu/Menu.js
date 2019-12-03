@@ -93,6 +93,7 @@ class Menu extends React.Component {
 
         return (
             <div className="menuMain">
+              <div className="menuContainer">
                 <div class="mdl-grid no-spacing" style = {{backgroundColor: "rgba(190, 190, 190, 0.6)"}}>
                     <div class="mdl-cell mdl-cell--4-col">
                         <div className = "section" style = {{textAlign:'center'}}>
@@ -131,6 +132,7 @@ class Menu extends React.Component {
                         />
                     </div>
                 </div>
+              </div>
             </div>
         );
     }

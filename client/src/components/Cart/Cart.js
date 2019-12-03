@@ -2,6 +2,7 @@ import React from 'react';
 import Paypal from './Paypal.js';
 import ItemList from './CartItems.js';
 import './Cart.css';
+import '../Menu/Menu.css'
 
 class Cart extends React.Component {
     constructor(props) {
@@ -23,15 +24,16 @@ class Cart extends React.Component {
         return (
             <div id="mainContainer" className="maincart">
             
-                <div id="cartBox">
+                <div id="cartBox" className="cartBox">
                     <div><b id="cartTitle">Cart</b></div>
-                    <div id="itemsBox">
+                    <div id="itemsBox" className="itemsBox">
                         <b id="confirmTitle">Please confirm your purchases:</b>
-                        <div id="items" className="items">
+                        <br/>
+                        <div id="items" class="mdl-cell mdl-cell--8-col">
                             <ItemList cart={cart} cartRemove={cartRemove}/> 
                         </div>
                     </div>
-                    <div className="paypal"> 
+                    <div className="paypal">
                          <Paypal cart={cart}/>
                     </div>
                     {/*<input id="checkoutButton" type="button" value="Checkout"
