@@ -2,16 +2,10 @@ import React from 'react';
 import './SignIn.css'
 
 var crypto = require('crypto'),
-    request = require('request');
-    //Customer = require('../../../../server/models/customerSchema.js'),
-    //Vendor = require('../../../../server/models/vendorSchema.js');
+    request = require('request'),
+    apiURL = 'https://chomperapp.herokuapp.com/api/';
 
-/*** Password Salting Functions ***/
-
-/* Create a salt that is length-bytes long*/
-function saltShaker(length) {
-    return crypto.randomBytes(length).toString('hex');
-};
+/*** Password Checking Function ***/
 
 /* Create a SHA512 hash of password for a given salt */
 function hashPass(password, salt) {
@@ -24,22 +18,80 @@ class Sign_In extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            userName: '',
-            password: ''
+            username: '',
+            password: '',
+            message: '',
         };
 
-        this.checkLogin = this.checkLogin.bind(this);
+        this.changeMessage = this.changeMessage.bind(this);
     }
 
     // Query API to see if user exists in database
-    checkLogin(username, password) {
-        request('https://chomperapp.herokuapp.com/api/customers', function(err, res, body){
-            console.log("Woohoo!");
+    checkLogin() {
+
+        const changeMessage = this.changeMessage;
+        const changeUser = this.props.changeUser;
+        const changePage = this.props.changePage;
+
+        var username = this.state.username,
+            password = this.state.password,
+            found = false;
+
+        // First check the customer database for the credentials given by the user
+        request(apiURL + 'customers', function(err, res, body){
+            var customers = JSON.parse(body),
+                index = -1;
+            
+            for (var i = 0; i < customers.length; i++) {
+                if (customers[i].credentials.username === username) index =  i;
+            }
+            if (index >= 0) { // If customer is found
+                console.log("Login successful!");
+                
+                var storedHash = customers[index].credentials.password,
+                    computedHash = hashPass(password, customers[index].credentials.salt);
+                
+                if (computedHash === storedHash) {
+                    changeUser(customers[index].name, password);
+                    changePage('home');
+                }
+                    // console.log("You are a verified user!");
+                else changeMessage("Login failed, please try again.");
+            }
+            else changeMessage("Login failed, please try again.");
+        });
+
+        // Then check the vendor database if the customer wasn't found
+        if (!found) request(apiURL + 'vendors', function(err, res, body) {
+            var vendors = JSON.parse(body),
+                index = -1;
+            
+            for (var i = 0; i < vendors.length; i++) {
+                if (vendors[i].credentials.username === username) index =  i;
+            }
+            if (index >= 0) { // If vendor is found
+                console.log("Login successful!");
+                
+                var storedHash = vendors[index].credentials.password,
+                    computedHash = hashPass(password, vendors[index].credentials.salt);
+                
+                if (computedHash === storedHash) {
+                    changeUser(vendors[index].name, password);
+                    changePage('home');
+                }
+                    // console.log("You are a verified user!");
+                else changeMessage("Login failed, please try again.");
+            }
+            else changeMessage("Login failed, please try again.");
         });
     }
 
+    changeMessage(val){
+        this.setState({message: val});
+    }
+
     changeUsername(val){
-        this.setState({userName: val});
+        this.setState({username: val});
     }
     
     changePassword(val){
@@ -47,14 +99,16 @@ class Sign_In extends React.Component {
     }
     
     render() {
-        const checkLogin = this.checkLogin;
+        const changeMessage = this.props.changeMessage;
         const changeUser = this.props.changeUser;
         const changePage = this.props.changePage;
 
         return (
             <div className="signin_main">
                 <div className = "form">
-                    <h5>Sign Into Your Chomper Account</h5>
+                    <h5>Sign In</h5>
+
+                    <label> {this.state.message} </label>
 
                     <label>Username:</label>
                     <input type="text" ref="username_input" onChange={() => {
@@ -66,7 +120,7 @@ class Sign_In extends React.Component {
                          this.changePassword(this.refs.password_input.value)}} />
 
                     <br/>
-                    <button onClick={(a) => {a.preventDefault(); checkLogin(this.state.username, this.state.password); /*changeUser(this.state.userName, this.state.password); changePage('home')*/}}> Submit </button>
+                    <button onClick={(a) => {a.preventDefault(); this.checkLogin(); /*changeUser(this.state.username, this.state.password); changePage('home')*/}}> Submit </button>
 
                     <br/>
                     <button onClick={(a) => {a.preventDefault(); changePage('new_user')}}> New User?  Click here to create your account. </button>

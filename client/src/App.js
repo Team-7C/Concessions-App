@@ -62,7 +62,7 @@ class App extends React.Component {
                         Sign In
                     </a>
                 ) : (
-                <a href="/" onClick={(a) => {a.preventDefault(); this.changeUser('', ''); this.changePage('home')}}>Hello {this.state.username}, Sign Out</a>   
+                <a href="/" onClick={(a) => {a.preventDefault(); this.changeUser('', ''); this.changePage('sign')}}>Hello, {this.state.username} | Sign Out</a>   
                 )}
 				<a href="/" onClick={(a) => {a.preventDefault(); this.setState({selectedPage: 'admin'})}}>Admin</a>
 
