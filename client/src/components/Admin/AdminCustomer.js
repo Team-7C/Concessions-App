@@ -2,10 +2,9 @@ import React from 'react';
 import './AdminDisplay.css'
 
 var req = require('request'),
-    apiURL = 'http://chomperapp.herokuapp.com/api/customers/', 
     custys;
 
-req.get(apiURL, function(err, res, body)
+req.get('http://chomperapp.herokuapp.com/api/customers/', function(err, res, body)
 {
     custys = JSON.parse(body);
 })
@@ -35,14 +34,14 @@ class AdminCustomer extends React.Component {
     }
 
     getCustomers() {
-        req.get(apiURL, function(err, res, body)
+        req.get('http://chomperapp.herokuapp.com/api/customers/', function(err, res, body)
         {
             custys = JSON.parse(body);
-        })
+        });
     }
 
     createCustomer(user, pass, name, phone, email) {
-        req.post(apiURL, {
+        req.post('http://chomperapp.herokuapp.com/api/customers/', {
             json: {
                 uid: custys.length + 1,
                 credentials: {
@@ -59,7 +58,7 @@ class AdminCustomer extends React.Component {
 
     deleteCustomer(uid)
     {
-        req.del(apiURL + uid, this.getCustomers());
+        req.del('http://chomperapp.herokuapp.com/api/customers/' + uid, this.getCustomers());
     }
     
 
