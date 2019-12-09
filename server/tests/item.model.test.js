@@ -6,7 +6,7 @@ var should = require('should'),
 var item, id;
 
 item = {
-    "id": 6, 
+    "id": 100, 
     "vid": 3, 
     "name": "Hot Coffee",
     "type": "Beverage", 

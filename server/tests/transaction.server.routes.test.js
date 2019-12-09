@@ -24,7 +24,6 @@ describe('Transaction CRUD Tests', function() {
             .end(function(err, res) {
                 should.not.exist(err);
                 should.exist(res);
-                // TODO: Make more thorough test for this part
                 done();
             });
     });

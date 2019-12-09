@@ -24,7 +24,6 @@ describe('Vendor CRUD Tests', function() {
             .end(function(err, res) {
                 should.not.exist(err);
                 should.exist(res);
-                // TODO: Make more thorough test for this part
                 done();
             });
     });
@@ -41,8 +40,6 @@ describe('Vendor CRUD Tests', function() {
                         res.body.name.should.equal('Domino\'s Pizza');
                         res.body.email.should.equal('contactus@dominos.com');
                         res.body.phone.should.equal('111-111-1111');
-                        // res.body.credentials.username.should.equal('dom');
-                        // res.body.credentials.password.should.equal('piz');
                         done();
                     });
             }

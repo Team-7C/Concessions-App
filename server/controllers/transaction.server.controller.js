@@ -17,10 +17,7 @@ exports.create = function(req, res) {
             console.log(err);
             res.status(400).send(err);
         }
-        else {
-            console.log(transaction);
-            res.json(transaction);
-        }
+        else res.json(transaction);
     });
 };
 
@@ -48,10 +45,7 @@ exports.update = function(req, res) {
             console.log(err);
             res.status(400).send(err);
         }
-        else {
-            console.log(transaction);
-            res.json(transaction);
-        }
+        else res.json(transaction);
     });
 };
 

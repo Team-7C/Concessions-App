@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
     crypto = require('crypto'),
     Customer = require('../models/customerSchema.js');
 
-/*** Password Salting Functions ***/
+/*** Password Salting Functions (Tutorial: https://ciphertrick.com/salt-hash-passwords-using-nodejs-crypto/) ***/
 
 /* Create a salt that is length-bytes long*/
 function saltShaker(length) {
@@ -37,10 +37,7 @@ exports.create = function(req, res) {
             console.log(err);
             res.status(400).send(err);
         }
-        else {
-            console.log(customer);
-            res.json(customer);
-        }
+        else res.json(customer);
     });
 };
 
@@ -73,10 +70,7 @@ exports.update = function(req, res) {
             console.log(err);
             res.status(400).send(err);
         }
-        else {
-            console.log(customer);
-            res.json(customer);
-        }
+        else res.json(customer);
     });
 };
 

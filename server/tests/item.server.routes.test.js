@@ -24,7 +24,6 @@ describe('Item CRUD Tests', function() {
             .end(function(err, res) {
                 should.not.exist(err);
                 should.exist(res);
-                // TODOL Make more thorough test for this part
                 done();
             });
     });
@@ -38,15 +37,10 @@ describe('Item CRUD Tests', function() {
                     .end(function(err, res) {
                         should.not.exist(err);
                         should.exist(res);
-                        console.log(res.body);
                         res.body.vid.should.equal(1);
                         res.body.name.should.equal("Cheese Pizza (11\")");
                         res.body.type.should.equal("Meal");
                         res.body.base_price.should.equal(8.99);
-                        // TODO: Make the testing of the addons work...(?)
-                        // res.body.addons[0].desc.should.equal("Large size");
-                        // res.body.addons[1].desc.should.equal("Cheese crust");
-                        // res.body.addons[2].desc.should.equal("Add pepperoni");
                         done();
                     });
             }
@@ -106,11 +100,6 @@ describe('Item CRUD Tests', function() {
                 res.body.name.should.equal('Hotdog');
                 res.body.type.should.equal('Entree');
                 res.body.base_price.should.equal(5.25);
-                // res.body.addons[0].should.equal({
-                //     aid: 1,
-                //     desc: "Add relish",
-                //     upcharge: 0.50
-                // });
                 done();
             });
     });

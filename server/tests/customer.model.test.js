@@ -4,7 +4,7 @@ var should = require('should'),
     crypto = require('crypto'),
     config = require('../config/config');
 
-/*** Password Salting Functions ***/
+/*** Password Salting Functions (Tutorial: https://ciphertrick.com/salt-hash-passwords-using-nodejs-crypto/) ***/
 
 /* Create a salt that is length-bytes long*/
 function saltShaker(length) {
