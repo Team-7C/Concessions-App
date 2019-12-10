@@ -11,6 +11,13 @@
 - CodePen MDL template -  https://codepen.io/SitePoint/pen/oxXdov
 - CodePen Roster List - https://codepen.io/MitchYang/pen/BaayRzy
 - CodePen Modal Box - https://codepen.io/Idered/pen/vytkH
+- https://tamalweb.com/how-to-properly-handle-your-users-passwords
+- https://daveceddia.com/deploy-react-express-app-heroku/
+- React Paypal tutorial: https://www.robinwieruch.de/react-paypal-payment                          	   
+- React Baby Names: https://github.com/simonswiss/react-baby-names
+- https://www.youtube.com/watch?v=DGtNLoY64ZQ&list=PLHrxuCR-0CcT7hgVVlh0lBWTqYkEEF55m
+- https://www.npmjs.com/package/react-number-format
+
 
 
 ## Set-Up & Use
