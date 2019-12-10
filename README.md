@@ -2,6 +2,18 @@
 #### Deployed Heroku Link
 [Chomper!](https://chomperapp.herokuapp.com/)
 
+### Pictures of Features
+Landing Page
+![LandingPage](ChomperLandingPage.png)
+Sign-In Page
+![SignInPage](ChomperSign-InPage)
+Menu Page
+![MenuPage](ChomperMenuPage.png)
+Cart Page
+![CartPage](ChomperCartPage.png)
+Admin Sign-In Page
+![AdminSignInPage](ChomperAdminSign-InPage.png)
+
 #### Resources Used
 - [Salting passwords](https://ciphertrick.com/salt-hash-passwords-using-nodejs-crypto/)
 - Fetching API Data with React.JS – 
