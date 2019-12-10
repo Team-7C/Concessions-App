@@ -4,6 +4,14 @@
 
 #### Resources Used
 - [Salting passwords](https://ciphertrick.com/salt-hash-passwords-using-nodejs-crypto/)
+- Fetching API Data with React.JS – 
+  https://blog.hellojs.org/fetching-api-data-with-react-js-460fe8bbf8f2
+- React MDL: https://tleunen.github.io/react-mdl/
+- React Personal Portfolio Project Playlist (used for reference on how to use React MDL) https://www.youtube.com/playlist?list=PL3KAvm6JMiowqFTXj3oPQkhP7aCgRHFTm
+- CodePen MDL template -  https://codepen.io/SitePoint/pen/oxXdov
+- CodePen Roster List - https://codepen.io/MitchYang/pen/BaayRzy
+- CodePen Modal Box - https://codepen.io/Idered/pen/vytkH
+
 
 ## Set-Up & Use
 First, run `npm install` from the root. After this you will run `npm run-script install-all` from the root. From now on run this command anytime you want to install all modules again.
