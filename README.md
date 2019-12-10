@@ -2,16 +2,16 @@
 #### Deployed Heroku Link
 [Chomper!](https://chomperapp.herokuapp.com/)
 
-### Pictures of Features
-Landing Page
+#### Pictures of Features
+##### Landing Page
 ![LandingPage](ChomperLandingPage.png)
-Sign-In Page
-![SignInPage](ChomperSign-InPage)
-Menu Page
+##### Sign-In Page
+![SignInPage](ChomperSign-InPage.png)
+##### Menu Page
 ![MenuPage](ChomperMenuPage.png)
-Cart Page
+##### Cart Page
 ![CartPage](ChomperCartPage.png)
-Admin Sign-In Page
+##### Admin Sign-In Page
 ![AdminSignInPage](ChomperAdminSign-InPage.png)
 
 #### Resources Used
